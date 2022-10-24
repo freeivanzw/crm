@@ -1,0 +1,97 @@
+/*SITE PANEL*/
+.site_panel {
+    color: var(--text-contrast);
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 90px;
+    margin-left: -100px;
+    margin-right: 10px;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.site_panel.active {
+    margin-left: 0;
+}
+
+.user_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_box figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_photo {
+    display: block;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user_box figcaption {
+    display: none;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.site_nav {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.confident {
+    color: var(--text-light);
+    text-align: center;
+    font-size: 10px;
+    margin-top: auto;
+}
+
+.site_nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site_nav li + li {
+    margin-top: 15px;
+}
+
+.site_nav li a {
+    font-size: 0;
+    display: block;
+}
+
+.site_nav li a .icon {
+    width: 26px;
+    height: 26px;
+    fill: var(--text-light);
+    transition: 0.3s;
+}
+
+.site_nav li a.active .icon {
+    fill: var(--text-contrast)
+}
+
+.open-site_panel {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.open-site_panel .icon {
+    margin: 0;
+}
