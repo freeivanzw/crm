@@ -35,6 +35,12 @@
     margin-right: 10px;
   }
 
+  .site_nav::before {
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 85px);
+  }
+
   .user_box figcaption {
     display: block;
   }
@@ -44,7 +50,7 @@
   }
 
   .site_panel.site_panel-main {
-    width: 300px;
+    flex: 0 0 300px;
     margin-right: 25px;
   }
 
@@ -86,12 +92,68 @@
     margin-right: 16px;
   }
 
+  .notification_list {
+    width: 360px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .notification_list li {
+    padding: 10px 10px 10px 20px;
+  }
+
+  .notification_list li + li {
+    margin-top: 10px;
+  }
+
+  .notification_list li::before {
+    width: 10px;
+  }
+
+  .notification_task-logo {
+    font-size: 30px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .notification_task-info .col-2 {
+    margin-left: 16px;
+  }
+
+  .task_list li {
+    padding: 10px;
+    border-radius: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .task_list li + li {
+    margin-top: 10px;
+  }
+
+  .task_list .col-1 {
+    flex: 0 1 auto;
+  }
+
+  .task_list .col-2 {
+    flex: 1 1 auto;
+  }
+
+  .task_list .col-3 {
+    flex: 0 1 auto;
+    padding-top: 0;
+    align-items: flex-start;
+  }
+
   /*MAIN PAGE*/
 }
 @media only screen and (min-width: 1280px) {
   /*SITE PANEL*/
   .site_panel.site_panel-main {
     margin-right: 45px;
+  }
+
+  .header_date {
+    margin-bottom: 22px;
   }
 
   /*MAIN PAGE*/
