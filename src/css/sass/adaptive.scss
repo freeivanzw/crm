@@ -1,6 +1,7 @@
 @media only screen and (min-width : 480px)  {
     /*SITE PANEL*/
     /*MAIN PAGE*/
+    /*TASK PAGE*/
 }
 
 @media only screen and (min-width : 640px)  {
@@ -13,11 +14,13 @@
         display: none;
     }
     /*MAIN PAGE*/
+    /*TASK PAGE*/
 }
 
 @media only screen and (min-width : 768px)  {
     /*SITE PANEL*/
     /*MAIN PAGE*/
+    /*TASK PAGE*/
 }
 
 @media only screen and (min-width : 1024px) {
@@ -29,6 +32,13 @@
         padding: 10px;
         border-radius: 10px;
     }
+
+    main::before {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        border-radius: 10px;
+    }
+
     /*SITE PANEL*/
     .site_panel {
         padding: 20px 10px 10px 10px;
@@ -40,6 +50,10 @@
         left: -10px;
         width: calc(100% + 20px);
         height: calc(100% + 85px);
+    }
+
+    .chart_box {
+        border-radius: 10px;
     }
 
     .user_box figcaption {
@@ -70,15 +84,14 @@
 
     .site_panel.site_panel-main .site_nav li {
         justify-content: flex-start;
-        padding-left: 40px;
+        padding-left: 28px;
     }
 
     .site_panel.site_panel-main .site_nav li a {
-        color: var(--text-light);
         display: flex;
         align-items: center;
         text-decoration: none;
-        font-size: 14px;
+        font-size: 18px;
         line-height: 1.2;
         transition: 0.3s;
     }
@@ -90,6 +103,11 @@
 
     .site_panel.site_panel-main .site_nav li a .icon {
         margin-right: 16px;
+    }
+
+    .site_nav li a .icon {
+        width: 30px;
+        height: 30px;
     }
 
     .notification_list {
@@ -120,6 +138,12 @@
         margin-left: 16px;
     }
 
+    .task_list {
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 0;
+    }
+
     .task_list li {
         padding: 10px;
         border-radius: 10px;
@@ -144,6 +168,40 @@
         align-items: flex-start;
     }
     /*MAIN PAGE*/
+    .main_page {
+        display: flex;
+    }
+
+    .main_page > .col-1 {
+        flex: 0 1 65%;
+        margin-bottom: 10px;
+    }
+
+    .main_page > .col-2 {
+        flex: 0 1 35%;
+        padding-left: 16px;
+        padding-right: 10px;
+    }
+
+    .task_counter {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .task_counter li {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .task_counter li + li {
+        margin-top: 10px;
+    }
+
+    .birthday {
+        padding: 10px;
+        border-radius: 10px;
+    }
+    /*TASK PAGE*/
 }
 
 @media only screen and (min-width : 1280px) {
@@ -151,8 +209,64 @@
     .site_panel.site_panel-main {
         margin-right: 45px;
     }
+    .content {
+        padding-top: 24px;
+    }
     .header_date {
+        font-size: 26px;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+    .content_header {
+        flex-direction: row;
+        align-items: center;
         margin-bottom: 22px;
     }
+    .content_header-inner {
+        order: 4;
+        margin-bottom: 0;
+        width: auto;
+    }
+    .btn_time {
+        margin: 0 22px 0 0 ;
+    }
+    .add_task-btn {
+        margin: 0 22px 0 0 ;
+    }
+    .site_panel.site_panel-main .user_box figcaption {
+        font-size: 26px;
+        margin-bottom: 16px;
+    }
     /*MAIN PAGE*/
+    .main_page > .col-1 {
+        flex: 0 1 58%;
+    }
+    .main_page > .col-2 {
+        padding-left: 25px;
+        flex: 0 1 42%;
+    }
+
+    .task_item-title {
+        font-size: 22px;
+        margin-bottom: 2px;
+    }
+
+    .task_item-mentor {
+        margin-bottom: 24px;
+    }
+
+    .chart_box {
+        margin-bottom: 25px;
+    }
+
+    .task_size {
+        font-size: 36px;
+        min-width: 65px;
+        height: 65px;
+    }
+
+    .task_description span {
+        font-size: 24px;
+    }
+    /*TASK PAGE*/
 }

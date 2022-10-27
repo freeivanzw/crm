@@ -1,0 +1,30 @@
+/*TASK PAGE*/
+.task_page-list {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--site-bg-contrast);
+}
+
+.task_page-list li {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e0e3ec;
+}
+
+.task_page-list li + li {
+    margin-top: 5px;
+}
+
+.task_page-list li.status_danger {
+    background-color: #f85b06;
+}
+
+.task_page-list li.status_warning {
+    background-color: #f8aa06;
+}
+
+.task_page-list li.status_success {
+    background-color: #51a727;
+}

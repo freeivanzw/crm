@@ -51,7 +51,7 @@
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 115px;
     position: relative;
     z-index: 1;
 
@@ -93,17 +93,19 @@
 .site_nav li a {
     font-size: 0;
     display: block;
+    opacity: 0.4;
 }
 
 .site_nav li a .icon {
     width: 26px;
     height: 26px;
-    fill: var(--text-light);
+    fill: var(--text-contrast);
     transition: 0.3s;
 }
 
-.site_nav li a.active .icon {
-    fill: var(--text-contrast)
+.site_nav li a:hover,
+.site_nav li a.active {
+    opacity: 1;
 }
 
 .open-site_panel {
@@ -119,12 +121,14 @@
 .content_header {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .content_header-inner {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+    width: 100%;
 }
 
 .notification {
@@ -279,6 +283,10 @@
     text-align: end;
 }
 
+.btn_time {
+    margin-bottom: 8px;
+}
+
 .header_date {
     font-size: 20px;
     line-height: 1.2;
@@ -290,10 +298,17 @@
     color: var(--light-primary)
 }
 
+.add_task-btn .icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+}
+
 .task_list {
     margin-bottom: 16px;
     padding: 5px;
-    bprder-radius: 5px;
+    border-radius: 5px;
+    background-color: var(--site-bg-contrast);
 }
 
 .task_list li {
@@ -387,6 +402,7 @@
 }
 
 .tasks-counter {
+    white-space: nowrap;
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -445,6 +461,7 @@
     border: 2px solid var(--text-color);
     border-radius: 5px;
     z-index: 2;
+    transition: 0.3s;
 }
 
 .task_list li.status_danger .add_task,
@@ -456,10 +473,146 @@
 .add_task .icon {
     width: 16px;
     height: 16px;
+    transition: 0.3s;
+}
+
+.add_task:hover .icon  {
+    transform: scale(1.2);
 }
 
 .task_list li.status_danger .add_task .icon,
 .task_list li.status_warning .add_task .icon,
 .task_list li.status_success .add_task .icon {
     fill: var(--text-contrast);
+}
+
+.chart_box {
+    margin-bottom: 16px;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: var(--light-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#spark4 {
+    max-width: 350px;
+    margin-bottom: 12px;
+}
+
+.chart_box-title {
+    color: var(--text-contrast);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.my_money {
+    color: var(--text-contrast);
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.my_money-add {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 5px 15px;
+    font-size: 14px;
+    color: var(--text-contrast);
+    background-color: var(--primary);
+    border-radius: 15px;
+}
+
+.task_counter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.task_counter li {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e0e3ec;
+}
+
+.task_counter li + li {
+    margin-top: 5px;
+}
+
+.task_size {
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    padding: 0 10px;
+    min-width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.task_size.status_danger {
+    background-color: var(--danger);
+}
+
+.task_size.status_warning {
+    background-color: var(--warning);
+}
+
+.task_size.status_success {
+    background-color: var(--success);
+}
+
+.task_description {
+    display: flex;
+    flex-direction: column;
+}
+
+.task_description span {
+    font-size: 16px;
+}
+
+.task_description small {
+    font-size: 12px;
+    color: var(--text-light)
+}
+
+.birthday {
+    color: var(--text-contrast);
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--primary);
+}
+
+.birthday img {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+.birthday figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 16px;
+}
+
+.birthday figcaption span {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.birthday figcaption b {
+    font-size: 22px;
+    margin-bottom: 22px;
 }
