@@ -715,6 +715,7 @@ a.sub_title:hover {
 }
 
 .dead_line {
+  text-align: center;
   color: var(--text-contrast);
   display: flex;
   align-items: center;
@@ -957,24 +958,148 @@ a.sub_title:hover {
   background-color: var(--site-bg-contrast);
 }
 
-.task_page-list li {
-  padding: 5px;
+.task_page-list > li {
+  padding: 10px 5px;
   border-radius: 5px;
   background-color: #e0e3ec;
 }
 
-.task_page-list li + li {
+.task_page-list > li + li {
   margin-top: 5px;
 }
 
-.task_page-list li.status_danger {
+.task_page-list > li.status_danger {
+  color: var(--text-contrast);
   background-color: #f85b06;
 }
 
-.task_page-list li.status_warning {
+.task_page-list > li.status_warning {
+  color: var(--text-contrast);
   background-color: #f8aa06;
 }
 
-.task_page-list li.status_success {
+.task_page-list > li.status_success {
+  color: var(--text-contrast);
   background-color: #51a727;
+}
+
+.status_main {
+  position: relative;
+}
+
+.status_main > .col-1 {
+  display: flex;
+}
+
+.task_info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 18px;
+}
+
+.status_main > .col-2 {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-left: 68px;
+}
+
+.status_main > .col-2 .add_task {
+  margin: 0 12px 0 0;
+  z-index: 3;
+}
+
+.task_page-list > li.status_danger .add_task,
+.task_page-list > li.status_warning .add_task,
+.task_page-list > li.status_success .add_task {
+  border-color: var(--text-contrast);
+}
+
+.task_page-list > li.status_danger .icon,
+.task_page-list > li.status_warning .icon,
+.task_page-list > li.status_success .icon {
+  fill: var(--text-contrast);
+}
+
+.status_main > .col-3 {
+  display: flex;
+  align-items: center;
+  padding-left: 68px;
+}
+
+.status_main > .col-3 .dead_line {
+  margin-right: auto;
+}
+
+.tasks-counter {
+  margin-left: 8px;
+}
+
+.sub_tasks {
+  padding-left: 68px;
+  padding-top: 20px;
+}
+
+.sub_tasks li {
+  position: relative;
+}
+
+.sub_tasks li + li {
+  margin-top: 20px;
+}
+
+.sub_tasks li::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-color);
+  position: absolute;
+  top: -11px;
+  left: 0;
+}
+
+.task_page-list > li.status_danger .sub_tasks li::before,
+.task_page-list > li.status_warning .sub_tasks li::before,
+.task_page-list > li.status_success .sub_tasks li::before {
+  background-color: var(--text-contrast);
+}
+
+.sub_tasks li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid var(--text-color);
+  border-left: 2px solid var(--text-color);
+}
+
+.task_page-list > li.status_danger .sub_tasks li::after,
+.task_page-list > li.status_warning .sub_tasks li::after,
+.task_page-list > li.status_success .sub_tasks li::after {
+  border-color: var(--text-contrast);
+}
+
+.sub_tasks li.finished {
+  filter: grayscale(1) opacity(0.5);
+}
+
+.sub_tasks .col-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub_tasks .col-2 {
+  margin-bottom: 8px;
+}
+
+.sub_tasks .col-3 {
+  display: flex;
+  align-items: center;
+}
+
+.sub_tasks .col-3 .dead_line {
+  margin-right: auto;
 }
