@@ -54,6 +54,10 @@
     padding-left: 68px;
 }
 
+.task_page .task_item-title:before {
+    display: none;
+}
+
 .status_main > .col-2 .add_task {
     margin: 0 12px 0 0;
     z-index: 3;

@@ -145,7 +145,7 @@ main::before {
 }
 
 .content {
-  flex: 1 1 auto;
+  flex: 0 0 100%;
 }
 
 input {
@@ -786,8 +786,8 @@ a.sub_title:hover {
   align-items: center;
   justify-content: center;
   margin-left: 10px;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   border: 2px solid var(--text-color);
   border-radius: 5px;
   z-index: 2;
@@ -1005,6 +1005,10 @@ a.sub_title:hover {
   padding-left: 68px;
 }
 
+.task_page .task_item-title:before {
+  display: none;
+}
+
 .status_main > .col-2 .add_task {
   margin: 0 12px 0 0;
   z-index: 3;
@@ -1103,3 +1107,5 @@ a.sub_title:hover {
 .sub_tasks .col-3 .dead_line {
   margin-right: auto;
 }
+
+/*POPUPS*/

@@ -2,6 +2,7 @@
   /*SITE PANEL*/
   /*MAIN PAGE*/
   /*TASK PAGE*/
+  /*POPUPS*/
 }
 @media only screen and (min-width: 640px) {
   /*SITE PANEL*/
@@ -13,13 +14,19 @@
     display: none;
   }
 
+  .content {
+    flex: 1 1 auto;
+  }
+
   /*MAIN PAGE*/
   /*TASK PAGE*/
+  /*POPUPS*/
 }
 @media only screen and (min-width: 768px) {
   /*SITE PANEL*/
   /*MAIN PAGE*/
   /*TASK PAGE*/
+  /*POPUPS*/
 }
 @media only screen and (min-width: 1024px) {
   body {
@@ -39,9 +46,15 @@
 
   /*SITE PANEL*/
   .site_panel {
+    flex: 0 0 92px;
     padding: 20px 10px 10px 10px;
     border-radius: 10px;
     margin-right: 10px;
+  }
+
+  .user_photo {
+    width: 68px;
+    height: 68px;
   }
 
   .site_nav::before {
@@ -56,6 +69,7 @@
 
   .user_box figcaption {
     display: block;
+    font-size: 14px;
   }
 
   .site_nav li + li {
@@ -241,7 +255,7 @@
 
   .status_main > .col-3 {
     padding-left: 0;
-    padding-right: 130px;
+    padding-right: 138px;
     position: relative;
   }
 
@@ -273,7 +287,7 @@
 
   .sub_tasks .col-3 {
     position: relative;
-    padding-right: 130px;
+    padding-right: 138px;
   }
 
   .sub_tasks .col-3 .tasks-counter {
@@ -282,6 +296,8 @@
     right: 0;
     transform: translateY(-50%);
   }
+
+  /*POPUPS*/
 }
 @media only screen and (min-width: 1280px) {
   /*SITE PANEL*/
@@ -309,6 +325,10 @@
     order: 4;
     margin-bottom: 0;
     width: auto;
+  }
+
+  .content_header .btn {
+    min-width: 210px;
   }
 
   .btn_time {
@@ -358,4 +378,5 @@
   }
 
   /*TASK PAGE*/
+  /*POPUPS*/
 }
