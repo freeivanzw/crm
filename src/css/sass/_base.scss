@@ -19,6 +19,10 @@ body {
     background-color: #e0e3ec;
 }
 
+body.body_overflow {
+    overflow: hidden;
+}
+
 main {
     display: flex;
     flex: 1 0 auto;
@@ -48,6 +52,11 @@ main::before {
     flex: 0 0 100%;
 }
 
+button {
+    outline: none;
+    border: none;
+}
+
 input {
     font-size: 14px;
     line-height: 17px;
@@ -57,6 +66,12 @@ input {
     padding: 0 15px 0 8px;
     border: 1px solid #D6D6D6;
     transition: 0.3s;
+}
+
+input.dark {
+    background-color: var(--sub-primary);
+    border-color: var(--sub-primary);
+    color: var(--text-contrast);
 }
 
 input[type=text].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
