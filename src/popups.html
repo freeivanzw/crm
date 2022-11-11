@@ -297,7 +297,7 @@
                 <a href="#" class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</a>
                 <a href="#" class="close_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
             </div>
-            <form class="popup_body">
+            <div class="popup_body">
                 <div class="create_title">
                     <label class="name_task">
                         <span>Назва завдання</span>
@@ -315,8 +315,61 @@
                         </label>
                     </div>
                 </div>
+                <div class="popup_tasks">
+                    <div class="popup_tasks-header">
+                        <div class="popup_creator">
+                            <span>Павло Цвєтков</span>
+                            <img src="./images/bearded-man.png" alt="user photo">
+                        </div>
+                        <div class="tasks_status">
+                            <div class="tasks_counter">
+                                <span>Remarks</span>
+                                <div class="tasks_box">
+                                    <span>1 / 5</span>
+                                    <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn_contrast active">Виконано</a>
+                        </div>
+                    </div>
+                    <ul class="popup_tasks-list">
+                        <li>
+                            <div class="col-1">
+                                <span class="order_number">1</span>
+                                <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
+                            </div>
+                            <div class="col-2">
+                                <label class="popup_tasks-status">
+                                    <input type="checkbox">
+                                    <i></i>
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <div class="popup_tasks-text">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dolores fugiat magnam obcaecati optio provident quidem sint tempora totam.</span>
+                                    <input type="text" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dolores fugiat magnam obcaecati optio provident quidem sint tempora totam.">
+                                </div>
+                                <div class="popup_tasks-control">
+                                    <ul class="popup_tasks-developers">
+                                        <li><a href="#">Павло Цвєтков</a></li>
+                                        <li><a href="#" class="active">Павло Цвєтков</a></li>
+                                    </ul>
+                                    <div class="tasks_time-edit">
+                                        <span>Час виконання</span>
+                                        <input type="text">
+                                        <span>годин</span>
+                                        <input type="text">
+                                        <span>хвилин</span>
+                                    </div>
+                                    <span class="tasks_time">1 година 30 хвилин</span>
+                                </div>
+                            </div>
+                            <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                        </li>
+                    </ul>
+                </div>
                 <button class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</button>
-            </form>
+            </div>
         </div>
     </div>
 
