@@ -286,64 +286,57 @@
 </main>
 
 <div class="popup_box active">
-    <div class="popup create_popup">
+    <div class="popup register_popup">
         <div class="popup_header">
             <div class="popup_title">
                 <div class="icon_box">
-                    <svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>
+                    <svg class="icon"><use xlink:href="./images/sprite.svg#user"></use></svg>
                 </div>
-                <span>Створення нового завдання</span>
+                <span>Реєстрація нового співробітника</span>
             </div>
-            <a href="#" class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</a>
+            <a href="#" class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Реєстрація</a>
             <a href="#" class="close_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
         </div>
         <div class="popup_body">
-            <div class="create_title">
-                <label class="name_task">
-                    <span>Назва завдання</span>
-                    <input type="text" class="dark error">
-                </label>
-                <div class="select_type error">
-                    <span>Тип завдання</span>
-                    <label>
-                        <input type="radio" name="rb1">
-                        <div class="task_box"><svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg><span>Технічне завдання</span></div>
-                    </label>
-                    <label>
-                        <input type="radio" name="rb1" checked>
-                        <div class="task_box"><svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg><span>Checklist</span></div>
-                    </label>
-                </div>
-            </div>
-            <div class="popup_tasks">
-                <div class="add_check-item">
-                    <span>Лінк на завдання</span>
+            <form class="register_grid">
+                <div class="register_item">
+                    <span>Ім'я</span>
                     <input type="text">
                 </div>
-            </div>
-            <div class="responsible">
-                <div class="responsible_users">
-                    <b>Відповідальний</b>
-                    <input id="input_tagator" name="input_tagator" value="jQuery,Script,Net" placeholder="Please input some tags">
+                <div class="register_item">
+                    <span>Прізвище</span>
+                    <input type="text">
                 </div>
-                <a href="#" class="important_task active"><svg class="icon"><use xlink:href="./images/sprite.svg#fire"></use></svg> Надтермінове завдання</a>
-            </div>
-            <div class="popup-bottom_info">
-                <div class="popup-bottom_inner popup-dead_line">
-                    <span>Dead line</span>
-                    <b>17 липня 2022</b>
+                <div class="register_item">
+                    <span>По батькові</span>
+                    <input type="text">
                 </div>
-                <div class="popup-bottom_inner">
-                    <span>Поставлено</span>
-                    <b>Сьогодні</b>
+                <div class="register_item">
+                    <span>Дата народження</span>
+                    <input type="date">
                 </div>
-                <div class="popup-bottom_inner">
-                    <span>Робочий час виконання</span>
-                    <b>50 годин</b>
+                <div class="register_item">
+                    <span>Телефон</span>
+                    <input type="tel">
                 </div>
-            </div>
-
-            <button class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</button>
+                <div class="register_item">
+                    <span>Email</span>
+                    <input type="email">
+                </div>
+                <div class="register_item">
+                    <span>Відділ</span>
+                    <div class="dropdown choose_department">
+                        <div class="overflow"><span>Відділ</span><button type="button" class="drop_arrow"></button></div>
+                        <ul>
+                            <li><a href="#">Відділ 1</a></li>
+                            <li><a href="#">Відділ 2</a></li>
+                            <li><a href="#">Відділ 3</a></li>
+                            <li><a href="#">Відділ 4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            <button class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Реєстрація</button>
         </div>
     </div>
 </div>

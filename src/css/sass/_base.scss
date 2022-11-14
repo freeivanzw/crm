@@ -74,11 +74,11 @@ input.dark {
     color: var(--text-contrast);
 }
 
-input[type=text].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
+input[type=text].error, input[type=date].error, input[type=email].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
     border-color: #EE3C30;
 }
 
-input[type=text]:focus , input[type=password]:focus , input[type=tel]:focus , input[type=number]:focus, textarea:focus  {
+input[type=text]:focus, input[type=date]:focus, input[type=email]:focus, input[type=password]:focus , input[type=tel]:focus , input[type=number]:focus, textarea:focus  {
     border-color: var(--sub_main-color);
     outline: 0;
     outline-offset: 0;
@@ -90,7 +90,6 @@ input::-webkit-calendar-picker-indicator {
 
 input:focus {
     outline: none !important;
-    border-color: #1F1F1F;
 }
 
 textarea  {

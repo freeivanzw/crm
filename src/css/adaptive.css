@@ -3,6 +3,9 @@
   /*MAIN PAGE*/
   /*TASK PAGE*/
   /*POPUPS*/
+  .register_grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media only screen and (min-width: 640px) {
   /*SITE PANEL*/
@@ -578,5 +581,9 @@
   .popup-bottom_info {
     font-size: 18px;
     padding: 0 20px;
+  }
+
+  .add_check-item span {
+    font-size: 18px;
   }
 }
