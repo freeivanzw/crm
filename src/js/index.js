@@ -59,5 +59,37 @@ $(function () {
         }
     }
 
-    new ApexCharts(document.querySelector("#spark4"), spark4).render();
+    $('.comment-area-responsive').focus(function () {
+        let $currentBox = $(this).closest('.col-3')
+        $currentBox.addClass('active')
+
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest($currentBox).length) {
+                $currentBox.removeClass('active')
+            }
+            e.stopPropagation();
+        });
+    })
+
+    $('.comment-area-responsive').each(function () {
+        $(this).css('height', ($(this)[0].scrollHeight + 2 ) + 'px')
+        $(this).on('input', TextInput)
+    })
+
+    function TextInput() {
+        $(this).css('height', ($(this)[0].scrollHeight + 2 ) + 'px')
+    }
+
+
+    var $input_tagator1 = $('#input_tagator');
+  if ($input_tagator1.data('tagator') === undefined) {
+            $input_tagator1.tagator({
+                autocomplete: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'],
+                useDimmer: true
+            });
+            $activate_tagator1.val('destroy tagator');
+        } else {
+            $input_tagator1.tagator('destroy');
+            $activate_tagator1.val('activate tagator');
+        }
 })

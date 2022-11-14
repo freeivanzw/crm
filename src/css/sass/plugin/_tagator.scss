@@ -1,0 +1,156 @@
+/**
+ * Tagator jQuery Plugin
+ * A plugin to make input elements, tag holders
+ * version 1.0, Jan 13th, 2014
+ * by Ingi á Steinamørk
+ */
+
+/* reset */
+.tagator_element * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* dimmer */
+#tagator_dimmer {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+
+}
+
+/* Main box */
+.tagator_element {
+    padding: 5px !important;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: var(--sub-primary);
+    display: inline-block;
+    text-decoration: none;
+}
+.tagator_element.options-visible {
+    position: relative;
+    z-index: 101;
+}
+
+/* placeholder */
+.tagator_placeholder {
+    position: absolute;
+    color: #999;
+    left: 4px;
+    top: 4px;
+    font-size: 13px;
+}
+
+/* chosen items holder */
+.tagator_tags {
+    display: inline;
+}
+
+/* chosen item */
+.tagator_tag {
+    display: inline-block;
+    background-color: var(--light-primary);
+    border-radius: 2px;
+    color: var(--text-contrast);
+    padding: 6px 24px 6px 10px;
+    font-size: 14px;
+    margin: 2px;
+    position: relative;
+    vertical-align: top;
+}
+
+/* chosen item remove button */
+.tagator_tag_remove {
+    font-size: 0;
+    display: block;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tagator_tag_remove::after,
+.tagator_tag_remove::before {
+    content: "";
+    width: 12px;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.tagator_tag_remove::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.tagator_tag_remove::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+.tagator_tag_remove:hover::after,
+.tagator_tag_remove:hover::before {
+    background-color: var(--text-contrast);
+}
+
+    /* input box */
+.tagator_input,
+.tagator_textlength {
+    color: var(--text-contrast);
+    border: 0;
+    display: inline-block;
+    margin: 0;
+    height: 28px;
+    background-color: transparent;
+    font-size: 14px;
+    outline: none;
+    padding: 4px 0 0 5px;
+    position: relative;
+    z-index: 1;
+    transition: none;
+}
+.tagator_input {
+    /*padding: 0px 0px;*/
+}
+
+/* options holder */
+.tagator_options {
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 3px 3px;
+    font-family: sans-serif;
+    position: absolute;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    z-index: 101;
+    background-color: #fff;
+    overflow: auto;
+    max-height: 250px;
+    list-style: none;
+    left: -1px;
+    right: -1px;
+}
+.tagator_element.options-hidden .tagator_options {
+    display: none;
+}
+
+/* result item */
+.tagator_option {
+    padding: 5px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: 0.3s;
+}
+.tagator_option.active {
+    background-color: var(--primary);
+    color: var(--text-contrast)
+}

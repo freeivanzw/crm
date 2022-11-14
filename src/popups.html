@@ -306,7 +306,7 @@
                     <div class="select_type error">
                         <span>Тип завдання</span>
                         <label>
-                            <input type="radio" name="rb1">
+                            <input type="radio" name="rb1" checked>
                             <div class="task_box"><svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg><span>Технічне завдання</span></div>
                         </label>
                         <label>
@@ -346,13 +346,76 @@
                             </div>
                             <div class="col-3">
                                 <div class="popup_tasks-text">
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dolores fugiat magnam obcaecati optio provident quidem sint tempora totam.</span>
-                                    <input type="text" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cupiditate dolores fugiat magnam obcaecati optio provident quidem sint tempora totam.">
+                                   <textarea class='comment-area-responsive'>asd fasdf asfd fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf </textarea>
                                 </div>
                                 <div class="popup_tasks-control">
                                     <ul class="popup_tasks-developers">
-                                        <li><a href="#">Павло Цвєтков</a></li>
-                                        <li><a href="#" class="active">Павло Цвєтков</a></li>
+                                        <li><a href="#" class="btn">Павло Цвєтков</a></li>
+                                        <li><a href="#" class="btn active">Павло Цвєтков</a></li>
+                                    </ul>
+                                    <div class="tasks_time-edit">
+                                        <span>Час виконання</span>
+                                        <input type="text" class="error">
+                                        <span>годин</span>
+                                        <input type="text">
+                                        <span>хвилин</span>
+                                    </div>
+                                    <span class="tasks_time">1 година 30 хвилин</span>
+                                </div>
+                            </div>
+                            <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                        </li>
+                        <li>
+                            <div class="col-1">
+                                <span class="order_number">1</span>
+                                <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
+                            </div>
+                            <div class="col-2">
+                                <label class="popup_tasks-status">
+                                    <input type="checkbox">
+                                    <i></i>
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <div class="popup_tasks-text">
+                                    <textarea class='comment-area-responsive'></textarea>
+                                </div>
+                                <div class="popup_tasks-control">
+                                    <ul class="popup_tasks-developers">
+                                        <li><a href="#" class="btn">Павло Цвєтков</a></li>
+                                        <li><a href="#" class="btn active">Павло Цвєтков</a></li>
+                                    </ul>
+                                    <div class="tasks_time-edit">
+                                        <span>Час виконання</span>
+                                        <input type="text">
+                                        <span>годин</span>
+                                        <input type="text">
+                                        <span>хвилин</span>
+                                    </div>
+                                    <span class="tasks_time">1 година 30 хвилин</span>
+                                </div>
+                            </div>
+                            <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                        </li>
+                        <li class="completed">
+                            <div class="col-1">
+                                <span class="order_number">1</span>
+                                <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
+                            </div>
+                            <div class="col-2">
+                                <label class="popup_tasks-status">
+                                    <input type="checkbox">
+                                    <i></i>
+                                </label>
+                            </div>
+                            <div class="col-3">
+                                <div class="popup_tasks-text">
+                                    <textarea class='comment-area-responsive'>asdlkfj a;lskdfj a;lskdfj ;alskd fj;alksdjf; alksdjf ;alksdfj;al ksdfj;alksdjf ;laskdfj ;laskdfj</textarea>
+                                </div>
+                                <div class="popup_tasks-control">
+                                    <ul class="popup_tasks-developers">
+                                        <li><a href="#" class="btn">Павло Цвєтков</a></li>
+                                        <li><a href="#" class="btn active">Павло Цвєтков</a></li>
                                     </ul>
                                     <div class="tasks_time-edit">
                                         <span>Час виконання</span>
@@ -368,6 +431,28 @@
                         </li>
                     </ul>
                 </div>
+                <div class="responsible">
+                    <div class="responsible_users">
+                        <b>Відповідальний</b>
+                        <input id="input_tagator" name="input_tagator" value="jQuery,Script,Net" placeholder="Please input some tags">
+                    </div>
+                    <a href="#" class="important_task active"><svg class="icon"><use xlink:href="./images/sprite.svg#fire"></use></svg> Надтермінове завдання</a>
+                </div>
+                <div class="popup-bottom_info">
+                    <div class="popup-bottom_inner popup-dead_line">
+                        <span>Dead line</span>
+                        <b>17 липня 2022</b>
+                    </div>
+                    <div class="popup-bottom_inner">
+                        <span>Поставлено</span>
+                        <b>Сьогодні</b>
+                    </div>
+                    <div class="popup-bottom_inner">
+                        <span>Робочий час виконання</span>
+                        <b>50 годин</b>
+                    </div>
+                </div>
+
                 <button class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</button>
             </div>
         </div>
@@ -376,6 +461,8 @@
     <div class="shadow"></div>
 
     <script src="./js/jquery.min.js"></script>
+    <script src="./js/plugins/fm.tagator.jquery.js"></script>
+    <script src="./js/plugins/chart.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

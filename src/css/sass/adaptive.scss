@@ -26,8 +26,13 @@
     }
 
     .popup_header {
+        border-radius: 10px 10px 0 0;
         padding: 16px 160px 16px 14px;
         justify-content: space-between;
+    }
+
+    .popup_header::before {
+        border-radius: 0 0 75px 0;
     }
 
     .popup_title {
@@ -67,6 +72,45 @@
         max-width: 400px;
         margin-bottom: 0;
     }
+
+    .tasks_time-edit span:nth-child(1),
+    .tasks_time-edit span:nth-child(3),
+    .tasks_time-edit span:nth-child(5) {
+        flex: 0 1 auto;
+    }
+
+    .tasks_time-edit input {
+        margin: 0 16px;
+    }
+
+    .responsible {
+        flex-direction: row;
+    }
+
+    .responsible_users {
+        width: 50% !important;
+        max-width: 640px;
+        margin-bottom: 0;
+
+    }
+
+    .tagator_element {
+    }
+
+    .popup-bottom_info {
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .popup-bottom_inner {
+        align-items: flex-start;
+        margin: 0 22px 0 0;
+    }
+
+    .important_task {
+        padding-top: 26px;
+        margin-left: 30px;
+    }
 }
 
 @media only screen and (min-width : 768px)  {
@@ -74,6 +118,49 @@
     /*MAIN PAGE*/
     /*TASK PAGE*/
     /*POPUPS*/
+    .popup_tasks-header {
+        display: flex;
+        align-items: center;
+    }
+
+    .popup_creator {
+        font-size: 20px;
+        margin: 0 0 0 auto;
+        order: 1;
+        flex-direction: row;
+    }
+
+    .popup_creator img {
+        margin: 0 0 0 16px;
+    }
+
+    .tasks_counter {
+        margin-right: 12px;
+    }
+
+    .tasks_counter > span {
+        font-size: 16px;
+        margin-right: 12px;
+    }
+
+    .popup_tasks-list .col-1 {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .order_number {
+        padding: 0;
+        margin-right: 12px;
+    }
+
+    .move_btn {
+        padding: 0;
+    }
+
+    .popup_tasks-status {
+        margin-top: 3px;
+        display: block;
+    }
 }
 
 @media only screen and (min-width : 1024px) {
@@ -342,6 +429,9 @@
         transform: translateY(-50%);
     }
     /*POPUPS*/
+    .popup-bottom_inner {
+        padding: 0 44px 0 0;
+    }
 }
 
 @media only screen and (min-width : 1280px) {
@@ -413,4 +503,73 @@
     }
     /*TASK PAGE*/
     /*POPUPS*/
+
+    .popup_tasks-list .col-3.active .popup_tasks-control {
+        display: flex;
+    }
+
+    .popup_tasks-control {
+        align-items: center;
+    }
+
+    .popup_tasks-developers {
+        flex: 0 0 300px;
+        margin: 0 0 -6px 0;
+    }
+
+    .tasks_time-edit {
+        flex: 1 1 auto;
+        margin-bottom: 0px;
+    }
+
+    .create_title {
+        margin-bottom: 45px;
+    }
+
+    .name_task span {
+        font-size: 18px;
+    }
+
+    .select_type > span {
+        font-size: 18px;
+    }
+
+    .task_box {
+        font-size: 16px;
+    }
+
+    .tasks_counter > span {
+        font-size: 22px;
+    }
+
+    .tasks_box {
+        font-size: 16px;
+        padding: 0 12px 0 16px;
+    }
+
+    .popup_tasks {
+        margin-bottom: 16px;
+    }
+
+    .responsible {
+        padding: 0 20px;
+    }
+
+    .responsible_users > b {
+        margin-bottom: 20px;
+    }
+
+    .important_task {
+        padding-top: 41px;
+        font-size: 18px;
+    }
+
+    .responsible_users > b {
+        font-size: 18px;
+    }
+
+    .popup-bottom_info {
+        font-size: 18px;
+        padding: 0 20px;
+    }
 }
