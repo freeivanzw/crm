@@ -192,4 +192,22 @@ $(function () {
     }
 
     $('.choose_department').dropdown()
+
+    if ($(window).outerWidth() < 1024) {
+        $('.timeline_tasks').children('li').on('click', function () {
+            let $clickElem = $(this);
+            $clickElem.addClass('active');
+
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest($clickElem).length) {
+                    $clickElem.removeClass('active')
+                }
+                e.stopPropagation();
+            });
+        })
+    }
+
+    $(".demo-x").mCustomScrollbar({
+        axis:"x",
+    });
 })

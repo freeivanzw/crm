@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/adaptive.css">
+</head>
+<body>
+<main>
+    <!--SITE PANEL-->
+    <aside class="site_panel">
+        <div class="user_box">
+            <figure>
+                <img src="./images/bearded-man.png" class="user_photo" alt="user" width="145" height="145">
+                <figcaption>Павло Цветков</figcaption>
+            </figure>
+            <a href="#" class="btn btn_not-radius">Coder</a>
+        </div>
+        <nav class="site_nav">
+            <ul>
+                <li><a href="#" class="active"><svg class="icon"><use xlink:href="./images/sprite.svg#home"></use></svg>Головна</a></li>
+                <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#check-list"></use></svg>Завдання</a></li>
+                <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#payment"></use></svg>Заробіток</a></li>
+                <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#user"></use></svg>Команда</a></li>
+                <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#settings"></use></svg>Мої налаштування</a></li>
+            </ul>
+            <span class="confident">Borozna © 2023</span>
+        </nav>
+    </aside>
+    <div class="content">
+        <header class="content_header">
+            <div class="content_header-inner">
+                <a href="#" class="open-site_panel btn btn_not-radius"><svg class="icon"><use xlink:href="./images/sprite.svg#home"></use></svg></a>
+                <div class="notification">
+                    <a href="#" class="notification_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#notification"></use></svg><span class="notification_counter">2</span></a>
+                    <ul class="notification_list">
+                        <li class="status_danger">
+                            <div class="notification_task-info">
+                                <div class="col-1">
+                                    <a href="#" style="background-color: #5a5df6;" class="notification_task-logo">M</a>
+                                </div>
+                                <div class="col-2">
+                                    <span class="notification_task-title">Магія Візерунку</span>
+                                    <span class="notification_task-mentor">від Володимир Романчук</span>
+                                </div>
+                            </div>
+                            <div class="notification_task-status">
+                                <b>Протерміноване</b>
+                                <span>Додано 20 червня 2022</span>
+                            </div>
+                        </li>
+                        <li class="status_warning">
+                            <div class="notification_task-info">
+                                <div class="col-1">
+                                    <a href="#" style="background-color: #5a5df6;" class="notification_task-logo">M</a>
+                                </div>
+                                <div class="col-2">
+                                    <span class="notification_task-title">Магія Візерунку</span>
+                                    <span class="notification_task-mentor">від Володимир Романчук</span>
+                                </div>
+                            </div>
+                            <div class="notification_task-status">
+                                <b>Повернуте</b>
+                                <span>Додано 20 червня 2022</span>
+                            </div>
+                        </li>
+                        <li class="status_success">
+                            <div class="notification_task-info">
+                                <div class="col-1">
+                                    <a href="#" style="background-color: #5a5df6;" class="notification_task-logo">M</a>
+                                </div>
+                                <div class="col-2">
+                                    <span class="notification_task-title">Магія Візерунку</span>
+                                    <span class="notification_task-mentor">від Володимир Романчук</span>
+                                </div>
+                            </div>
+                            <div class="notification_task-status">
+                                <b>Виконане</b>
+                                <span>Додано 20 червня 2022</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <span class="header_date">16 червня 2022,<b> Четвер 16:28</b></span>
+        </header>
+        <!--TIMELINE-->
+        <section class="timeline">
+            <ul class="timeline_tasks">
+                <li class="has_subtasks status_danger">
+                    <div class="timeline_tasks-item">
+                        <span>Stepankiv stepankiv</span>
+                        <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
+                        <div class="timeline_tasks-add">
+                            <a href="#" class="add_timeline-item"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg> </a>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="timeline_tasks-item">
+                                <span>Stepankiv stepankiv</span>
+                                <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
+                            </div>
+                        </li>
+                        <li class="completed">
+                            <div class="timeline_tasks-item">
+                                <span>Stepankiv stepankiv</span>
+                                <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="status_warning">
+                    <div class="timeline_tasks-item">
+                        <span>Stepankiv stepankiv</span>
+                        <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
+                        <div class="timeline_tasks-add">
+                            <a href="#" class="add_timeline-item"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg> </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="status_success">
+                    <div class="timeline_tasks-item">
+                        <span>Stepankiv stepankiv</span>
+                        <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
+                        <div class="timeline_tasks-add">
+                            <a href="#" class="add_timeline-item"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg> </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline_tasks-item">
+                        <span>Stepankiv stepankiv</span>
+                        <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
+                        <div class="timeline_tasks-add">
+                            <a href="#" class="add_timeline-item"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg> </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="status_completed">
+                    <div class="timeline_tasks-item">
+                        <span>Stepankiv stepankiv</span>
+                        <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
+                        <div class="timeline_tasks-add">
+                            <a href="#" class="add_timeline-item"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg> </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="timeline_panel demo-x">
+                <div class="timeline_col current_day">
+                    <div class="date_box"><span>30</span></div>
+                    <div class="timeline_box status_danger start_task" style="top: 60px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_danger" style="top: 110px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_danger end_task" style="top: 160px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                        <div class="timeline_box-late start_box-late" style="width: 45%"></div>
+                    </div>
+                    <div class="timeline_box status_warning start_task" style="top: 210px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_success start_task" style="top: 260px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box start_task" style="top: 310px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_completed start_task" style="top: 360px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>31</span></div>
+                    <div class="timeline_box status_danger end_task" style="top: 60px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_danger end_task" style="top: 110px">
+                        <div class="timeline_box-normal" style="width: 20%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_danger end_task" style="top: 160px">
+                        <div class="timeline_box-late"></div>
+                    </div>
+                    <div class="timeline_box status_warning" style="top: 210px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_success" style="top: 260px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box" style="top: 310px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_completed" style="top: 360px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                </div>
+                <div class="timeline_col month_box month_section">
+                    <div class="timeline_box status_danger" style="top: 160px">
+                        <div class="timeline_box-late"></div>
+                    </div>
+                    <div class="timeline_box status_warning" style="top: 210px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_success" style="top: 260px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box" style="top: 310px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_completed" style="top: 360px">
+                        <div class="timeline_box-normal"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>1</span></div>
+                    <div class="timeline_box status_danger end_task" style="top: 160px">
+                        <div class="timeline_box-late end_box-late" style="width: 25%"></div>
+                    </div>
+                    <div class="timeline_box status_warning end_task" style="top: 210px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_success end_task" style="top: 260px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box end_task" style="top: 310px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                    <div class="timeline_box status_completed end_task" style="top: 360px">
+                        <div class="timeline_box-normal" style="width: 50%"></div>
+                        <div class="hour_line" style="left: 75%"></div>
+                    </div>
+                </div>
+                <div class="timeline_col pay_day">
+                    <div class="date_box"><span>4$</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>5</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box weekend"><span>6</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box weekend"><span>7</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>8</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>8</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>9</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>10</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>11</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box weekend"><span>12</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box weekend"><span>13</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+                <div class="timeline_col">
+                    <div class="date_box"><span>14</span></div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <div class="shadow hidden"></div>
+</main>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/plugins/fm.tagator.jquery.js"></script>
+<script src="./js/plugins/chart.js"></script>
+<script src="./js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

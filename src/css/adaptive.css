@@ -6,6 +6,13 @@
   .register_grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /*LOGIN PAGE*/
+  .login_page .register_grid {
+    grid-template-columns: 1fr;
+  }
+
+  /*TIMELINE*/
 }
 @media only screen and (min-width: 640px) {
   /*SITE PANEL*/
@@ -19,6 +26,10 @@
 
   .content {
     flex: 1 1 auto;
+  }
+
+  .site_panel:not(.site_panel-main) + .content {
+    max-width: calc(100% - 85px);
   }
 
   /*MAIN PAGE*/
@@ -110,6 +121,14 @@
     padding-top: 26px;
     margin-left: 30px;
   }
+
+  /*LOGIN PAGE*/
+  /*TIMELINE*/
+  .timeline {
+    margin: 0;
+    width: calc(100% - 10px);
+    max-width: calc(100% - 10px);
+  }
 }
 @media only screen and (min-width: 768px) {
   /*SITE PANEL*/
@@ -159,6 +178,9 @@
     margin-top: 3px;
     display: block;
   }
+
+  /*LOGIN PAGE*/
+  /*TIMELINE*/
 }
 @media only screen and (min-width: 1024px) {
   body {
@@ -348,6 +370,10 @@
     border-radius: 10px;
   }
 
+  .site_panel:not(.site_panel-main) + .content {
+    max-width: calc(100% - 102px);
+  }
+
   /*TASK PAGE*/
   .task_page-list {
     margin-right: 10px;
@@ -432,6 +458,18 @@
   /*POPUPS*/
   .popup-bottom_inner {
     padding: 0 44px 0 0;
+  }
+
+  /*LOGIN PAGE*/
+  .login_page {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  /*TIMELINE*/
+  .timeline_tasks > li:hover .timeline_tasks-add {
+    visibility: visible;
+    opacity: 1;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -586,4 +624,7 @@
   .add_check-item span {
     font-size: 18px;
   }
+
+  /*LOGIN PAGE*/
+  /*TIMELINE*/
 }

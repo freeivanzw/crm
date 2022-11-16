@@ -1,0 +1,376 @@
+/*TIMELINE*/
+.timeline {
+    display: flex;
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    padding: 10px;
+    background-color: var(--site-bg-contrast);
+    margin: 0 10px 10px 10px;
+    border-radius: 10px;
+}
+
+.timeline_tasks {
+    padding-top: 50px;
+    flex: 0 0 210px;
+    margin-right: 20px;
+}
+
+.timeline_tasks > li {
+    background-color: #e0e3ec;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.timeline_tasks > li.status_danger {
+    background-color: #f85b06;
+    color: var(--text-contrast);
+}
+
+.timeline_tasks > li.status_warning {
+    background-color: #f8aa06;
+    color: var(--text-contrast);
+}
+
+.timeline_tasks > li.status_success {
+    background-color: #51a727;
+    color: var(--text-contrast);
+}
+
+.timeline_tasks-item {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    position: relative;
+}
+
+.timeline_tasks > li.has_subtasks > .timeline_tasks-item::after,
+.timeline_tasks > li.has_subtasks > .timeline_tasks-item::before {
+    content: "";
+    width: 10px;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translateY(-50%);
+}
+
+.timeline_tasks > li.has_subtasks > .timeline_tasks-item::before {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+
+.timeline_tasks > li.has_subtasks.status_danger > .timeline_tasks-item::before,
+.timeline_tasks > li.has_subtasks.status_danger > .timeline_tasks-item::after,
+.timeline_tasks > li.has_subtasks.status_warning > .timeline_tasks-item::before,
+.timeline_tasks > li.has_subtasks.status_warning > .timeline_tasks-item::after,
+.timeline_tasks > li.has_subtasks.status_success > .timeline_tasks-item::before,
+.timeline_tasks > li.has_subtasks.status_success > .timeline_tasks-item::after {
+    background-color: var(--text-contrast);
+}
+
+.timeline_tasks > li.has_subtasks > ul > li > .timeline_tasks-item::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid var(--text-color);
+    border-left: 2px solid var(--text-color);
+    position: absolute;
+    bottom: 50%;
+    left: -3px;
+    background-color: transparent;
+}
+.timeline_tasks > li.has_subtasks > ul > li > .timeline_tasks-item::before,
+.timeline_tasks > li.status_warning > ul > li > .timeline_tasks-item::before,
+.timeline_tasks > li.status_success > ul > li > .timeline_tasks-item::before {
+    border-color: var(--text-contrast);
+    background-color: transparent;
+}
+
+.timeline_tasks > li.status_completed .timeline_tasks-item {
+    opacity: 0.5;
+}
+
+.timeline_tasks-item span {
+    line-height: 1.4;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.timeline_tasks-item .icon {
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    fill: var(--text-color);
+}
+
+.timeline_tasks > li.status_danger .timeline_tasks-item .icon,
+.timeline_tasks > li.status_warning .timeline_tasks-item .icon,
+.timeline_tasks > li.status_success .timeline_tasks-item .icon {
+    fill: var(--text-contrast);
+}
+
+.timeline_tasks-add {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: -10px;
+    padding-left: 30px;
+    padding-right: 10px;
+    background-color: #e0e3ec;
+    border-radius: 0 10px 10px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.timeline_tasks > li.active .timeline_tasks-add {
+    visibility: visible;
+    opacity: 1;
+}
+
+.timeline_tasks > li.status_completed  .timeline_tasks-add {
+    display: none;
+}
+
+.timeline_tasks > li.status_danger .timeline_tasks-add {
+    background-color: #f85b06;
+}
+
+.timeline_tasks > li.status_warning .timeline_tasks-add {
+    background-color: #f8aa06;
+}
+
+.timeline_tasks > li.status_success .timeline_tasks-add {
+    background-color: #51a727;
+}
+
+.add_timeline-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+}
+
+.timeline_tasks > li.status_danger .add_timeline-item,
+.timeline_tasks > li.status_warning .add_timeline-item,
+.timeline_tasks > li.status_success .add_timeline-item {
+    border-color: var(--text-contrast);
+}
+
+.add_timeline-item .icon {
+    width: 14px;
+    height: 14px;
+    fill: var(--text-color);
+}
+
+.timeline_tasks > li > ul > li {
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item  {
+    font-size: 12px;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item span {
+    line-height: 1.5;
+}
+
+.timeline_panel {
+    flex: 0 0 calc(100% - 230px);
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.timeline_panel .mCustomScrollBox {
+    width: 100%;
+}
+
+.timeline_panel .mCSB_horizontal.mCSB_inside > .mCSB_container {
+
+    display: flex;
+    height: 100%;
+}
+
+.timeline_panel .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+
+}
+
+.timeline_col {
+    flex: 0 0 50px;
+    position: relative;
+}
+
+.timeline_col:nth-child(1) {
+    border-left: 1px solid var(--border-color);
+}
+
+.timeline_col.current_day {
+    background-color: #feeecd;
+}
+
+.timeline_col.pay_day {
+    background-color: #daf5d4;
+}
+
+.timeline_col::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--border-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.date_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 50px;
+    opacity: 0.7;
+}
+
+.timeline_col.pay_day .date_box {
+    font-size: 18px;
+    font-weight: 700;
+    color: #51a727;
+}
+
+.date_box.weekend {
+    color: var(--danger)
+}
+
+.timeline_col.current_day .date_box {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--light-primary);
+}
+
+.timeline_col.current_day .date_box::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--border-color);
+}
+
+.timeline_box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40px;
+    opacity: 1;
+}
+
+.timeline_box-normal {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    border-top: 2px solid var(--info);
+    border-bottom: 2px solid var(--info);
+    background-color: rgba(var(--info-color), 0.3);
+}
+
+.timeline_box.start_task .timeline_box-normal {
+    border-left: 2px solid var(--info);
+    border-radius: 5px 0 0 5px;
+    left: auto;
+    right: 0;
+}
+
+.timeline_box.end_task .timeline_box-normal {
+    border-right: 2px solid var(--info);
+    border-radius: 0 5px 5px 0;
+    right: auto;
+    left: 0;
+}
+
+
+.timeline_box.status_danger .timeline_box-normal {
+    border-color: var(--danger);
+    background-color: rgba(var(--danger-color), 0.3);
+}
+
+.timeline_box.status_warning .timeline_box-normal {
+    border-color: var(--warning);
+    background-color: rgba(var(--warning-color), 0.3);
+}
+
+.timeline_box.status_success .timeline_box-normal {
+    border-color: var(--success);
+    background-color: rgba(var(--success-color), 0.3);
+}
+
+.timeline_box.status_completed .timeline_box-normal {
+    filter: grayscale(1);
+}
+
+.hour_line {
+    display: none;
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    width: 2px;
+    background-color: #f85b06;
+    transform: translateX(-1px);
+}
+
+.timeline_col.current_day .hour_line {
+    display: block;
+}
+
+.timeline_box-late {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid rgba(var(--danger-color), 0.3);
+    border-bottom: 2px solid rgba(var(--danger-color), 0.3);
+    background-color: rgba(var(--danger-color), 0.3);
+}
+
+.timeline_box-late.start_box-late {
+    left: auto;
+    right: 0;
+    border-left: 2px solid rgba(var(--danger-color), 0.3);
+    border-radius: 5px 0 0 5px;
+}
+
+.timeline_box-late.end_box-late {
+    right: auto;
+    left: 0;
+    border-right: 2px solid rgba(var(--danger-color), 0.3);
+    border-radius: 0 5px 5px 0;
+}
+
+.timeline_col.month_section {
+    flex: 0 0 10px;
+    background-color: #e0e3ec;
+}

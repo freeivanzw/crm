@@ -1,0 +1,38 @@
+/*LOGIN PAGE*/
+.login_page {
+    color: var(--text-contrast);
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--site-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.login_page .centre {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 375px;
+}
+
+.login_page .main_title {
+    display: inline-block;
+    color: var(--text-contrast);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit_box .btn {
+    font-size: 18px;
+    height: 40px;
+    padding: 0 20px;
+}
+
