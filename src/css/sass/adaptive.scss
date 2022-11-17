@@ -229,6 +229,17 @@
         padding: 12px;
         border-radius: 10px;
     }
+
+    .users_fired_box {
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .users_fired-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 22px;
+    }
 }
 
 @media only screen and (min-width : 1024px) {
@@ -553,6 +564,10 @@
     .user_edit-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .users_fired-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media only screen and (min-width : 1280px) {
@@ -733,5 +748,9 @@
 
     .users_grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .users_fired-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }

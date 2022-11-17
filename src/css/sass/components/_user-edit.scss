@@ -244,3 +244,28 @@
 .user_item-control:hover .icon {
     fill: var(--danger)
 }
+
+.users_fired_box {
+    color: var(--text-contrast);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--primary);
+}
+
+.users_fired-header {
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--warning);
+    margin-bottom: 8px;
+    padding-top: 4px;
+}
+
+.users_fired_box .user_item-control .icon {
+    fill: var(--warning)
+}
+
+.users_fired_box .user_item-control:hover .icon {
+    fill: var(--primary)
+}
