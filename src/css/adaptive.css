@@ -156,6 +156,9 @@
   }
 
   /*USER EDIT*/
+  .user_edit-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media only screen and (min-width: 768px) {
   /*SITE PANEL*/
@@ -537,6 +540,10 @@
     margin: 0 0 0 auto;
     order: 1;
   }
+
+  .user_edit-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @media only screen and (min-width: 1280px) {
   /*SITE PANEL*/
@@ -721,4 +728,8 @@
   }
 
   /*USER EDIT*/
+  .user_edit-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 10px 10px 10px;
+  }
 }
