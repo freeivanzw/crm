@@ -159,6 +159,8 @@ $(function () {
         }
     }
 
+    new ApexCharts(document.querySelector("#spark4"), spark4).render();
+
     $('.comment-area-responsive').focus(function () {
         let $currentBox = $(this).closest('.col-3')
         $currentBox.addClass('active')
@@ -191,7 +193,10 @@ $(function () {
         $input_tagator1.tagator('destroy');
     }
 
+
     $('.choose_department').dropdown()
+    $('.money_month').dropdown()
+    $('.money_year').dropdown()
 
     if ($(window).outerWidth() < 1024) {
         $('.timeline_tasks').children('li').on('click', function () {
@@ -210,4 +215,6 @@ $(function () {
     $(".demo-x").mCustomScrollbar({
         axis:"x",
     });
+
+
 })

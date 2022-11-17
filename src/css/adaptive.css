@@ -1,6 +1,12 @@
 @media only screen and (min-width: 480px) {
   /*SITE PANEL*/
   /*MAIN PAGE*/
+  .row_chart {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   /*TASK PAGE*/
   /*POPUPS*/
   .register_grid {
@@ -13,6 +19,8 @@
   }
 
   /*TIMELINE*/
+  /*MONEY*/
+  /*USER EDIT*/
 }
 @media only screen and (min-width: 640px) {
   /*SITE PANEL*/
@@ -125,10 +133,29 @@
   /*LOGIN PAGE*/
   /*TIMELINE*/
   .timeline {
-    margin: 0;
+    flex: 1 1 auto;
+    margin: 0 0 10px;
     width: calc(100% - 10px);
     max-width: calc(100% - 10px);
   }
+
+  /*MONEY*/
+  .money_header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .money_header .col-1 {
+    margin-bottom: 0;
+    width: 200px;
+  }
+
+  .money_header .col-2 {
+    margin-bottom: 0;
+    width: 200px;
+  }
+
+  /*USER EDIT*/
 }
 @media only screen and (min-width: 768px) {
   /*SITE PANEL*/
@@ -181,6 +208,8 @@
 
   /*LOGIN PAGE*/
   /*TIMELINE*/
+  /*MONEY*/
+  /*USER EDIT*/
 }
 @media only screen and (min-width: 1024px) {
   body {
@@ -275,6 +304,7 @@
   .site_nav li a .icon {
     width: 30px;
     height: 30px;
+    transition: 0.3s;
   }
 
   .notification_list {
@@ -471,6 +501,27 @@
     visibility: visible;
     opacity: 1;
   }
+
+  /*MONEY*/
+  /*USER EDIT*/
+  .user_list {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .user_header {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .user_header img {
+    margin: 0 12px 0 0;
+  }
+
+  .user_header .btn {
+    order: 0;
+    margin-bottom: 0;
+  }
 }
 @media only screen and (min-width: 1280px) {
   /*SITE PANEL*/
@@ -627,4 +678,32 @@
 
   /*LOGIN PAGE*/
   /*TIMELINE*/
+  /*MONEY*/
+  .money_header {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .money_header .col-1,
+.money_header .col-2 {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+  }
+
+  .money_header .col-1 > span,
+.money_header .col-2 > span {
+    font-size: 18px;
+    margin: 0 12px 0 0;
+  }
+
+  .money_header .col-1 .dropdown {
+    width: 225px;
+  }
+
+  .money_header .col-2 .dropdown {
+    width: 100px;
+  }
+
+  /*USER EDIT*/
 }

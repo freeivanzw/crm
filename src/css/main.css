@@ -603,6 +603,36 @@ select {
   color: #000;
 }
 
+.dropdown.white_drop {
+  background-color: var(--secondary);
+}
+
+.dropdown.white_drop .overflow {
+  background-color: transparent;
+}
+
+.dropdown.white_drop span {
+  color: var(--text-color);
+}
+
+.dropdown.white_drop .drop_arrow:after {
+  border-color: var(--primary);
+}
+
+.dropdown.white_drop UL LI A {
+  background-color: var(--secondary);
+  color: var(--text-color);
+}
+
+.dropdown.white_drop UL LI A:hover {
+  color: var(--text-contrast);
+  background-color: var(--primary);
+}
+
+.dropdown.white_drop UL LI {
+  border-top: 1px solid var(--primary);
+}
+
 /*
 == malihu jquery custom scrollbar plugin ==
 Plugin URI: http://manos.malihu.gr/jquery-custom-content-scroller
@@ -2302,6 +2332,8 @@ main::before {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
   flex: 0 0 100%;
   width: 100%;
 }
@@ -2998,6 +3030,25 @@ a.sub_title:hover {
 #spark4 {
   max-width: 350px;
   margin-bottom: 12px;
+}
+
+.row_chart {
+  display: flex;
+  flex-direction: column;
+}
+
+.row_chart .col-1,
+.row_chart .col-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.row_chart .col-2 .my_money {
+  background-color: rgba(225, 225, 225, 0.4);
+  padding: 5px 15px;
+  border-radius: 10px;
 }
 
 .chart_box-title {
@@ -3898,10 +3949,17 @@ a.sub_title:hover {
   display: flex;
   width: calc(100% - 20px);
   max-width: calc(100% - 20px);
-  padding: 10px;
+  padding: 50px 10px 10px 10px;
   background-color: var(--site-bg-contrast);
   margin: 0 10px 10px 10px;
   border-radius: 10px;
+  position: relative;
+}
+
+.timeline_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .timeline_tasks {
@@ -4262,4 +4320,194 @@ a.sub_title:hover {
 .timeline_col.month_section {
   flex: 0 0 10px;
   background-color: #e0e3ec;
+}
+
+/*MONEY*/
+.money {
+  padding-bottom: 10px;
+}
+
+.money_header {
+  color: var(--text-contrast);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.money_header > .col-1,
+.money_header > .col-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.money_header > .col-1 {
+  margin-bottom: 12px;
+}
+
+.money_header-title {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.money_content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--site-bg-contrast);
+}
+
+.money_content-title {
+  font-size: 16px;
+  background-color: #e0e3ec;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.money_content > ul {
+  margin-bottom: 30px;
+}
+
+.money_content ul {
+  padding: 0 15px;
+}
+
+.money_content ul ul {
+  opacity: 0.7;
+}
+
+.money_content ul li {
+  display: block;
+  margin-top: 20px;
+}
+
+.money_project {
+  font-size: 16px;
+  line-height: 1.2;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.money_project.status_danger span:nth-child(2) {
+  color: var(--danger);
+}
+
+.money_project::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #e0e3ec;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.money_project span {
+  flex: 0 1 auto;
+  max-width: 50%;
+  padding: 0 2px;
+  z-index: 1;
+  background-color: var(--site-bg-contrast);
+}
+
+.money_project span:nth-child(2) {
+  text-align: end;
+}
+
+.money_content-bottom {
+  font-size: 16px;
+  background-color: #e0e3ec;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.money_content-bottom b {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.2;
+  margin-left: 12px;
+  color: var(--light-primary);
+}
+
+/*USER EDIT*/
+.user_list {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #e0e3ec;
+}
+
+.user_header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.user_header img {
+  display: block;
+  margin-bottom: 8px;
+  width: 150px;
+  height: 45px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+.user_header .user_header-title {
+  font-size: 18px;
+}
+
+.user_header .btn {
+  order: -1;
+  margin-bottom: 12px;
+  margin-left: auto;
+}
+
+.user_header .btn .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.user_list-edit {
+  color: var(--text-contrast);
+  background-color: var(--primary);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.user_edit-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user_edit-header .btn {
+  order: -1;
+}
+
+.user_edit-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.user_edit-box img {
+  margin-right: 12px;
+  width: 46px;
+  height: 46px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  object-fit: cover;
 }

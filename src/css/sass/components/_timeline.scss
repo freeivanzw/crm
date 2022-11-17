@@ -3,10 +3,17 @@
     display: flex;
     width: calc(100% - 20px);
     max-width: calc(100% - 20px);
-    padding: 10px;
+    padding: 50px 10px 10px 10px;
     background-color: var(--site-bg-contrast);
     margin: 0 10px 10px 10px;
     border-radius: 10px;
+    position: relative;
+}
+
+.timeline_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .timeline_tasks {

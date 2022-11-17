@@ -283,3 +283,33 @@
     background-color: #f3f3f3;
     color: #000;
 }
+
+.dropdown.white_drop {
+    background-color: var(--secondary);
+}
+
+.dropdown.white_drop .overflow {
+    background-color:transparent;
+}
+
+.dropdown.white_drop span {
+    color: var(--text-color);
+}
+
+.dropdown.white_drop .drop_arrow:after {
+    border-color: var(--primary);
+}
+
+.dropdown.white_drop UL LI A {
+    background-color: var(--secondary);
+    color: var(--text-color);
+}
+
+.dropdown.white_drop UL LI A:hover {
+    color: var(--text-contrast);
+    background-color: var(--primary);
+}
+
+.dropdown.white_drop UL LI {
+    border-top: 1px solid var(--primary);
+}

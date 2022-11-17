@@ -1,0 +1,120 @@
+/*MONEY*/
+
+.money {
+    padding-bottom: 10px;
+}
+
+.money_header {
+    color: var(--text-contrast);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.money_header > .col-1,
+.money_header > .col-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.money_header > .col-1 {
+    margin-bottom: 12px;
+}
+
+.money_header-title {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.money_content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--site-bg-contrast);
+}
+
+.money_content-title {
+    font-size: 16px;
+    background-color: #e0e3ec;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.money_content > ul {
+    margin-bottom: 30px;
+}
+
+.money_content ul {
+    padding: 0 15px;
+}
+
+.money_content ul ul {
+    opacity: 0.7;
+}
+
+.money_content ul li {
+    display: block;
+    margin-top: 20px;
+}
+
+.money_project {
+    font-size: 16px;
+    line-height: 1.2;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.money_project.status_danger span:nth-child(2) {
+    color: var(--danger)
+}
+
+.money_project::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #e0e3ec;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.money_project span {
+    flex: 0 1 auto;
+    max-width: 50%;
+    padding: 0 2px;
+    z-index: 1;
+    background-color: var(--site-bg-contrast);
+
+}
+
+.money_project span:nth-child(2) {
+    text-align: end;
+}
+
+.money_content-bottom {
+    font-size: 16px;
+    background-color: #e0e3ec;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.money_content-bottom b {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-left: 12px;
+    color: var(--light-primary);
+}
