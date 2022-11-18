@@ -3166,6 +3166,7 @@ a.sub_title:hover {
 .birthday figcaption b {
   font-size: 22px;
   margin-bottom: 22px;
+  font-weight: 400;
 }
 
 /*TASK PAGE*/
@@ -3502,6 +3503,7 @@ a.sub_title:hover {
   transition: 0.3s;
   padding: 6px;
   min-height: 40px;
+  cursor: pointer;
 }
 
 .task_box .icon {
@@ -4351,6 +4353,19 @@ a.sub_title:hover {
   font-size: 16px;
   line-height: 1.2;
   margin-bottom: 6px;
+}
+
+.money_header .dropdown {
+  height: 34px;
+}
+
+.money_header .drop_arrow {
+  width: 34px;
+  height: 34px;
+}
+
+.money_header .dropdown UL {
+  top: 32px;
 }
 
 .money_content {

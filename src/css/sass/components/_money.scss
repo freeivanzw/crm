@@ -30,6 +30,19 @@
     margin-bottom: 6px;
 }
 
+.money_header .dropdown {
+    height: 34px;
+}
+
+.money_header .drop_arrow {
+    width: 34px;
+    height: 34px;
+}
+
+.money_header .dropdown UL {
+    top: 32px;
+}
+
 .money_content {
     display: flex;
     flex-direction: column;

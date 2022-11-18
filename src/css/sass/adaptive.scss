@@ -406,6 +406,7 @@
 
     .main_page > .col-2 {
         flex: 0 1 35%;
+        padding-top: 10px;
         padding-left: 16px;
         padding-right: 10px;
     }
@@ -430,6 +431,13 @@
     }
     .site_panel:not(.site_panel-main) + .content{
         max-width: calc(100% - 102px);
+    }
+    .birthday {
+        padding: 16px 10px;
+    }
+    .birthday figcaption span {
+        font-size: 18px;
+        margin-bottom: 16px;
     }
     /*TASK PAGE*/
     .task_page-list {
@@ -637,6 +645,11 @@
     .task_description span {
         font-size: 24px;
     }
+
+    .my_money {
+        font-size: 42px;
+        font-weight: 400;
+    }
     /*TASK PAGE*/
     /*POPUPS*/
 
@@ -741,6 +754,9 @@
         width: 100px;
     }
     /*USER EDIT*/
+    .user_header .user_header-title {
+        font-size: 20px;
+    }
     .user_edit-grid {
         grid-template-columns: repeat(4, 1fr);
         padding: 0 10px 10px 10px;
@@ -752,5 +768,13 @@
 
     .users_fired-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .user_edit-name {
+        font-size: 20px;
+    }
+
+    .user_edit-item > span {
+        font-size: 18px;
     }
 }
