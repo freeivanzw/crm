@@ -70,7 +70,7 @@
 }
 
 .confident {
-    color: var(--text-light);
+    opacity: 0.4;
     text-align: center;
     font-size: 10px;
     margin-top: auto;
@@ -141,11 +141,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
     background-color: #fff;
     border-radius: 6px;
     position: relative;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.notification_btn:hover {
+    background-color: #e0e3ec;
 }
 
 .notification_btn .icon {
@@ -281,6 +288,14 @@
 .notification_task-status span {
     font-size: 12px;
     text-align: end;
+}
+
+.notification_task-status span.status-in_time {
+    color: var(--success)
+}
+
+.notification_task-status span.status-wrong_time {
+    color: var(--danger)
 }
 
 .btn_time {

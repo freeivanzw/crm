@@ -91,6 +91,14 @@
     background-color: var(--danger);
 }
 
+.task_list li:not(.status_danger):not(.status_warning):not(.status_success) .dead_line {
+    opacity: 0.7;
+}
+
+.task_list li.status_danger .dead_line {
+    filter: saturate(0.7);
+}
+
 .task_list .col-3 {
     flex: 0 1 100%;
     display: flex;
@@ -118,7 +126,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.3;
+    opacity: 0.6;
     z-index: -1;
 }
 
@@ -152,13 +160,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10px;
+    margin-left: auto;
     width: 28px;
     height: 28px;
-    border: 2px solid var(--text-color);
+    border: 2px solid #6c758e;
     border-radius: 5px;
     z-index: 2;
     transition: 0.3s;
+}
+
+.add_task:hover {
+    background-color: var(--text-color);
 }
 
 .task_list li.status_danger .add_task,
@@ -167,20 +179,39 @@
     border-color: var(--text-contrast);
 }
 
+.task_list li.status_danger .add_task:hover,
+.task_list li.status_warning .add_task:hover,
+.task_list li.status_success .add_task:hover {
+    background-color: var(--text-contrast);
+}
+
 .add_task .icon {
     width: 16px;
     height: 16px;
     transition: 0.3s;
+    fill: #6c758e;
 }
 
-.add_task:hover .icon  {
-    transform: scale(1.2);
+.add_task:hover .icon {
+    fill: #e0e3ec;
 }
 
 .task_list li.status_danger .add_task .icon,
 .task_list li.status_warning .add_task .icon,
 .task_list li.status_success .add_task .icon {
     fill: var(--text-contrast);
+}
+
+.task_list li.status_danger .add_task:hover .icon {
+    fill: #f85b06;
+}
+
+.task_list li.status_warning .add_task:hover .icon {
+    fill: #f85b06;
+}
+
+.task_list li.status_success .add_task:hover .icon {
+    fill: #51a727;
 }
 
 .chart_box {
@@ -194,7 +225,7 @@
 }
 
 #spark4 {
-    max-width: 350px;
+    width: 100%;
     margin-bottom: 12px;
 }
 
@@ -224,10 +255,15 @@
 }
 
 .my_money {
+    font-weight: 400;
     color: var(--text-contrast);
     font-size: 30px;
     line-height: 1.2;
     margin-bottom: 8px;
+}
+
+.my_money span {
+    opacity: 0.5;
 }
 
 .my_money-add {
@@ -235,10 +271,10 @@
     display: flex;
     align-items: center;
     min-height: 30px;
-    padding: 5px 15px;
+    padding: 5px 26px;
     font-size: 14px;
     color: var(--text-contrast);
-    background-color: var(--primary);
+    background-color: #374092;
     border-radius: 15px;
 }
 
@@ -286,7 +322,7 @@
 }
 
 .task_size.status_success {
-    background-color: var(--success);
+    background-color: var(--light-primary);
 }
 
 .task_description {
@@ -306,9 +342,14 @@
 .birthday {
     color: var(--text-contrast);
     display: flex;
+    margin-bottom: 10px;
     padding: 5px;
     border-radius: 5px;
     background-color: var(--primary);
+}
+
+.birthday.status_wrong {
+    background-color: #f85b06;
 }
 
 .birthday img {

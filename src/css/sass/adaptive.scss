@@ -36,6 +36,24 @@
     .site_panel:not(.site_panel-main) + .content{
         max-width: calc(100% - 85px);
     }
+    .content_header {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+    .content_header-inner {
+        order: 4;
+        margin-bottom: 0;
+        width: auto;
+    }
+    .content_header .btn {
+        min-width: 210px;
+    }
+    .header_date {
+        font-size: 26px;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
     /*MAIN PAGE*/
     /*TASK PAGE*/
     /*POPUPS*/
@@ -264,6 +282,11 @@
         padding: 20px 10px 10px 10px;
         border-radius: 10px;
         margin-right: 10px;
+        transition: 0.3s;
+    }
+
+    .site_panel:hover {
+        box-shadow: var(--elem-shadow);
     }
 
     .user_photo {
@@ -362,13 +385,28 @@
     }
 
     .notification_task-info .col-2 {
-        margin-left: 16px;
+        padding-left: 16px;
+    }
+
+    .notification_btn {
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    .notification_btn .icon {
+        width: 30px;
+        height: 30px;
     }
 
     .task_list {
         padding: 10px;
         border-radius: 10px;
         margin-bottom: 0;
+        transition: 0.3s;
+    }
+
+    .task_list:hover {
+        box-shadow: var(--elem-shadow);
     }
 
     .task_list li {
@@ -411,9 +449,22 @@
         padding-right: 10px;
     }
 
+    .chart_box {
+        transition: 0.3s;
+    }
+
+    .chart_box:hover {
+        box-shadow: var(--elem-shadow);
+    }
+
     .task_counter {
         padding: 10px;
         border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .task_counter:hover {
+        box-shadow: var(--elem-shadow);
     }
 
     .task_counter li {
@@ -428,22 +479,37 @@
     .birthday {
         padding: 10px;
         border-radius: 10px;
+        transition: 0.3s
     }
+
+    .birthday:hover {
+        box-shadow: var(--elem-shadow);
+    }
+
     .site_panel:not(.site_panel-main) + .content{
         max-width: calc(100% - 102px);
     }
+
     .birthday {
         padding: 16px 10px;
     }
+
     .birthday figcaption span {
         font-size: 18px;
         margin-bottom: 16px;
     }
+
     /*TASK PAGE*/
     .task_page-list {
         margin-right: 10px;
+        margin-bottom: 10px;
         padding: 10px;
         border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .task_page-list:hover {
+        box-shadow: var(--elem-shadow);
     }
 
     .task_page-list > li{
@@ -489,6 +555,17 @@
         transform: translateY(-50%);
     }
 
+    .main_task .icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .add_task {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
     .sub_tasks li {
         display: flex;
         align-items: center;
@@ -529,15 +606,39 @@
         border-radius: 10px;
     }
     /*TIMELINE*/
+    .timeline {
+        transition: 0.3s
+    }
+
+    .timeline:hover {
+        box-shadow: var(--elem-shadow);
+    }
+
     .timeline_tasks > li:hover .timeline_tasks-add {
         visibility: visible;
         opacity: 1;
     }
     /*MONEY*/
+
+    .money_header,
+    .money_content {
+        transition: 0.3s;
+    }
+
+    .money_header:hover,
+    .money_content:hover {
+        box-shadow: var(--elem-shadow);
+    }
+
     /*USER EDIT*/
     .user_list {
         padding: 10px;
         border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .user_list:hover {
+        box-shadow: var(--elem-shadow);
     }
 
     .user_header {
@@ -583,26 +684,12 @@
     .site_panel.site_panel-main {
         margin-right: 45px;
     }
+
+    .site_panel.site_panel-main .confident {
+        font-size: 12px;
+    }
     .content {
         padding-top: 24px;
-    }
-    .header_date {
-        font-size: 26px;
-        margin-right: auto;
-        margin-bottom: 0;
-    }
-    .content_header {
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 22px;
-    }
-    .content_header-inner {
-        order: 4;
-        margin-bottom: 0;
-        width: auto;
-    }
-    .content_header .btn {
-        min-width: 210px;
     }
     .btn_time {
         margin: 0 22px 0 0 ;
