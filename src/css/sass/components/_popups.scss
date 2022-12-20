@@ -23,7 +23,7 @@
     width: calc(100% - 20px);
     max-width: 740px;
     background-color: var(--primary);
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .popup.active {
@@ -62,14 +62,14 @@
     width: 26px;
     height: 26px;
     border: 2px solid var(--text-contrast);
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     margin-right: 14px;
     padding: 2px;
 }
 
 .popup.create_popup .popup_title .icon_box {
-    padding: 5px;
+    padding: 8px;
 }
 
 .popup_title .icon {
@@ -81,7 +81,7 @@
 .close_popup {
     width: 30px;
     height: 30px;
-    padding: 5px;
+    padding: 8px;
     position: absolute;
     top: 5px;
     right: 5px;
@@ -99,13 +99,14 @@
 }
 
 .submit_popup .icon {
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     margin-right: 8px;
 }
 
 .popup_header .submit_popup {
     display: none;
+    font-size: 16px;
 }
 
 .popup_body {
@@ -219,7 +220,7 @@
     width: 46px;
     height: 46px;
     border: 2px solid #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     object-fit: cover;
     margin-right: 10px;
 }
@@ -295,7 +296,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 8px;
 }
 
 .move_btn .icon {
@@ -359,7 +360,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    padding: 5px;
+    padding: 8px;
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
@@ -545,7 +546,7 @@
     padding: 0 16px;
     min-height: 40px;
     background-color: var(--sub-primary);
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .popup-bottom_inner.popup-dead_line > b {
@@ -567,12 +568,6 @@
     display: inline-block;
     margin-bottom: 8px;
     opacity: 0.6;
-}
-
-.register_item > input {
-    color: var(--text-contrast);
-    background-color: var(--sub-primary);
-    border-color: var(--sub-primary);
 }
 
 .register_grid + .btn {

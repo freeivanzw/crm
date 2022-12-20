@@ -1,6 +1,6 @@
 .dropdown,
 .dropdown UL {
-    border: 1px solid var(--sub-primary);
+    border: 1px solid var(--input-border-dark);
 }
 .dropdown {
     position: relative;
@@ -24,7 +24,7 @@
 .dropdown .overflow {
     height: 100%;
     padding: 0 40px 0 0;
-    background-color: var(--sub-primary);
+    background-color: var(--input-bg-dark);
 }
 .dropdown.short .overflow {
     width: 138px;
@@ -33,7 +33,7 @@
     z-index: 10;
 }
 .dropdown Span {
-    color: var(--text-contrast);
+    color: var(--input-text-dark);
     font-size: 15px;
     line-height: 1.2;
     cursor: pointer;
@@ -57,7 +57,7 @@
     top: 40px;
     right: -1px;
     left: -1px;
-    background: var(--sub-primary);
+    background: var(--input-bg-dark);
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
     z-index: 4;
@@ -83,7 +83,6 @@
     background: 0 0;
     font-size: 15px;
     line-height: 1.2;
-    border-top: 1px solid #d7d7d7;
 }
 .dropdown_short UL LI {
     border: 0;
@@ -91,17 +90,16 @@
 .dropdown UL LI A {
     text-decoration: none;
     color: var(--text-contrast);
-    padding: 11px 20px;
+    padding: 8px 20px;
     transition: 0.3s;
 }
 .dropdown_short ul li a {
-    color: #1d1d1d;
     text-align: center;
     padding: 6px 0;
 }
 .dropdown UL LI A:hover {
-    background-color: var(--secondary);
-    color: var(--text-color);
+    background-color: var(--warning);
+    color: var(--text-contrast);
 }
 .dropdown_short ul li a:hover {
     background-color: var(--main-color);
@@ -308,8 +306,4 @@
 .dropdown.white_drop UL LI A:hover {
     color: var(--text-contrast);
     background-color: var(--primary);
-}
-
-.dropdown.white_drop UL LI {
-    border-top: 1px solid var(--primary);
 }

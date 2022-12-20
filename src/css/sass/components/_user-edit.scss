@@ -1,8 +1,9 @@
 /*USER EDIT*/
 
 .user_list {
-    padding: 5px;
-    border-radius: 5px;
+    margin: 0 5px 5px 0;
+    padding: 8px;
+    border-radius: 8px;
     background-color: #e0e3ec;
 }
 
@@ -27,11 +28,18 @@
     font-size: 18px;
 }
 
-.user_header .btn {
-    order: -1;
-    margin-bottom: 12px;
-    margin-left: auto;
+.user_header .user_header-title span {
+    opacity: 0.6;
 }
+
+.users-header_btn {
+    order: -1;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 
 .user_header .btn .icon {
     width: 16px;
@@ -41,8 +49,8 @@
 .user_list-edit {
     color: var(--text-contrast);
     background-color: var(--primary);
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .user_edit-header {
@@ -73,7 +81,7 @@
     width: 46px;
     height: 46px;
     border: 2px solid #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     object-fit: cover;
 }
 
@@ -93,12 +101,6 @@
     opacity: 0.6;
 }
 
-.user_edit-item > input {
-    color: var(--text-contrast);
-    background-color: var(--sub-primary);
-    border-color: var(--sub-primary);
-}
-
 .photo_file-btn {
     font-size: 14px;
     line-height: 17px;
@@ -108,8 +110,8 @@
     height: 40px;
     border-radius: 4px;
     padding: 0 15px 0 8px;
-    border: 1px solid var(--sub-primary);
-    background-color: var(--sub-primary);
+    border: 1px solid var(--input-border-dark);
+    background-color: var(--input-bg-dark);
     transition: 0.3s;
     cursor: pointer;
 }
@@ -166,8 +168,8 @@
 
 .users_section {
     color: var(--text-contrast);
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     background-color: var(--primary);
 }
 
@@ -178,6 +180,15 @@
     margin-bottom: 4px;
 }
 
+.users_section-title > span {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.add_new_user {
+    font-size: 14px;
+}
+
 .add_new_user .icon {
     width: 16px;
     height: 16px;
@@ -185,12 +196,12 @@
 
 .user_item {
     color: var(--text-color);
-    margin-top: 5px;
-    padding: 5px;
+    margin-top: 8px;
+    padding: 8px;
     display: flex;
     align-items: center;
     background-color: var(--site-bg-contrast);
-    border-radius: 5px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
@@ -210,8 +221,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
-    border: 2px solid #fff;
+    border-radius: 8px;
 }
 
 .user_item-name {
@@ -232,7 +242,7 @@
     display: block;
     width: 22px;
     height: 22px;
-    padding: 5px;
+    padding: 3px;
 }
 
 .user_item-control .icon {
@@ -249,8 +259,8 @@
     color: var(--text-contrast);
     display: flex;
     flex-direction: column;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     background-color: var(--primary);
 }
 

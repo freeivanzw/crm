@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 5px;
+    padding: 8px;
     background-color: #e0e3ec;
 }
 
@@ -27,8 +27,8 @@ main {
     display: flex;
     flex: 1 0 auto;
     background-color: #fff;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 8px;
+    padding: 8px;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -36,13 +36,13 @@ main {
 
 main::before {
     content: "";
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
+    border-radius: 8px;
     background: rgb(224,227,236);
     background: linear-gradient(0deg, #e0e3ec 0%, white 100%);
     z-index: -1;
@@ -61,20 +61,21 @@ button {
 }
 
 input {
+    color: var(--input-text);
     font-size: 14px;
     line-height: 17px;
     height: 40px;
-    border: none;
+    background-color: var(--input-bg);
     border-radius: 4px;
     padding: 0 15px 0 8px;
-    border: 1px solid #D6D6D6;
+    border: 1px solid var(--input-border);
     transition: 0.3s;
 }
 
 input.dark {
-    background-color: var(--sub-primary);
-    border-color: var(--sub-primary);
-    color: var(--text-contrast);
+    background-color: var(--input-bg-dark);
+    border-color: var(--input-border-dark);
+    color: var(--input-text-dark);
 }
 
 input[type=text].error, input[type=date].error, input[type=email].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
@@ -223,11 +224,12 @@ a.sub_title:hover {
     padding: 0 15px;
     border-radius: 15px;
     color: var(--btn-text);
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .btn:hover {
-    filter: saturate(1.5);
+    background-color: var(--btn-bg-hover);
 }
 
 .btn .icon {
@@ -241,6 +243,10 @@ a.sub_title:hover {
 .btn.btn_contrast {
     color: var(--btn-text-contrast);
     background-color: var(--btn-bg-contrast);
+}
+
+.btn.btn_contrast:hover {
+    background-color: var(--btn-bg-contrast-hover);
 }
 
 .btn.btn_not-radius {

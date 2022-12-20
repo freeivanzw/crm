@@ -5,10 +5,10 @@
     display: flex;
     flex-direction: column;
     flex: 0 0 75px;
-    padding: 5px;
+    padding: 8px;
     margin-left: -85px;
     margin-right: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     position: relative;
     transition: 0.3s;
     overflow: hidden;
@@ -132,9 +132,27 @@
 }
 
 .notification {
+    display: flex;
+    align-items: center;
     position: relative;
     margin-left: auto;
     z-index: 12;
+}
+
+.notification_info {
+    margin-right: 16px;
+}
+
+.notification_info.status_danger {
+    color: var(--danger);
+}
+
+.notification_info.status_warning {
+    color: var(--warning);
+}
+
+.notification_info.status_success {
+    color: var(--success);
 }
 
 .notification_btn {
@@ -146,8 +164,8 @@
     background-color: #fff;
     border-radius: 6px;
     position: relative;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
@@ -176,14 +194,14 @@
 
 .notification_list {
     position: absolute;
-    top: 100%;
-    right: 100%;
-    padding: 5px;
-    width: 300px;
+    top: calc(100% + 16px);
+    right: 0;
+    padding: 8px;
+    width: calc(100vw - 20px);
     max-height: 360px;
     overflow-y: auto;
     background-color: #e0e3ec;
-    border-radius: 5px;
+    border-radius: 8px;
     visibility: hidden;
     opacity: 0;
     transition: 0.3s;
@@ -196,7 +214,7 @@
 
 .notification_list li {
     padding: 5px 5px 5px 10px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: var(--site-bg-contrast);
     position: relative;
     overflow: hidden;
@@ -224,7 +242,7 @@
 }
 
 .notification_list li + li {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .notification_task-info {

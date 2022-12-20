@@ -33,27 +33,14 @@
     .content {
         flex: 1 1 auto;
     }
-    .site_panel:not(.site_panel-main) + .content{
+
+    .site_panel.site_panel-main + .content {
         max-width: calc(100% - 85px);
     }
-    .content_header {
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 22px;
-    }
-    .content_header-inner {
-        order: 4;
-        margin-bottom: 0;
-        width: auto;
-    }
-    .content_header .btn {
-        min-width: 210px;
-    }
-    .header_date {
-        font-size: 26px;
-        margin-right: auto;
-        margin-bottom: 0;
-    }
+    //.site_panel:not(.site_panel-main) + .content{
+    //    max-width: calc(100% - 85px);
+    //}
+
     /*MAIN PAGE*/
     /*TASK PAGE*/
     /*POPUPS*/
@@ -63,7 +50,7 @@
 
     .popup_header {
         border-radius: 10px 10px 0 0;
-        padding: 16px 160px 16px 14px;
+        padding: 16px 160px 16px 16px;
         justify-content: space-between;
     }
 
@@ -86,7 +73,7 @@
     }
 
     .popup_body {
-        padding: 42px 10px 32px 10px;
+        padding: 42px 16px 32px 16px;
     }
 
     .popup_body .submit_popup {
@@ -178,6 +165,29 @@
 
 @media only screen and (min-width : 768px)  {
     /*SITE PANEL*/
+    .content_header {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 22px;
+    }
+    .content_header-inner {
+        order: 4;
+        margin-bottom: 0;
+        width: auto;
+    }
+    .content_header .btn {
+        min-width: 210px;
+    }
+    .header_date {
+        font-size: 26px;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+
+    .notification_list {
+        width: 300px;
+    }
+
     /*MAIN PAGE*/
     /*TASK PAGE*/
     /*POPUPS*/
@@ -228,10 +238,6 @@
     /*TIMELINE*/
     /*MONEY*/
     /*USER EDIT*/
-    .users_section-title > span {
-        font-size: 16px;
-        line-height: 1.2;
-    }
 
     .users_grid {
         grid-template-columns: 1fr 1fr;
@@ -314,7 +320,7 @@
     }
 
     .site_panel.site_panel-main {
-        flex: 0 0 300px;
+        flex: 0 0 175px;
         margin-right: 25px;
     }
     .site_panel.site_panel-main .user_photo {
@@ -331,16 +337,10 @@
         padding: 0 16px;
     }
 
-    .site_panel.site_panel-main .site_nav li {
-        justify-content: flex-start;
-        padding-left: 28px;
-    }
-
     .site_panel.site_panel-main .site_nav li a {
         display: flex;
         align-items: center;
         text-decoration: none;
-        font-size: 18px;
         line-height: 1.2;
         transition: 0.3s;
     }
@@ -350,14 +350,14 @@
         color: var(--text-contrast)
     }
 
-    .site_panel.site_panel-main .site_nav li a .icon {
-        margin-right: 16px;
-    }
-
     .site_nav li a .icon {
         width: 30px;
         height: 30px;
         transition: 0.3s;
+    }
+
+    .notification_info {
+        font-size: 18px;
     }
 
     .notification_list {
@@ -396,6 +396,10 @@
     .notification_btn .icon {
         width: 30px;
         height: 30px;
+    }
+
+    .site_panel.site_panel-main + .content {
+        max-width: calc(100% - 200px);
     }
 
     .task_list {
@@ -536,6 +540,14 @@
         margin-bottom: 0;
     }
 
+    .status_main > .col-1 .add_task {
+        display: none;
+    }
+
+    .status_main > .col-2 .add_task {
+        display: flex;
+    }
+
     .status_main > .col-2 {
         padding-left: 0;
         flex: 1 1 auto;
@@ -561,6 +573,7 @@
     }
 
     .add_task {
+        flex: 0 0 30px;
         width: 30px;
         height: 30px;
         margin-left: 10px;
@@ -630,8 +643,14 @@
         box-shadow: var(--elem-shadow);
     }
 
+    .money_content ul ul {
+        padding: 0 30px;
+    }
+
     /*USER EDIT*/
+
     .user_list {
+        margin: 0 10px 10px 0;
         padding: 10px;
         border-radius: 10px;
         transition: 0.3s;
@@ -650,9 +669,16 @@
         margin: 0 12px 0 0;
     }
 
-    .user_header .btn {
+    .users-header_btn {
         order: 0;
-        margin-bottom: 0;
+        margin: 0 0 0 auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .users-header_btn .btn + .btn {
+        margin-top: 8px;
     }
 
     .user_list-edit {
@@ -677,12 +703,35 @@
     .users_fired-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .users_section {
+        transition: 0.3s;
+    }
+
+    .users_section:hover {
+        box-shadow: var(--elem-shadow);
+    }
 }
 
 @media only screen and (min-width : 1280px) {
     /*SITE PANEL*/
+
     .site_panel.site_panel-main {
+        flex: 0 0 300px;
         margin-right: 45px;
+    }
+
+    .site_panel.site_panel-main .site_nav li {
+        justify-content: flex-start;
+        padding-left: 28px;
+    }
+
+    .site_panel.site_panel-main .site_nav li a {
+        font-size: 18px;
+    }
+
+    .site_panel.site_panel-main  .site_nav li a .icon {
+        margin-right: 16px;
     }
 
     .site_panel.site_panel-main .confident {
@@ -700,6 +749,9 @@
     .site_panel.site_panel-main .user_box figcaption {
         font-size: 26px;
         margin-bottom: 16px;
+    }
+    .site_panel.site_panel-main + .content {
+        max-width: calc(100% - 345px);
     }
     /*MAIN PAGE*/
     .main_page > .col-1 {
@@ -814,6 +866,34 @@
     }
     /*LOGIN PAGE*/
     /*TIMELINE*/
+    .add_timeline-item:hover {
+        background-color: var(--text-color);
+        border-color: var(--text-color);
+    }
+
+    .add_timeline-item:hover .icon {
+        fill: var(--text-contrast)
+    }
+    .timeline_tasks > li.status_danger .add_timeline-item:hover,
+    .timeline_tasks > li.status_warning .add_timeline-item:hover,
+    .timeline_tasks > li.status_success .add_timeline-item:hover {
+        background-color: var(--text-contrast);
+        border-color: var(--text-contrast);
+    }
+
+    .timeline_tasks > li.status_danger .add_timeline-item:hover .icon {
+        fill: var(--danger)
+    }
+
+    .timeline_tasks > li.status_warning .add_timeline-item:hover .icon {
+        fill: var(--warning)
+    }
+
+
+    .timeline_tasks > li.status_success .add_timeline-item:hover .icon {
+        fill: var(--success)
+    }
+
     /*MONEY*/
     .money_header {
         padding-left: 22px;

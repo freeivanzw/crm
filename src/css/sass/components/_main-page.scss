@@ -2,22 +2,22 @@
 
 .task_list {
     margin-bottom: 16px;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     background-color: var(--site-bg-contrast);
 }
 
 .task_list li {
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     background-color: #e0e3ec;
     position: relative;
 }
 
 .task_list li + li {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .task_list li.status_danger {
@@ -42,6 +42,7 @@
 .task_item-logo {
     font-size: 30px;
     color: #fff;
+    flex: 0 0 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,6 +158,7 @@
 }
 
 .add_task {
+    flex: 0 0 28px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,24 +166,25 @@
     width: 28px;
     height: 28px;
     border: 2px solid #6c758e;
-    border-radius: 5px;
+    border-radius: 8px;
     z-index: 2;
     transition: 0.3s;
 }
 
 .add_task:hover {
     background-color: var(--text-color);
+    border-color: var(--text-color);
 }
 
-.task_list li.status_danger .add_task,
-.task_list li.status_warning .add_task,
-.task_list li.status_success .add_task {
+li.status_danger .add_task,
+li.status_warning .add_task,
+li.status_success .add_task {
     border-color: var(--text-contrast);
 }
 
-.task_list li.status_danger .add_task:hover,
-.task_list li.status_warning .add_task:hover,
-.task_list li.status_success .add_task:hover {
+li.status_danger .add_task:hover,
+li.status_warning .add_task:hover,
+li.status_success .add_task:hover {
     background-color: var(--text-contrast);
 }
 
@@ -196,28 +199,28 @@
     fill: #e0e3ec;
 }
 
-.task_list li.status_danger .add_task .icon,
-.task_list li.status_warning .add_task .icon,
-.task_list li.status_success .add_task .icon {
+li.status_danger .add_task .icon,
+li.status_warning .add_task .icon,
+li.status_success .add_task .icon {
     fill: var(--text-contrast);
 }
 
-.task_list li.status_danger .add_task:hover .icon {
+li.status_danger .add_task:hover .icon {
     fill: #f85b06;
 }
 
-.task_list li.status_warning .add_task:hover .icon {
+li.status_warning .add_task:hover .icon {
     fill: #f85b06;
 }
 
-.task_list li.status_success .add_task:hover .icon {
+li.status_success .add_task:hover .icon {
     fill: #51a727;
 }
 
 .chart_box {
     margin-bottom: 16px;
     padding: 25px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: var(--light-primary);
     display: flex;
     flex-direction: column;
@@ -278,25 +281,31 @@
     border-radius: 15px;
 }
 
+.my_money-add.money_details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .task_counter {
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     background-color: #fff;
 }
 
 .task_counter li {
     display: flex;
     align-items: center;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     background-color: #e0e3ec;
 }
 
 .task_counter li + li {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .task_size {
@@ -322,7 +331,7 @@
 }
 
 .task_size.status_success {
-    background-color: var(--light-primary);
+    background-color: #51a727;
 }
 
 .task_description {
@@ -343,8 +352,8 @@
     color: var(--text-contrast);
     display: flex;
     margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
     background-color: var(--primary);
 }
 

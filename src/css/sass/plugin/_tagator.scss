@@ -25,7 +25,7 @@
 /* Main box */
 .tagator_element {
     padding: 5px !important;
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box;
     background-color: var(--sub-primary);
     display: inline-block;
@@ -145,7 +145,7 @@
 
 /* result item */
 .tagator_option {
-    padding: 5px;
+    padding: 8px;
     cursor: pointer;
     color: var(--text-color);
     transition: 0.3s;
