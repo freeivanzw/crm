@@ -3,7 +3,6 @@
 .task_list {
     margin-bottom: 16px;
     padding: 8px;
-    border-radius: 8px;
     background-color: var(--site-bg-contrast);
 }
 
@@ -220,7 +219,6 @@ li.status_success .add_task:hover .icon {
 .chart_box {
     margin-bottom: 16px;
     padding: 25px;
-    border-radius: 8px;
     background-color: var(--light-primary);
     display: flex;
     flex-direction: column;
@@ -292,7 +290,6 @@ li.status_success .add_task:hover .icon {
     flex-direction: column;
     margin-bottom: 16px;
     padding: 8px;
-    border-radius: 8px;
     background-color: #fff;
 }
 
@@ -331,7 +328,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .task_size.status_success {
-    background-color: #51a727;
+    background-color: var(--light-primary);
 }
 
 .task_description {
@@ -353,7 +350,6 @@ li.status_success .add_task:hover .icon {
     display: flex;
     margin-bottom: 10px;
     padding: 8px;
-    border-radius: 8px;
     background-color: var(--primary);
 }
 

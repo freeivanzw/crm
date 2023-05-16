@@ -2668,6 +2668,7 @@ a.sub_title:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 5px;
 }
 
 .content_header-inner {
@@ -2678,51 +2679,126 @@ a.sub_title:hover {
 }
 
 .notification {
-  display: flex;
-  align-items: center;
   position: relative;
   margin-left: auto;
   z-index: 12;
-}
-
-.notification_info {
-  margin-right: 16px;
-}
-
-.notification_info.status_danger {
-  color: var(--danger);
-}
-
-.notification_info.status_warning {
-  color: var(--warning);
-}
-
-.notification_info.status_success {
-  color: var(--success);
 }
 
 .notification_btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 30px;
-  min-height: 30px;
+  width: 30px;
+  height: 30px;
   background-color: #fff;
   border-radius: 6px;
   position: relative;
-  padding: 8px;
-  border-radius: 8px;
   transition: 0.3s;
+  filter: grayscale(1);
+  opacity: 0.75;
 }
 
-.notification_btn:hover {
-  background-color: #e0e3ec;
+.notification_btn.active {
+  opacity: 1;
+  filter: grayscale(0);
 }
 
 .notification_btn .icon {
   fill: var(--danger);
+  transition: transform 0.75s;
+  transform: rotate(0deg);
+  transform-origin: top;
 }
 
+.notification_btn.active .icon {
+  animation-name: ring;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  3% {
+    transform: rotate(-15deg);
+  }
+  6% {
+    transform: rotate(0deg);
+  }
+  9% {
+    transform: rotate(15deg);
+  }
+  12% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-15deg);
+  }
+  18% {
+    transform: rotate(0deg);
+  }
+  21% {
+    transform: rotate(15deg);
+  }
+  24% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.notification_btn.active::before,
+.notification_btn.active::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  animation-name: flicker;
+  animation-delay: 1.5s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+.notification_btn.active::before {
+  top: 4px;
+  left: 12px;
+  transform: rotate(-33deg);
+  border-right: 1px solid var(--danger);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.notification_btn.active::after {
+  top: 4px;
+  left: 6px;
+  transform: rotate(33deg);
+  border-left: 1px solid var(--danger);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .notification_counter {
   color: var(--text-contrast);
   font-size: 12px;
@@ -2740,14 +2816,14 @@ a.sub_title:hover {
 
 .notification_list {
   position: absolute;
-  top: calc(100% + 16px);
-  right: 0;
-  padding: 8px;
-  width: calc(100vw - 20px);
+  top: 100%;
+  right: 100%;
+  padding: 5px;
+  width: 300px;
   max-height: 360px;
   overflow-y: auto;
   background-color: #e0e3ec;
-  border-radius: 8px;
+  border-radius: 5px;
   visibility: hidden;
   opacity: 0;
   transition: 0.3s;
@@ -2760,7 +2836,7 @@ a.sub_title:hover {
 
 .notification_list li {
   padding: 5px 5px 5px 10px;
-  border-radius: 8px;
+  border-radius: 5px;
   background-color: var(--site-bg-contrast);
   position: relative;
   overflow: hidden;
@@ -2787,8 +2863,16 @@ a.sub_title:hover {
   background-color: var(--success);
 }
 
+.notification_list li.status_pending::before {
+  background-color: var(--success);
+}
+
 .notification_list li + li {
-  margin-top: 8px;
+  margin-top: 5px;
+}
+
+.notification_item {
+  text-decoration: none;
 }
 
 .notification_task-info {
@@ -2849,17 +2933,21 @@ a.sub_title:hover {
   color: var(--success);
 }
 
-.notification_task-status span {
-  font-size: 12px;
-  text-align: end;
-}
-
-.notification_task-status span.status-in_time {
+.notification_list li.status_pending .notification_task-status b {
   color: var(--success);
 }
 
-.notification_task-status span.status-wrong_time {
+.status-in_time {
+  color: var(--success);
+}
+
+.status_wrong_time {
   color: var(--danger);
+}
+
+.notification_task-status span {
+  font-size: 12px;
+  text-align: end;
 }
 
 .btn_time {
@@ -2887,7 +2975,6 @@ a.sub_title:hover {
 .task_list {
   margin-bottom: 16px;
   padding: 8px;
-  border-radius: 8px;
   background-color: var(--site-bg-contrast);
 }
 
@@ -3103,7 +3190,6 @@ li.status_success .add_task:hover .icon {
 .chart_box {
   margin-bottom: 16px;
   padding: 25px;
-  border-radius: 8px;
   background-color: var(--light-primary);
   display: flex;
   flex-direction: column;
@@ -3175,7 +3261,6 @@ li.status_success .add_task:hover .icon {
   flex-direction: column;
   margin-bottom: 16px;
   padding: 8px;
-  border-radius: 8px;
   background-color: #fff;
 }
 
@@ -3214,7 +3299,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .task_size.status_success {
-  background-color: #51a727;
+  background-color: var(--light-primary);
 }
 
 .task_description {
@@ -3236,7 +3321,6 @@ li.status_success .add_task:hover .icon {
   display: flex;
   margin-bottom: 10px;
   padding: 8px;
-  border-radius: 8px;
   background-color: var(--primary);
 }
 
@@ -3274,7 +3358,6 @@ li.status_success .add_task:hover .icon {
   flex-direction: column;
   margin-bottom: 5px;
   padding: 8px;
-  border-radius: 8px;
   background-color: var(--site-bg-contrast);
 }
 
@@ -4059,7 +4142,7 @@ li.status_success .add_task:hover .icon {
   max-width: calc(100% - 20px);
   padding: 30px 10px 10px 10px;
   background-color: var(--site-bg-contrast);
-  margin: 0 10px 10px 10px;
+  margin: 20px 10px 10px 10px;
   border-radius: 10px;
   position: relative;
 }
@@ -4515,7 +4598,6 @@ li.status_success .add_task:hover .icon {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border-radius: 10px;
   background-color: var(--site-bg-contrast);
 }
 
@@ -4617,7 +4699,7 @@ li.status_success .add_task:hover .icon {
 
 /*USER EDIT*/
 .user_list {
-  margin: 0 5px 5px 0;
+  margin: 0 0 5px 0;
   padding: 8px;
   border-radius: 8px;
   background-color: #e0e3ec;

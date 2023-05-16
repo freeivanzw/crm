@@ -40,8 +40,32 @@
     max-width: calc(100% - 85px);
   }
 
+  .content_header {
+    padding: 8px;
+  }
+
   /*MAIN PAGE*/
+  .task_list {
+    border-radius: 8px;
+  }
+
+  .chart_box {
+    border-radius: 8px;
+  }
+
+  .task_counter {
+    border-radius: 8px;
+  }
+
+  .birthday {
+    border-radius: 8px;
+  }
+
   /*TASK PAGE*/
+  .task_page-list {
+    border-radius: 8px;
+  }
+
   /*POPUPS*/
   .popup {
     border-radius: 10px;
@@ -153,6 +177,10 @@
   .money_header .col-2 {
     margin-bottom: 0;
     width: 200px;
+  }
+
+  .money_content {
+    border-radius: 10px;
   }
 
   /*USER EDIT*/
@@ -389,13 +417,35 @@
   }
 
   .notification_btn {
-    padding: 8px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
   }
 
   .notification_btn .icon {
     width: 30px;
     height: 30px;
+  }
+
+  .notification_btn.active::before,
+.notification_btn.active::after {
+    width: 22px;
+    height: 22px;
+  }
+
+  .notification_btn.active::before {
+    top: 3px;
+    left: 12px;
+    border-right: 2px solid var(--danger);
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+  }
+
+  .notification_btn.active::after {
+    top: 3px;
+    left: 6px;
+    border-left: 2px solid var(--danger);
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
   }
 
   .site_panel.site_panel-main + .content {
@@ -719,7 +769,6 @@
   /*SITE PANEL*/
   .site_panel.site_panel-main {
     flex: 0 0 300px;
-    margin-right: 45px;
   }
 
   .site_panel.site_panel-main .site_nav li {
@@ -757,7 +806,7 @@
   }
 
   .site_panel.site_panel-main + .content {
-    max-width: calc(100% - 345px);
+    max-width: calc(100% - 325px);
   }
 
   /*MAIN PAGE*/
@@ -796,6 +845,10 @@
   .my_money {
     font-size: 42px;
     font-weight: 400;
+  }
+
+  .task_counter {
+    margin-bottom: 25px;
   }
 
   /*TASK PAGE*/
