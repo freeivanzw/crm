@@ -3,7 +3,7 @@
     display: flex;
     width: calc(100% - 20px);
     max-width: calc(100% - 20px);
-    padding: 30px 10px 10px 10px;
+    padding: 30px 10px 0 10px;
     background-color: var(--site-bg-contrast);
     margin: 20px 10px 10px 10px;
     border-radius: 10px;
@@ -21,6 +21,7 @@
     flex: 0 0 210px;
     margin-right: 20px;
     position: relative;
+    padding-bottom: 10px;
 }
 
 .timeline_tasks::before {
@@ -60,7 +61,7 @@
     display: flex;
     align-items: center;
     height: 40px;
-    padding-left: 15px;
+    padding-left: 20px;
     padding-right: 10px;
     font-size: 14px;
     position: relative;
@@ -74,8 +75,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     position: absolute;
     top: 50%;
     left: -15px;
@@ -98,6 +99,18 @@
 .timeline_tasks .timeline_plus .icon {
     width: 12px;
     height: 12px;
+}
+
+.timeline_plus .icon.icon_minus {
+    display: none;
+}
+
+.timeline_plus.item-opened .icon.icon_plus {
+    display: none;
+}
+
+.timeline_plus.item-opened .icon.icon_minus {
+    display: block;
 }
 
 .timeline_tasks-title {
@@ -146,7 +159,7 @@
     justify-content: center;
     height: 100%;
     margin-left: -10px;
-    padding-left: 30px;
+    padding-left: 0;
     padding-right: 10px;
     background-color: #e0e3ec;
     border-radius: 0 10px 10px 0;
@@ -159,6 +172,7 @@
 .timeline_tasks > li.active .timeline_tasks-add {
     visibility: visible;
     opacity: 1;
+    padding-left: 30px;
 }
 
 
@@ -287,6 +301,7 @@
 }
 
 .date_box {
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -302,6 +317,10 @@
     color: #51a727;
 }
 
+.timeline_col.pay_day .date_box span {
+    padding-bottom: 6px;
+}
+
 .date_box.weekend {
     color: var(--danger)
 }
@@ -311,6 +330,10 @@
     font-size: 18px;
     line-height: 1.2;
     color: var(--light-primary);
+}
+
+.timeline_col.current_day .date_box span {
+    padding-bottom: 6px;
 }
 
 .timeline_col.pay_day .date_box::before,

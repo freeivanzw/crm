@@ -161,18 +161,6 @@ $(function () {
 
     new ApexCharts(document.querySelector("#spark4"), spark4).render();
 
-    $('.comment-area-responsive').focus(function () {
-        let $currentBox = $(this).closest('.col-3')
-        $currentBox.addClass('active')
-
-        $(document).on('click', function(e) {
-            if (!$(e.target).closest($currentBox).length) {
-                $currentBox.removeClass('active')
-            }
-            e.stopPropagation();
-        });
-    })
-
     $('.comment-area-responsive').each(function () {
         $(this).css('height', ($(this)[0].scrollHeight + 2 ) + 'px')
         $(this).on('input', TextInput)
@@ -183,20 +171,11 @@ $(function () {
     }
 
 
-    var $input_tagator1 = $('#input_tagator');
-    if ($input_tagator1.data('tagator') === undefined) {
-        $input_tagator1.tagator({
-            autocomplete: ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'],
-            useDimmer: true
-        });
-    } else {
-        $input_tagator1.tagator('destroy');
-    }
-
-
     $('.choose_department').dropdown()
     $('.money_month').dropdown()
     $('.money_year').dropdown()
+    $('.choose_performers').dropdown()
+    $('.choose_customer').dropdown()
 
 
     $(".demo-x").mCustomScrollbar({

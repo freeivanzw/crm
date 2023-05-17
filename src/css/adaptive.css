@@ -13,6 +13,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .register_item > span {
+    font-size: 18px;
+  }
+
   /*LOGIN PAGE*/
   .login_page .register_grid {
     grid-template-columns: 1fr;
@@ -73,7 +77,7 @@
 
   .popup_header {
     border-radius: 10px 10px 0 0;
-    padding: 16px 160px 16px 16px;
+    padding: 16px 160px 16px 26px;
     justify-content: space-between;
   }
 
@@ -82,7 +86,7 @@
   }
 
   .popup_title {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .close_popup {
@@ -95,8 +99,12 @@
     margin-left: 12px;
   }
 
+  .register_grid {
+    grid-column-gap: 26px;
+  }
+
   .popup_body {
-    padding: 42px 16px 32px 16px;
+    padding: 42px 26px 26px 26px;
   }
 
   .popup_body .submit_popup {
@@ -150,8 +158,25 @@
   }
 
   .important_task {
-    padding-top: 26px;
+    margin-top: 26px;
     margin-left: 30px;
+  }
+
+  .task_performers {
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+
+  .task_responsible {
+    width: 60%;
+    margin-bottom: 0;
+    padding-right: 10px;
+  }
+
+  .task_customer {
+    width: 40%;
+    padding-left: 10px;
+    margin-bottom: 0;
   }
 
   /*LOGIN PAGE*/
@@ -200,10 +225,6 @@
     order: 4;
     margin-bottom: 0;
     width: auto;
-  }
-
-  .content_header .btn {
-    min-width: 210px;
   }
 
   .header_date {
@@ -646,7 +667,7 @@
 
   .sub_tasks .col-2 {
     flex: 1 1 auto;
-    padding-left: 42px;
+    padding-left: 52px;
   }
 
   .sub_tasks .col-3 {
@@ -663,7 +684,7 @@
 
   /*POPUPS*/
   .popup-bottom_inner {
-    padding: 0 44px 0 0;
+    margin: 0 44px 0 0;
   }
 
   /*LOGIN PAGE*/
@@ -684,6 +705,7 @@
   .timeline_tasks > li:hover .timeline_tasks-add {
     visibility: visible;
     opacity: 1;
+    padding-left: 30px;
   }
 
   /*MONEY*/
@@ -764,6 +786,10 @@
   .users_section:hover {
     box-shadow: var(--elem-shadow);
   }
+
+  .user_item-name {
+    font-size: 18px;
+  }
 }
 @media only screen and (min-width: 1280px) {
   /*SITE PANEL*/
@@ -793,7 +819,7 @@
   }
 
   .btn_time {
-    margin: 0 22px 0 0;
+    margin: 0 16px 0 0;
   }
 
   .add_task-btn {
@@ -809,14 +835,18 @@
     max-width: calc(100% - 325px);
   }
 
+  .content_header .btn {
+    font-size: 14px;
+  }
+
   /*MAIN PAGE*/
   .main_page > .col-1 {
-    flex: 0 1 58%;
+    flex: 1 1 auto;
   }
 
   .main_page > .col-2 {
     padding-left: 25px;
-    flex: 0 1 42%;
+    flex: 0 1 428px;
   }
 
   .task_item-title {
@@ -835,11 +865,17 @@
   .task_size {
     font-size: 36px;
     min-width: 65px;
-    height: 65px;
+    min-height: 65px;
+    margin-right: 16px;
   }
 
   .task_description span {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .task_description small {
+    margin-top: 6px;
+    font-size: 16px;
   }
 
   .my_money {
@@ -909,7 +945,6 @@
   }
 
   .important_task {
-    padding-top: 41px;
     font-size: 18px;
   }
 
@@ -923,6 +958,10 @@
   }
 
   .add_check-item span {
+    font-size: 18px;
+  }
+
+  .task_performers-title {
     font-size: 18px;
   }
 
@@ -1007,5 +1046,14 @@
 
   .user_edit-item > span {
     font-size: 18px;
+  }
+
+  /*TIMELINE*/
+  .timeline_tasks {
+    flex: 0 0 260px;
+  }
+
+  .timeline_panel {
+    flex: 0 0 calc(100% - 270px);
   }
 }

@@ -29,7 +29,7 @@
   --input-bg: #ffffff;
   --input-border: #D6D6D6;
   --input-text-dark: #ffffff;
-  --input-bg-dark: #4c5672;
+  --input-bg-dark: #464b5e;
   --input-border-dark: #4c5672;
   --text-color: #181e36;
   --text-light: #7a8891;
@@ -114,164 +114,6 @@ select {
 
 .spinner-border {
   display: none;
-}
-
-/**
- * Tagator jQuery Plugin
- * A plugin to make input elements, tag holders
- * version 1.0, Jan 13th, 2014
- * by Ingi á Steinamørk
- */
-/* reset */
-.tagator_element * {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  text-decoration: none;
-}
-
-/* dimmer */
-#tagator_dimmer {
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  z-index: 10;
-}
-
-/* Main box */
-.tagator_element {
-  padding: 5px !important;
-  border-radius: 8px;
-  box-sizing: border-box;
-  background-color: var(--sub-primary);
-  display: inline-block;
-  text-decoration: none;
-}
-
-.tagator_element.options-visible {
-  position: relative;
-  z-index: 101;
-}
-
-/* placeholder */
-.tagator_placeholder {
-  position: absolute;
-  color: #999;
-  left: 4px;
-  top: 4px;
-  font-size: 13px;
-}
-
-/* chosen items holder */
-.tagator_tags {
-  display: inline;
-}
-
-/* chosen item */
-.tagator_tag {
-  display: inline-block;
-  background-color: var(--light-primary);
-  border-radius: 2px;
-  color: var(--text-contrast);
-  padding: 6px 24px 6px 10px;
-  font-size: 14px;
-  margin: 2px;
-  position: relative;
-  vertical-align: top;
-}
-
-/* chosen item remove button */
-.tagator_tag_remove {
-  font-size: 0;
-  display: block;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.tagator_tag_remove::after,
-.tagator_tag_remove::before {
-  content: "";
-  width: 12px;
-  height: 2px;
-  background-color: var(--text-color);
-  transition: 0.3s;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.tagator_tag_remove::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.tagator_tag_remove::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.tagator_tag_remove:hover::after,
-.tagator_tag_remove:hover::before {
-  background-color: var(--text-contrast);
-}
-
-/* input box */
-.tagator_input,
-.tagator_textlength {
-  color: var(--text-contrast);
-  border: 0;
-  display: inline-block;
-  margin: 0;
-  height: 28px;
-  background-color: transparent;
-  font-size: 14px;
-  outline: none;
-  padding: 4px 0 0 5px;
-  position: relative;
-  z-index: 1;
-  transition: none;
-}
-
-.tagator_input {
-  /*padding: 0px 0px;*/
-}
-
-/* options holder */
-.tagator_options {
-  margin: 0;
-  padding: 0;
-  border-radius: 0 0 3px 3px;
-  font-family: sans-serif;
-  position: absolute;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  z-index: 101;
-  background-color: #fff;
-  overflow: auto;
-  max-height: 250px;
-  list-style: none;
-  left: -1px;
-  right: -1px;
-}
-
-.tagator_element.options-hidden .tagator_options {
-  display: none;
-}
-
-/* result item */
-.tagator_option {
-  padding: 8px;
-  cursor: pointer;
-  color: var(--text-color);
-  transition: 0.3s;
-}
-
-.tagator_option.active {
-  background-color: var(--primary);
-  color: var(--text-contrast);
 }
 
 .dropdown,
@@ -632,8 +474,7 @@ select {
 }
 
 .dropdown.white_drop UL LI A:hover {
-  color: var(--text-contrast);
-  background-color: var(--primary);
+  background-color: #e0e3ec;
 }
 
 /*
@@ -2285,6 +2126,10 @@ yx-axis
 }
 
 /* ---------------------------------------- */
+HTML {
+  height: 100%;
+}
+
 BODY, HTML {
   font-family: Tahoma, sans-serif;
   font-style: normal;
@@ -2293,7 +2138,6 @@ BODY, HTML {
   line-height: 1.2;
   width: 100%;
   min-width: 360px;
-  height: 100%;
   color: var(--text-color);
 }
 
@@ -2301,6 +2145,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height: 100%;
   padding: 8px;
   background-color: #e0e3ec;
 }
@@ -2365,7 +2210,7 @@ input.dark {
 }
 
 input[type=text].error, input[type=date].error, input[type=email].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
-  border-color: #EE3C30;
+  box-shadow: 2px 2px 7px 0px rgba(238, 60, 48, 0.56);
 }
 
 input[type=text]:focus, input[type=date]:focus, input[type=email]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=number]:focus, textarea:focus {
@@ -2639,6 +2484,7 @@ a.sub_title:hover {
 .site_nav li a {
   font-size: 0;
   display: block;
+  width: 100%;
   opacity: 0.4;
 }
 
@@ -2679,9 +2525,23 @@ a.sub_title:hover {
 }
 
 .notification {
+  display: flex;
+  align-items: center;
   position: relative;
   margin-left: auto;
   z-index: 12;
+}
+
+.notification .btn {
+  margin-right: 12px;
+}
+
+.notification_info {
+  margin-right: 12px;
+}
+
+.notification_info.status_success {
+  color: var(--success);
 }
 
 .notification_btn {
@@ -3277,6 +3137,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .task_size {
+  white-space: nowrap;
   font-size: 30px;
   color: #fff;
   display: flex;
@@ -3285,7 +3146,7 @@ li.status_success .add_task:hover .icon {
   margin-right: 12px;
   padding: 0 10px;
   min-width: 50px;
-  height: 50px;
+  min-height: 50px;
   border: 2px solid #fff;
   border-radius: 10px;
 }
@@ -3365,6 +3226,11 @@ li.status_success .add_task:hover .icon {
   padding: 10px 5px;
   border-radius: 8px;
   background-color: #e0e3ec;
+  transition: 0.3s;
+}
+
+.task_page-list > li:hover {
+  box-shadow: var(--elem-shadow);
 }
 
 .task_page-list > li + li {
@@ -3388,6 +3254,14 @@ li.status_success .add_task:hover .icon {
 
 .status_main {
   position: relative;
+  transition: 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.status_main:hover {
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .status_main > .col-1 {
@@ -3413,7 +3287,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .status_main > .col-2 .add_task {
-  margin: 0 12px 0 0;
+  margin: 0 22px 0 0;
   z-index: 3;
   display: none;
 }
@@ -3451,35 +3325,27 @@ li.status_success .add_task:hover .icon {
 
 .sub_tasks li {
   position: relative;
+  transition: 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.sub_tasks li:hover {
+  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sub_tasks li + li {
   margin-top: 20px;
 }
 
-.sub_tasks li::before {
-  content: "";
-  width: 100%;
-  height: 2px;
-  background-color: var(--text-color);
-  position: absolute;
-  top: -11px;
-  left: 0;
-}
-
-.task_page-list > li.status_danger .sub_tasks li::before,
-.task_page-list > li.status_warning .sub_tasks li::before,
-.task_page-list > li.status_success .sub_tasks li::before {
-  background-color: var(--text-contrast);
-}
-
 .sub_tasks li:after {
   content: "";
   position: absolute;
-  top: 0;
-  left: -30px;
-  width: 8px;
-  height: 8px;
+  top: 10px;
+  left: -23px;
+  width: 6px;
+  height: 6px;
   border-bottom: 2px solid var(--text-color);
   border-left: 2px solid var(--text-color);
 }
@@ -3529,14 +3395,19 @@ li.status_success .add_task:hover .icon {
   left: 0;
   width: 100%;
   height: 100%;
-  display: none;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
   padding: 125px 0 75px 0;
   overflow-y: auto;
+  background: rgba(32, 30, 80, 0.4);
   z-index: 12;
+  transition: 0.3s;
 }
 
 .popup_box.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .popup {
@@ -3548,6 +3419,11 @@ li.status_success .add_task:hover .icon {
   max-width: 740px;
   background-color: var(--primary);
   border-radius: 8px;
+  transition: 0.3s;
+}
+
+.popup:hover {
+  box-shadow: var(--elem-shadow);
 }
 
 .popup.active {
@@ -3585,15 +3461,12 @@ li.status_success .add_task:hover .icon {
 .popup_title .icon_box {
   width: 26px;
   height: 26px;
-  border: 2px solid var(--text-contrast);
-  border-radius: 8px;
   display: flex;
   margin-right: 14px;
-  padding: 2px;
 }
 
 .popup.create_popup .popup_title .icon_box {
-  padding: 8px;
+  padding: 5px;
 }
 
 .popup_title .icon {
@@ -3694,7 +3567,7 @@ li.status_success .add_task:hover .icon {
 .task_box {
   display: flex;
   align-items: center;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: 0.3s;
   padding: 6px;
   min-height: 40px;
@@ -3715,7 +3588,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .select_type label input[type=radio]:checked + .task_box .icon {
-  fill: var(--warning);
+  fill: #f85b06;
 }
 
 .popup_tasks {
@@ -3800,6 +3673,11 @@ li.status_success .add_task:hover .icon {
   padding: 10px 40px 10px 10px;
   background-color: #e0e3ec;
   position: relative;
+  transition: 0.3s;
+}
+
+.popup_tasks-list > li:hover {
+  background-color: var(--site-bg-contrast);
 }
 
 .popup_tasks-list .col-1 {
@@ -3826,7 +3704,7 @@ li.status_success .add_task:hover .icon {
 .move_btn .icon {
   width: 24px;
   height: 24px;
-  fill: var(--text-color);
+  fill: #646d87;
   opacity: 0.7;
 }
 
@@ -3856,13 +3734,14 @@ li.status_success .add_task:hover .icon {
   border: 1px solid var(--border-color);
   background-color: #fff;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .popup_tasks-status input[type=checkbox] + i::before {
   content: "";
   width: 12px;
   height: 12px;
-  background-color: var(--warning);
+  background-color: #f85b06;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -3883,12 +3762,13 @@ li.status_success .add_task:hover .icon {
   position: absolute;
   top: 10px;
   right: 10px;
-  padding: 8px;
+  padding: 5px;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
 }
 
+.popup_tasks-list > li:hover .del_task,
 .popup_tasks-list .col-3.active + .del_task {
   opacity: 1;
   visibility: visible;
@@ -3912,9 +3792,12 @@ li.status_success .add_task:hover .icon {
 
 .comment-area-responsive {
   overflow: hidden;
+  display: block;
   width: 100%;
+  padding: 8px;
   background-color: transparent;
   transition-property: height, background-color;
+  border: 1px solid transparent;
   transition-duration: 0s, 0.3s;
 }
 
@@ -3923,25 +3806,135 @@ li.status_success .add_task:hover .icon {
 }
 
 .popup_tasks-list > li.completed .comment-area-responsive {
-  pointer-events: none;
   text-decoration: line-through;
   opacity: 0.5;
 }
 
+.comment-area-responsive a {
+  color: var(--light-primary);
+}
+
 .popup_tasks-control {
   min-width: 1px;
-  display: none;
+  display: flex;
+  flex-wrap: wrap;
   padding-top: 12px;
 }
 
-.popup_tasks-list .col-3.active .popup_tasks-control {
-  display: block;
+.task_responsible {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.task_performers-title {
+  margin-bottom: 10px;
+}
+
+.task_performers-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 5px 0 5px;
+  border-radius: 5px;
+  background-color: #464b5e;
+  margin-bottom: 15px;
+}
+
+.task_performers-list li {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0 5px 5px 0;
+  background-color: var(--light-primary);
+}
+
+.task_performers-list li img {
+  margin-right: 12px;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+.task_customer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.task_responsible .dropdown,
+.task_customer .dropdown {
+  margin-bottom: 12px;
+  max-width: 275px;
+  width: 100%;
+  height: 56px;
+}
+
+.task_responsible .dropdown .overflow,
+.task_customer .dropdown .overflow {
+  padding-right: 50px;
+}
+
+.task_responsible .dropdown .drop_arrow,
+.task_customer .dropdown .drop_arrow {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.task_responsible .dropdown img,
+.task_customer .dropdown img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-right: 6px;
+}
+
+.task_responsible .dropdown UL,
+.task_customer .dropdown UL {
+  top: 54px;
+}
+
+.task_responsible .dropdown UL LI A,
+.task_customer .dropdown UL LI A {
+  display: flex;
+  align-items: center;
+}
+
+.delete_performer {
+  margin-left: 8px;
+  flex: 0 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.delete_performer .icon {
+  width: 12px;
+  height: 12px;
+  fill: var(--text-color);
+  transition: 0.3s;
+}
+
+.delete_performer:hover .icon {
+  fill: var(--danger);
 }
 
 .popup_tasks-developers {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   margin-bottom: 12px;
+}
+
+.popup_tasks-list .col-3.active .popup_tasks-developers {
+  display: flex;
 }
 
 .popup_tasks-developers > li {
@@ -3953,18 +3946,27 @@ li.status_success .add_task:hover .icon {
 }
 
 .tasks_time-edit {
-  display: flex;
+  display: none;
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 12px;
 }
 
+.popup_tasks-list .col-3.active .tasks_time-edit {
+  display: flex;
+}
+
 .tasks_time-edit input {
+  color: var(--light-primary);
   margin: 0 12px 0 0;
   height: 20px;
   width: 50px;
   padding: 0;
   text-align: center;
+}
+
+.tasks_time-edit input:focus {
+  border-color: var(--text-color);
 }
 
 .tasks_time-edit span {
@@ -3985,6 +3987,7 @@ li.status_success .add_task:hover .icon {
 
 .tasks_time {
   font-weight: 700;
+  margin-left: auto;
 }
 
 .add_check-item {
@@ -4030,20 +4033,34 @@ li.status_success .add_task:hover .icon {
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: #f85b06;
-  filter: grayscale(1);
+  color: #ffffff;
   transition: 0.3s;
+  width: max-content;
+  margin-bottom: 12px;
 }
 
 .important_task.active {
-  filter: grayscale(0);
+  color: #f85b06;
 }
 
 .important_task .icon {
   margin-right: 8px;
   width: 26px;
   height: 26px;
+  fill: #ffffff;
+}
+
+.important_task.active .icon {
   fill: #f85b06;
+}
+
+.task_performers {
+  display: flex;
+  flex-direction: column;
+}
+
+.task_performers .btn {
+  align-self: start;
 }
 
 .popup-bottom_info {
@@ -4072,7 +4089,28 @@ li.status_success .add_task:hover .icon {
   border-radius: 8px;
 }
 
+.popup-bottom_inner > input {
+  color: var(--light-primary);
+  font-size: 18px;
+  padding: 0 16px;
+  width: 165px;
+  min-height: 40px;
+  background-color: var(--sub-primary);
+  border-color: var(--sub-primary);
+  border-radius: 8px;
+}
+
+.popup-bottom_inner:not(.popup-dead_line) > b {
+  color: var(--light-primary);
+}
+
+.popup-bottom_inner > input:focus {
+  border-color: var(--secondary);
+}
+
+.popup-bottom_inner.popup-dead_line > input,
 .popup-bottom_inner.popup-dead_line > b {
+  color: var(--secondary);
   background-color: #a30c16;
 }
 
@@ -4140,7 +4178,7 @@ li.status_success .add_task:hover .icon {
   display: flex;
   width: calc(100% - 20px);
   max-width: calc(100% - 20px);
-  padding: 30px 10px 10px 10px;
+  padding: 30px 10px 0 10px;
   background-color: var(--site-bg-contrast);
   margin: 20px 10px 10px 10px;
   border-radius: 10px;
@@ -4158,6 +4196,7 @@ li.status_success .add_task:hover .icon {
   flex: 0 0 210px;
   margin-right: 20px;
   position: relative;
+  padding-bottom: 10px;
 }
 
 .timeline_tasks::before {
@@ -4197,7 +4236,7 @@ li.status_success .add_task:hover .icon {
   display: flex;
   align-items: center;
   height: 40px;
-  padding-left: 15px;
+  padding-left: 20px;
   padding-right: 10px;
   font-size: 14px;
   position: relative;
@@ -4211,8 +4250,8 @@ li.status_success .add_task:hover .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   position: absolute;
   top: 50%;
   left: -15px;
@@ -4235,6 +4274,18 @@ li.status_success .add_task:hover .icon {
 .timeline_tasks .timeline_plus .icon {
   width: 12px;
   height: 12px;
+}
+
+.timeline_plus .icon.icon_minus {
+  display: none;
+}
+
+.timeline_plus.item-opened .icon.icon_plus {
+  display: none;
+}
+
+.timeline_plus.item-opened .icon.icon_minus {
+  display: block;
 }
 
 .timeline_tasks-title {
@@ -4283,7 +4334,7 @@ li.status_success .add_task:hover .icon {
   justify-content: center;
   height: 100%;
   margin-left: -10px;
-  padding-left: 30px;
+  padding-left: 0;
   padding-right: 10px;
   background-color: #e0e3ec;
   border-radius: 0 10px 10px 0;
@@ -4296,6 +4347,7 @@ li.status_success .add_task:hover .icon {
 .timeline_tasks > li.active .timeline_tasks-add {
   visibility: visible;
   opacity: 1;
+  padding-left: 30px;
 }
 
 .timeline_tasks > li.status_danger .timeline_tasks-add {
@@ -4417,6 +4469,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .date_box {
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4432,6 +4485,10 @@ li.status_success .add_task:hover .icon {
   color: #51a727;
 }
 
+.timeline_col.pay_day .date_box span {
+  padding-bottom: 6px;
+}
+
 .date_box.weekend {
   color: var(--danger);
 }
@@ -4441,6 +4498,10 @@ li.status_success .add_task:hover .icon {
   font-size: 18px;
   line-height: 1.2;
   color: var(--light-primary);
+}
+
+.timeline_col.current_day .date_box span {
+  padding-bottom: 6px;
 }
 
 .timeline_col.pay_day .date_box::before,
@@ -4726,6 +4787,10 @@ li.status_success .add_task:hover .icon {
   font-size: 18px;
 }
 
+.user_header .user_header-title b {
+  font-weight: 400;
+}
+
 .user_header .user_header-title span {
   opacity: 0.6;
 }
@@ -4882,13 +4947,10 @@ li.status_success .add_task:hover .icon {
   line-height: 1.2;
 }
 
-.add_new_user {
-  font-size: 14px;
-}
-
 .add_new_user .icon {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
 }
 
 .user_item {
@@ -4931,14 +4993,10 @@ li.status_success .add_task:hover .icon {
   flex: 1 1 auto;
 }
 
-.user_item-name:hover {
-  text-decoration: underline;
-}
-
 .user_item-control {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   padding: 3px;
 }
 
@@ -4964,13 +5022,17 @@ li.status_success .add_task:hover .icon {
 .users_fired-header {
   font-size: 18px;
   line-height: 1.2;
-  color: var(--warning);
+  color: #f85b06;
   margin-bottom: 8px;
   padding-top: 4px;
 }
 
+.users-fired-count {
+  color: #f85b06;
+}
+
 .users_fired_box .user_item-control .icon {
-  fill: var(--warning);
+  fill: #f85b06;
 }
 
 .users_fired_box .user_item-control:hover .icon {

@@ -25,6 +25,7 @@
                 <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#check-list"></use></svg>Завдання</a></li>
                 <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#payment"></use></svg>Заробіток</a></li>
                 <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#user"></use></svg>Команда</a></li>
+                <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#customer"></use></svg>Замовники</a></li>
                 <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#settings"></use></svg>Мої налаштування</a></li>
             </ul>
             <span class="confident">Borozna © 2023</span>
@@ -35,6 +36,7 @@
             <div class="content_header-inner">
                 <a href="#" class="open-site_panel btn btn_contrast btn_not-radius"><svg class="icon"><use xlink:href="./images/sprite.svg#home"></use></svg></a>
                 <div class="notification">
+                    <a href="#" class="btn btn_contrast add_task-btn"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</a>
                     <a href="#" class="notification_btn active"><svg class="icon"><use xlink:href="./images/sprite.svg#notification"></use></svg><span class="notification_counter">2</span></a>
                     <ul class="notification_list">
                         <li class="status_danger">
@@ -162,14 +164,16 @@
             </div>
             <a href="#" class="btn btn_time">Завдання Time Line</a>
             <span class="header_date">16 червня 2022,<b> Четвер 16:28</b></span>
-            <a href="#" class="btn btn_contrast add_task-btn"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</a>
         </header>
         <!--TIMELINE-->
         <section class="timeline">
             <ul class="timeline_tasks">
-                <li class="has_subtasks status_danger">
+                <li class="has_subtasks status_danger active">
                     <div class="timeline_tasks-item">
-                        <a href="#" class="timeline_plus"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg></a>
+                        <a href="#" class="timeline_plus"> <!-- item-opened -->
+                            <svg class="icon icon_plus"><use xlink:href="./images/sprite.svg#plus"></use></svg>
+                            <svg class="icon icon_minus"><use xlink:href="./images/sprite.svg#minus"></use></svg>
+                        </a>
                         <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
                         <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
                     </div>

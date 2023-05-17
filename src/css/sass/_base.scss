@@ -1,3 +1,6 @@
+HTML, {
+    height: 100%;
+}
 
 BODY, HTML {
     font-family: Tahoma, sans-serif;
@@ -7,7 +10,6 @@ BODY, HTML {
     line-height: 1.2;
     width: 100%;
     min-width: 360px;
-    height: 100%;
     color: var(--text-color);
 }
 
@@ -15,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 100%;
     padding: 8px;
     background-color: #e0e3ec;
 }
@@ -79,7 +82,7 @@ input.dark {
 }
 
 input[type=text].error, input[type=date].error, input[type=email].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
-    border-color: #EE3C30;
+    box-shadow: 2px 2px 7px 0px rgba(238,60,48,0.56);
 }
 
 input[type=text]:focus, input[type=date]:focus, input[type=email]:focus, input[type=password]:focus , input[type=tel]:focus , input[type=number]:focus, textarea:focus  {

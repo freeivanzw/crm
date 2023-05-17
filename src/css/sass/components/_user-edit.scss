@@ -28,6 +28,10 @@
     font-size: 18px;
 }
 
+.user_header .user_header-title b {
+    font-weight: 400;
+}
+
 .user_header .user_header-title span {
     opacity: 0.6;
 }
@@ -185,13 +189,10 @@
     line-height: 1.2;
 }
 
-.add_new_user {
-    font-size: 14px;
-}
-
 .add_new_user .icon {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
 }
 
 .user_item {
@@ -234,14 +235,10 @@
     flex: 1 1 auto;
 }
 
-.user_item-name:hover {
-    text-decoration: underline;
-}
-
 .user_item-control {
     display: block;
-    width: 22px;
-    height: 22px;
+    width: 26px;
+    height: 26px;
     padding: 3px;
 }
 
@@ -267,13 +264,17 @@
 .users_fired-header {
     font-size: 18px;
     line-height: 1.2;
-    color: var(--warning);
+    color: #f85b06;
     margin-bottom: 8px;
     padding-top: 4px;
 }
 
+.users-fired-count {
+    color: #f85b06;
+}
+
 .users_fired_box .user_item-control .icon {
-    fill: var(--warning)
+    fill: #f85b06;
 }
 
 .users_fired_box .user_item-control:hover .icon {

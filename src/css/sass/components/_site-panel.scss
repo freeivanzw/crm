@@ -93,6 +93,7 @@
 .site_nav li a {
     font-size: 0;
     display: block;
+    width: 100%;
     opacity: 0.4;
 }
 
@@ -133,9 +134,23 @@
 }
 
 .notification {
+    display: flex;
+    align-items: center;
     position: relative;
     margin-left: auto;
     z-index: 12;
+}
+
+.notification .btn {
+    margin-right: 12px;
+}
+
+.notification_info {
+    margin-right: 12px;
+}
+
+.notification_info.status_success {
+    color: var(--success)
 }
 
 .notification_btn {
@@ -415,7 +430,6 @@
 .status_wrong_time {
     color: var(--danger);
 }
-
 
 .notification_task-status span {
     font-size: 12px;

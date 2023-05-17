@@ -25,6 +25,7 @@
                     <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#check-list"></use></svg>Завдання</a></li>
                     <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#payment"></use></svg>Заробіток</a></li>
                     <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#user"></use></svg>Команда</a></li>
+                    <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#customer"></use></svg>Замовники</a></li>
                     <li><a href="#"><svg class="icon"><use xlink:href="./images/sprite.svg#settings"></use></svg>Мої налаштування</a></li>
                 </ul>
                 <span class="confident">Borozna © 2023</span>
@@ -378,7 +379,7 @@
                         <span>Назва завдання</span>
                         <input type="text" class="dark error">
                     </label>
-                    <div class="select_type error">
+                    <div class="select_type">
                         <span>Тип завдання</span>
                         <label>
                             <input type="radio" name="rb1" checked>
@@ -394,7 +395,7 @@
                     <div class="popup_tasks-header">
                         <div class="popup_creator">
                             <span>Павло Цвєтков</span>
-                            <img src="./images/bearded-man.png" alt="user photo">
+                            <img src="./images/mob-banner.png" alt="user photo">
                         </div>
                         <div class="tasks_status">
                             <div class="tasks_counter">
@@ -421,7 +422,7 @@
                             </div>
                             <div class="col-3">
                                 <div class="popup_tasks-text">
-                                   <textarea class='comment-area-responsive'>asd fasdf asfd fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf </textarea>
+                                    <span class="comment-area-responsive"><a href="#">asd fasdf asfd</a> fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf</span>
                                 </div>
                                 <div class="popup_tasks-control">
                                     <ul class="popup_tasks-developers">
@@ -451,9 +452,9 @@
                                     <i></i>
                                 </label>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 active">
                                 <div class="popup_tasks-text">
-                                    <textarea class='comment-area-responsive'></textarea>
+                                    <textarea class='comment-area-responsive'>asd fasdf asfd fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf </textarea>
                                 </div>
                                 <div class="popup_tasks-control">
                                     <ul class="popup_tasks-developers">
@@ -462,7 +463,7 @@
                                     </ul>
                                     <div class="tasks_time-edit">
                                         <span>Час виконання</span>
-                                        <input type="text">
+                                        <input type="text" class="error">
                                         <span>годин</span>
                                         <input type="text">
                                         <span>хвилин</span>
@@ -474,7 +475,7 @@
                         </li>
                         <li class="completed">
                             <div class="col-1">
-                                <span class="order_number">1</span>
+                                <span class="order_number">3</span>
                                 <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
                             </div>
                             <div class="col-2">
@@ -485,7 +486,7 @@
                             </div>
                             <div class="col-3">
                                 <div class="popup_tasks-text">
-                                    <textarea class='comment-area-responsive'>asdlkfj a;lskdfj a;lskdfj ;alskd fj;alksdjf; alksdjf ;alksdfj;al ksdfj;alksdjf ;laskdfj ;laskdfj</textarea>
+                                    <span class='comment-area-responsive'> ;alskd fj;alksdjf; alksdjf ;alksdfj;al ksdfj;alksdjf ;laskdfj ;laskdfj</span>
                                 </div>
                                 <div class="popup_tasks-control">
                                     <ul class="popup_tasks-developers">
@@ -506,37 +507,80 @@
                         </li>
                     </ul>
                 </div>
-                <div class="responsible">
-                    <div class="responsible_users">
-                        <b>Відповідальний</b>
-                        <input id="input_tagator" name="input_tagator" value="jQuery,Script,Net" placeholder="Please input some tags">
+                <div class="task_performers">
+                    <div class="task_responsible">
+                        <span class="task_performers-title">Відповідальний</span>
+                        <ul class="task_performers-list">
+                            <li>
+                                <img src="./images/mob-banner.png" alt="responsible">
+                                <span>Козак Іван</span>
+                                <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                            </li>
+                            <li>
+                                <img src="./images/mob-banner.png" alt="responsible">
+                                <span>Козак Іван</span>
+                                <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                            </li>
+                        </ul>
+                        <div class="dropdown white_drop choose_performers">
+                            <div class="overflow"><span><img src="./images/mob-banner.png" width="45" height="45" alt="responsible"> Відповідальний</span><button type="button" class="drop_arrow"></button></div>
+                            <ul>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible"> Козак Іван</a></li>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Павло Цветков</a></li>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Козак Іван</a></li>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Павло Цветков</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn_contrast">Додати</a>
                     </div>
-                    <a href="#" class="important_task active"><svg class="icon"><use xlink:href="./images/sprite.svg#fire"></use></svg> Надтермінове завдання</a>
+                    <div class="task_customer">
+                        <span class="task_performers-title">Замовник</span>
+                        <ul class="task_performers-list">
+                            <li>
+                                <img src="./images/mob-banner.png" alt="responsible">
+                                <span>7office</span>
+                                <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                            </li>
+                        </ul>
+                        <div class="dropdown white_drop choose_customer">
+                            <div class="overflow"><span>Замовник</span><button type="button" class="drop_arrow"></button></div>
+                            <ul>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">7office</a></li>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">dymolux</a></li>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">7office</a></li>
+                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">dymolux</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn_contrast">Додати</a>
+                    </div>
                 </div>
+
                 <div class="popup-bottom_info">
                     <div class="popup-bottom_inner popup-dead_line">
                         <span>Dead line</span>
+                        <input type="text" class="dark" value="17 липня 2022">
                         <b>17 липня 2022</b>
                     </div>
                     <div class="popup-bottom_inner">
                         <span>Поставлено</span>
+                        <input type="text" class="dark" value="Сьогодні">
                         <b>Сьогодні</b>
                     </div>
                     <div class="popup-bottom_inner">
                         <span>Робочий час виконання</span>
+                        <input type="text" class="dark" value="50 годин">
                         <b>50 годин</b>
                     </div>
                 </div>
-
+                <a href="#" class="important_task active"><svg class="icon"><use xlink:href="./images/sprite.svg#fire"></use></svg> Надтермінове завдання</a>
                 <button class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</button>
             </div>
         </div>
     </div>
 
-    <div class="shadow"></div>
+    <div class="shadow hidden"></div>
 
     <script src="./js/jquery.min.js"></script>
-    <script src="./js/plugins/fm.tagator.jquery.js"></script>
     <script src="./js/plugins/chart.js"></script>
     <script src="./js/plugins/jquery.mCustomScrollbar.js"></script>
     <script src="./js/index.js"></script>
