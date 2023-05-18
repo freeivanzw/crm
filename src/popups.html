@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/adaptive.css">
 </head>
-<body class="body_overflow">
+<body>
     <main>
         <!--SITE PANEL-->
         <aside class="site_panel site_panel-main">
@@ -360,225 +360,222 @@
             </section>
         </div>
     </main>
-
-    <div class="popup_box active">
-        <div class="popup create_popup active">
-            <div class="popup_header">
-                <div class="popup_title">
-                    <div class="icon_box">
-                        <svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>
-                    </div>
-                    <span>Створення нового завдання</span>
+    <div class="popup create_popup active">
+        <div class="popup_header">
+            <div class="popup_title">
+                <div class="icon_box">
+                    <svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>
                 </div>
-                <a href="#" class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</a>
-                <a href="#" class="close_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                <span>Створення нового завдання</span>
             </div>
-            <div class="popup_body">
-                <div class="create_title">
-                    <label class="name_task">
-                        <span>Назва завдання</span>
-                        <input type="text" class="dark error">
+            <a href="#" class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</a>
+            <a href="#" class="close_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+        </div>
+        <div class="popup_body">
+            <div class="create_title">
+                <label class="name_task">
+                    <span>Назва завдання</span>
+                    <input type="text" class="dark error">
+                </label>
+                <div class="select_type">
+                    <span>Тип завдання</span>
+                    <label>
+                        <input type="radio" name="rb1" checked>
+                        <div class="task_box"><svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg><span>Технічне завдання</span></div>
                     </label>
-                    <div class="select_type">
-                        <span>Тип завдання</span>
-                        <label>
-                            <input type="radio" name="rb1" checked>
-                            <div class="task_box"><svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg><span>Технічне завдання</span></div>
-                        </label>
-                        <label>
-                            <input type="radio" name="rb1">
-                            <div class="task_box"><svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg><span>Checklist</span></div>
-                        </label>
+                    <label>
+                        <input type="radio" name="rb1">
+                        <div class="task_box"><svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg><span>Checklist</span></div>
+                    </label>
+                </div>
+            </div>
+            <div class="popup_tasks">
+                <div class="popup_tasks-header">
+                    <div class="popup_creator">
+                        <span>Павло Цвєтков</span>
+                        <img src="./images/mob-banner.png" alt="user photo">
+                    </div>
+                    <div class="tasks_status">
+                        <div class="tasks_counter">
+                            <span>Remarks</span>
+                            <div class="tasks_box">
+                                <span>1 / 5</span>
+                                <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn_contrast active">Виконано</a>
                     </div>
                 </div>
-                <div class="popup_tasks">
-                    <div class="popup_tasks-header">
-                        <div class="popup_creator">
-                            <span>Павло Цвєтков</span>
-                            <img src="./images/mob-banner.png" alt="user photo">
+                <ul class="popup_tasks-list">
+                    <li>
+                        <div class="col-1">
+                            <span class="order_number">1</span>
+                            <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
                         </div>
-                        <div class="tasks_status">
-                            <div class="tasks_counter">
-                                <span>Remarks</span>
-                                <div class="tasks_box">
-                                    <span>1 / 5</span>
-                                    <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
-                                </div>
+                        <div class="col-2">
+                            <label class="popup_tasks-status">
+                                <input type="checkbox">
+                                <i></i>
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <div class="popup_tasks-text">
+                                <span class="comment-area-responsive"><a href="#">asd fasdf asfd</a> fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf</span>
                             </div>
-                            <a href="#" class="btn btn_contrast active">Виконано</a>
+                            <div class="popup_tasks-control">
+                                <ul class="popup_tasks-developers">
+                                    <li><a href="#" class="btn">Павло Цвєтков</a></li>
+                                    <li><a href="#" class="btn active">Павло Цвєтков</a></li>
+                                </ul>
+                                <div class="tasks_time-edit">
+                                    <span>Час виконання</span>
+                                    <input type="text" class="error">
+                                    <span>годин</span>
+                                    <input type="text">
+                                    <span>хвилин</span>
+                                </div>
+                                <span class="tasks_time">1 година 30 хвилин</span>
+                            </div>
                         </div>
-                    </div>
-                    <ul class="popup_tasks-list">
+                        <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                    </li>
+                    <li>
+                        <div class="col-1">
+                            <span class="order_number">1</span>
+                            <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
+                        </div>
+                        <div class="col-2">
+                            <label class="popup_tasks-status">
+                                <input type="checkbox">
+                                <i></i>
+                            </label>
+                        </div>
+                        <div class="col-3 active">
+                            <div class="popup_tasks-text">
+                                <textarea class='comment-area-responsive'>asd fasdf asfd fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf </textarea>
+                            </div>
+                            <div class="popup_tasks-control">
+                                <ul class="popup_tasks-developers">
+                                    <li><a href="#" class="btn">Павло Цвєтков</a></li>
+                                    <li><a href="#" class="btn active">Павло Цвєтков</a></li>
+                                </ul>
+                                <div class="tasks_time-edit">
+                                    <span>Час виконання</span>
+                                    <input type="text" class="error">
+                                    <span>годин</span>
+                                    <input type="text">
+                                    <span>хвилин</span>
+                                </div>
+                                <span class="tasks_time">1 година 30 хвилин</span>
+                            </div>
+                        </div>
+                        <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                    </li>
+                    <li class="completed">
+                        <div class="col-1">
+                            <span class="order_number">3</span>
+                            <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
+                        </div>
+                        <div class="col-2">
+                            <label class="popup_tasks-status">
+                                <input type="checkbox" checked>
+                                <i></i>
+                            </label>
+                        </div>
+                        <div class="col-3">
+                            <div class="popup_tasks-text">
+                                <span class='comment-area-responsive'> ;alskd fj;alksdjf; alksdjf ;alksdfj;al ksdfj;alksdjf ;laskdfj ;laskdfj</span>
+                            </div>
+                            <div class="popup_tasks-control">
+                                <ul class="popup_tasks-developers">
+                                    <li><a href="#" class="btn">Павло Цвєтков</a></li>
+                                    <li><a href="#" class="btn active">Павло Цвєтков</a></li>
+                                </ul>
+                                <div class="tasks_time-edit">
+                                    <span>Час виконання</span>
+                                    <input type="text">
+                                    <span>годин</span>
+                                    <input type="text">
+                                    <span>хвилин</span>
+                                </div>
+                                <span class="tasks_time">1 година 30 хвилин</span>
+                            </div>
+                        </div>
+                        <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="task_performers">
+                <div class="task_responsible">
+                    <span class="task_performers-title">Відповідальний</span>
+                    <ul class="task_performers-list">
                         <li>
-                            <div class="col-1">
-                                <span class="order_number">1</span>
-                                <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
-                            </div>
-                            <div class="col-2">
-                                <label class="popup_tasks-status">
-                                    <input type="checkbox">
-                                    <i></i>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <div class="popup_tasks-text">
-                                    <span class="comment-area-responsive"><a href="#">asd fasdf asfd</a> fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf</span>
-                                </div>
-                                <div class="popup_tasks-control">
-                                    <ul class="popup_tasks-developers">
-                                        <li><a href="#" class="btn">Павло Цвєтков</a></li>
-                                        <li><a href="#" class="btn active">Павло Цвєтков</a></li>
-                                    </ul>
-                                    <div class="tasks_time-edit">
-                                        <span>Час виконання</span>
-                                        <input type="text" class="error">
-                                        <span>годин</span>
-                                        <input type="text">
-                                        <span>хвилин</span>
-                                    </div>
-                                    <span class="tasks_time">1 година 30 хвилин</span>
-                                </div>
-                            </div>
-                            <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                            <img src="./images/mob-banner.png" alt="responsible">
+                            <span>Козак Іван</span>
+                            <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
                         </li>
                         <li>
-                            <div class="col-1">
-                                <span class="order_number">1</span>
-                                <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
-                            </div>
-                            <div class="col-2">
-                                <label class="popup_tasks-status">
-                                    <input type="checkbox">
-                                    <i></i>
-                                </label>
-                            </div>
-                            <div class="col-3 active">
-                                <div class="popup_tasks-text">
-                                    <textarea class='comment-area-responsive'>asd fasdf asfd fasd fasdfasdf asd fasdfsdf asdf asdf asdf asdf </textarea>
-                                </div>
-                                <div class="popup_tasks-control">
-                                    <ul class="popup_tasks-developers">
-                                        <li><a href="#" class="btn">Павло Цвєтков</a></li>
-                                        <li><a href="#" class="btn active">Павло Цвєтков</a></li>
-                                    </ul>
-                                    <div class="tasks_time-edit">
-                                        <span>Час виконання</span>
-                                        <input type="text" class="error">
-                                        <span>годин</span>
-                                        <input type="text">
-                                        <span>хвилин</span>
-                                    </div>
-                                    <span class="tasks_time">1 година 30 хвилин</span>
-                                </div>
-                            </div>
-                            <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
-                        </li>
-                        <li class="completed">
-                            <div class="col-1">
-                                <span class="order_number">3</span>
-                                <a href="#" class="move_btn"><svg class="icon"><use xlink:href="./images/sprite.svg#dots"></use></svg></a>
-                            </div>
-                            <div class="col-2">
-                                <label class="popup_tasks-status">
-                                    <input type="checkbox">
-                                    <i></i>
-                                </label>
-                            </div>
-                            <div class="col-3">
-                                <div class="popup_tasks-text">
-                                    <span class='comment-area-responsive'> ;alskd fj;alksdjf; alksdjf ;alksdfj;al ksdfj;alksdjf ;laskdfj ;laskdfj</span>
-                                </div>
-                                <div class="popup_tasks-control">
-                                    <ul class="popup_tasks-developers">
-                                        <li><a href="#" class="btn">Павло Цвєтков</a></li>
-                                        <li><a href="#" class="btn active">Павло Цвєтков</a></li>
-                                    </ul>
-                                    <div class="tasks_time-edit">
-                                        <span>Час виконання</span>
-                                        <input type="text">
-                                        <span>годин</span>
-                                        <input type="text">
-                                        <span>хвилин</span>
-                                    </div>
-                                    <span class="tasks_time">1 година 30 хвилин</span>
-                                </div>
-                            </div>
-                            <a href="#" class="del_task"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                            <img src="./images/mob-banner.png" alt="responsible">
+                            <span>Козак Іван</span>
+                            <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
                         </li>
                     </ul>
-                </div>
-                <div class="task_performers">
-                    <div class="task_responsible">
-                        <span class="task_performers-title">Відповідальний</span>
-                        <ul class="task_performers-list">
-                            <li>
-                                <img src="./images/mob-banner.png" alt="responsible">
-                                <span>Козак Іван</span>
-                                <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
-                            </li>
-                            <li>
-                                <img src="./images/mob-banner.png" alt="responsible">
-                                <span>Козак Іван</span>
-                                <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
-                            </li>
+                    <div class="dropdown white_drop choose_performers">
+                        <div class="overflow"><span><img src="./images/mob-banner.png" width="45" height="45" alt="responsible"> Відповідальний</span><button type="button" class="drop_arrow"></button></div>
+                        <ul>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible"> Козак Іван</a></li>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Павло Цветков</a></li>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Козак Іван</a></li>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Павло Цветков</a></li>
                         </ul>
-                        <div class="dropdown white_drop choose_performers">
-                            <div class="overflow"><span><img src="./images/mob-banner.png" width="45" height="45" alt="responsible"> Відповідальний</span><button type="button" class="drop_arrow"></button></div>
-                            <ul>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible"> Козак Іван</a></li>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Павло Цветков</a></li>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Козак Іван</a></li>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">Павло Цветков</a></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="btn btn_contrast">Додати</a>
                     </div>
-                    <div class="task_customer">
-                        <span class="task_performers-title">Замовник</span>
-                        <ul class="task_performers-list">
-                            <li>
-                                <img src="./images/mob-banner.png" alt="responsible">
-                                <span>7office</span>
-                                <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
-                            </li>
+                    <a href="#" class="btn btn_contrast">Додати</a>
+                </div>
+                <div class="task_customer">
+                    <span class="task_performers-title">Замовник</span>
+                    <ul class="task_performers-list">
+                        <li>
+                            <img src="./images/mob-banner.png" alt="responsible">
+                            <span>7office</span>
+                            <a href="#" class="delete_performer"><svg class="icon"><use xlink:href="./images/sprite.svg#close"></use></svg></a>
+                        </li>
+                    </ul>
+                    <div class="dropdown white_drop choose_customer">
+                        <div class="overflow"><span>Замовник</span><button type="button" class="drop_arrow"></button></div>
+                        <ul>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">7office</a></li>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">dymolux</a></li>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">7office</a></li>
+                            <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">dymolux</a></li>
                         </ul>
-                        <div class="dropdown white_drop choose_customer">
-                            <div class="overflow"><span>Замовник</span><button type="button" class="drop_arrow"></button></div>
-                            <ul>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">7office</a></li>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">dymolux</a></li>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">7office</a></li>
-                                <li><a href="#"><img src="./images/mob-banner.png" width="45" height="45" alt="responsible">dymolux</a></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="btn btn_contrast">Додати</a>
                     </div>
+                    <a href="#" class="btn btn_contrast">Додати</a>
                 </div>
-
-                <div class="popup-bottom_info">
-                    <div class="popup-bottom_inner popup-dead_line">
-                        <span>Dead line</span>
-                        <input type="text" class="dark" value="17 липня 2022">
-                        <b>17 липня 2022</b>
-                    </div>
-                    <div class="popup-bottom_inner">
-                        <span>Поставлено</span>
-                        <input type="text" class="dark" value="Сьогодні">
-                        <b>Сьогодні</b>
-                    </div>
-                    <div class="popup-bottom_inner">
-                        <span>Робочий час виконання</span>
-                        <input type="text" class="dark" value="50 годин">
-                        <b>50 годин</b>
-                    </div>
-                </div>
-                <a href="#" class="important_task active"><svg class="icon"><use xlink:href="./images/sprite.svg#fire"></use></svg> Надтермінове завдання</a>
-                <button class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</button>
             </div>
+
+            <div class="popup-bottom_info">
+                <div class="popup-bottom_inner popup-dead_line">
+                    <span>Dead line</span>
+                    <input type="text" class="dark" value="17 липня 2022">
+                    <b>17 липня 2022</b>
+                </div>
+                <div class="popup-bottom_inner">
+                    <span>Поставлено</span>
+                    <input type="text" class="dark" value="Сьогодні">
+                    <b>Сьогодні</b>
+                </div>
+                <div class="popup-bottom_inner">
+                    <span>Робочий час виконання</span>
+                    <input type="text" class="dark" value="50 годин">
+                    <b>50 годин</b>
+                </div>
+            </div>
+            <a href="#" class="important_task active"><svg class="icon"><use xlink:href="./images/sprite.svg#fire"></use></svg> Надтермінове завдання</a>
+            <button class="btn btn_contrast submit_popup"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</button>
         </div>
     </div>
 
-    <div class="shadow hidden"></div>
+    <div class="shadow"></div>
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/plugins/chart.js"></script>
