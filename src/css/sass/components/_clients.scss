@@ -1,1 +1,349 @@
 /*CLIENTS*/
+.clients {
+    flex: 1 1 auto;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 8px 8px 8px;
+    width: calc(100% - 16px);
+    transition: 0.3s;
+}
+
+.clients:hover {
+    box-shadow: var(--elem-shadow);
+}
+
+.clients_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.client_item {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #e0e3ec;
+    transition: 0.3s;
+}
+
+.client_item:hover {
+    box-shadow: var(--elem-shadow);
+}
+
+.client_item + .client_item {
+    margin-top: 8px;
+}
+
+.client_info > .col-1 {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.client_info > .col-1 > .task_item-logo {
+    font-size: 26px;
+    margin-right: 10px;
+    border: 4px solid #fff;
+}
+
+.dir-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.client_info > .col-1 > .dir-col {
+    flex: 1 1 auto;
+}
+
+.client_name {
+    align-self: flex-start;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    transition: 0.3s;
+}
+
+.client_name:hover {
+    color: var(--light-primary);
+}
+
+.client_name span {
+    opacity: 0.6;
+}
+
+.client_name span,
+.client_name b {
+    font-weight: 400;
+}
+
+.project_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project_list li {
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    margin: 0 10px 5px 0;
+    padding: 0 9px 0 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    position: relative;
+}
+
+.project_list li::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background-color: #818490;
+}
+
+.project_list li.status_success::after {
+    background-color: var(--success);
+}
+
+.project_list li.status_warning::after {
+    background-color: var(--warning);
+}
+
+.project_list li.status_danger::after {
+    background-color: var(--danger);
+}
+
+.client_contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.client_contacts > li {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.copy-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.copy-contact .icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-color);
+    transition: 0.3s;
+}
+
+.copy-contact:hover .icon {
+    fill: var(--success);
+}
+
+.copy_link {
+    transition: 0.3s;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.copy_link:hover {
+    color: var(--light-primary);
+}
+
+.copy_link.email_link {
+    color: var(--light-primary);
+}
+
+.copy_link.email_link:hover {
+    color: var(--text-color);
+}
+
+.client_info > .col-3 {
+    display: flex;
+    align-items: center;
+}
+
+.payment_status {
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background-color: #b7b7b7;
+}
+
+.payment_status.status_success {
+    background-color: var(--success);
+}
+
+.payment_status.status_warning {
+    background-color: var(--warning);
+}
+
+.payment_status.status_danger {
+    background-color: var(--danger);
+}
+
+.payment_status .icon {
+    width: 22px;
+    height: 22px;
+    display: block;
+    fill: #fff;
+}
+
+.client_info > .col-3 > .payment_status  {
+    margin-right: 10px;
+}
+
+.client_info > .col-3 > .dir-col {
+    flex: 1 1 auto;
+}
+
+.all_time {
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+.all_time span {
+    opacity: 0.6;
+}
+
+.all_time span,
+.all_time b {
+    font-weight: 400;
+}
+
+.used_time {
+    color: var(--text-contrast);
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 5px 12px;
+    border-radius: 12px;
+    background-color: var(--light-primary);
+}
+
+.used_time.status_success {
+    background-color: var(--success);
+}
+
+.used_time.status_warning {
+    background-color: var(--warning);
+}
+
+.used_time.status_danger {
+    background-color: var(--danger);
+}
+
+.used_time span {
+    opacity: 0.6;
+}
+
+.used_time span,
+.used_time b {
+    font-weight: 400;
+}
+
+.open_more-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    position: relative;
+}
+
+.open_more-info .icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-color);
+    transition: 0.3s;
+    //transform-origin: top;
+}
+
+.client_item:hover .open_more-info .icon {
+    animation-name: arrow-drop;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes arrow-drop {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(20deg);
+    }
+     75% {
+         transform: rotate(-20deg);
+     }
+}
+
+.client_projects {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.client_projects-info > .col-1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.client_projects-info > .col-1 > .task_item-logo {
+    flex: 0 0 50px;
+    margin-right: 10px;
+}
+
+.task_item-name {
+    font-size: 18px;
+    margin-bottom: 6px;
+    text-decoration: none;
+}
+
+.client_projects-info > .col-2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.client_projects-info > .col-2 > .payment_status {
+    margin-right: 10px;
+}
+
+.client_projects-info > .col-2 > .dir-col {
+    flex: 1 1 auto;
+}
+
+.client_projects-info > .col-3 {
+    display: flex;
+    align-items: center;
+}
+
+.client_projects-info > .col-3 > .tasks-counter {
+    order: -1;
+    margin: 0 10px 0 0;
+}
+
+.client_projects-info > .col-3 > .dir-col {
+    flex: 1 1 auto;
+}
