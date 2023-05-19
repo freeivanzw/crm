@@ -334,6 +334,45 @@
     flex: 0 1 33.33%;
     padding-left: 5px;
   }
+
+  .client_projects-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .client_projects-info > .col-1 {
+    flex: 0 0 33.33%;
+    margin-bottom: 0;
+    padding-right: 10px;
+  }
+
+  .client_projects-info > .col-1 > .dir-col {
+    padding-right: 10px;
+  }
+
+  .client_projects-info > .col-2 {
+    flex: 0 0 33.33%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .client_projects-info > .col-2 > .payment_status {
+    margin: 0 0 8px 0;
+  }
+
+  .client_projects-info > .col-3 {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 33.33%;
+    padding-left: 10px;
+  }
+
+  .client_projects-info > .col-3 > .tasks-counter {
+    margin: 0 0 8px 0;
+  }
 }
 @media only screen and (min-width: 1024px) {
   body {
@@ -1125,5 +1164,34 @@
 
   .timeline_panel {
     flex: 0 0 calc(100% - 270px);
+  }
+
+  .client_projects {
+    padding-left: 50px;
+  }
+
+  .client_projects-info > .col-1 {
+    padding-right: 20px;
+    flex: 0 0 38%;
+  }
+
+  .client_projects-info > .col-2 {
+    flex: 0 0 31%;
+    flex-direction: row;
+    padding-left: 20px;
+  }
+
+  .client_projects-info > .col-2 > .payment_status {
+    margin: 0 40px 0 0;
+  }
+
+  .client_projects-info > .col-3 {
+    flex: 0 0 31%;
+    flex-direction: row;
+  }
+
+  .client_projects-info > .col-3 > .tasks-counter {
+    margin: 0 0 0 30px;
+    order: 0;
   }
 }

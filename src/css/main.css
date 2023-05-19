@@ -4232,6 +4232,7 @@ li.status_success .add_task:hover .icon {
 
 .submit_box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -4240,6 +4241,20 @@ li.status_success .add_task:hover .icon {
   font-size: 18px;
   height: 40px;
   padding: 0 20px;
+}
+
+.remember_pass {
+  text-decoration: none;
+  text-align: center;
+  margin: 12px auto 0 auto;
+  opacity: 0.6;
+  transition: 0.3s;
+  border-bottom: 1px solid currentColor;
+}
+
+.remember_pass:hover {
+  font-size: 14px;
+  opacity: 1;
 }
 
 /*TIMELINE*/
@@ -5467,6 +5482,36 @@ li.status_success .add_task:hover .icon {
   padding-top: 15px;
 }
 
+.client_projects-list {
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.client_projects-list + .client_projects-list {
+  margin-top: 8px;
+}
+
+.client_projects-list.status_danger {
+  background-color: #f85b06;
+  color: var(--text-contrast);
+}
+
+.client_projects-list.status_warning {
+  background-color: #f8aa06;
+  color: var(--text-contrast);
+}
+
+.client_projects-list.status_success {
+  background-color: #51a727;
+  color: var(--text-contrast);
+}
+
+.client_projects-list.status_danger .icon,
+.client_projects-list.status_warning .icon,
+.client_projects-list.status_success .icon {
+  fill: var(--text-contrast);
+}
+
 .client_projects-info > .col-1 {
   display: flex;
   align-items: center;
@@ -5476,6 +5521,10 @@ li.status_success .add_task:hover .icon {
 .client_projects-info > .col-1 > .task_item-logo {
   flex: 0 0 50px;
   margin-right: 10px;
+}
+
+.client_projects-info > .col-1 > .dir-col {
+  flex: 1 1 auto;
 }
 
 .task_item-name {
