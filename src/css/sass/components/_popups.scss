@@ -31,9 +31,8 @@
     border-radius: 8px;
     transition: 0.3s;
     position: absolute;
-    top: 100px;
+    top: 10px;
     left: -100%;
-    transform: translateX(-50%);
     z-index: 12;
 }
 
@@ -42,7 +41,7 @@
 }
 
 .popup.active {
-    left: 50%;
+    left: 10px;
 }
 
 .popup_header {
@@ -74,6 +73,9 @@
 }
 
 .popup_title .icon_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 26px;
     height: 26px;
     display: flex;
@@ -81,19 +83,23 @@
 }
 
 .popup.create_popup .popup_title .icon_box {
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .popup_title .icon {
-    width: 100%;
-    height: 100%;
+    width: 22px;
+    height: 22px;
     fill: var(--text-contrast);
 }
 
 .close_popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 30px;
     height: 30px;
-    padding: 8px;
     position: absolute;
     top: 5px;
     right: 5px;
@@ -105,8 +111,8 @@
 }
 
 .close_popup .icon {
-    width: 100%;
-    height: 100%;
+    width: 18px;
+    height: 18px;
     fill: var(--danger);
 }
 
@@ -118,7 +124,6 @@
 
 .popup_header .submit_popup {
     display: none;
-    font-size: 16px;
 }
 
 .popup_body {
@@ -189,6 +194,10 @@
     cursor: pointer;
 }
 
+.task_box:hover {
+    opacity: 1;
+}
+
 .task_box .icon {
     flex: 0 0 28px;
     width: 28px;
@@ -245,6 +254,13 @@
 
 .tasks_status .btn {
     opacity: 0.5;
+    pointer-events: none;
+}
+
+.tasks_status .btn.active {
+    font-size: 16px;
+    opacity: 1;
+    pointer-events: unset;
 }
 
 .tasks_counter {
@@ -268,11 +284,6 @@
 .tasks_box .icon {
     margin-left: 6px;
     fill: currentColor;
-}
-
-.tasks_status .btn.active {
-    font-size: 16px;
-    opacity: 1;
 }
 
 .popup_tasks-list {
@@ -384,11 +395,6 @@
     transition: 0.3s;
 }
 
-.popup_tasks-list > li:hover .del_task,
-.popup_tasks-list .col-3.active + .del_task {
-    opacity: 1;
-    visibility: visible;
-}
 
 .del_task .icon {
     width: 100%;
@@ -410,7 +416,7 @@
     overflow: hidden;
     display: block;
     width: 100%;
-    padding: 8px;
+    padding: 3px 8px 8px 8px;
     background-color: transparent;
     transition-property: height, background-color;
     border: 1px solid transparent;
@@ -457,6 +463,7 @@
 }
 
 .task_performers-list li {
+    font-size: 18px;
     display: flex;
     align-items: center;
     padding: 5px;
@@ -494,6 +501,11 @@
     padding-right: 50px;
 }
 
+.task_responsible .dropdown .overflow span ,
+.task_customer .dropdown .overflow span {
+    font-size: 18px;
+}
+
 .task_responsible .dropdown .drop_arrow,
 .task_customer .dropdown .drop_arrow {
     width: 50px;
@@ -518,6 +530,7 @@
 
 .task_responsible .dropdown UL LI A,
 .task_customer .dropdown UL LI A {
+    font-size: 18px;
     display: flex;
     align-items: center;
 }
@@ -606,6 +619,10 @@
     margin-left: auto;
 }
 
+.popup_tasks-list .col-3.active .tasks_time {
+    display: none;
+}
+
 .add_check-item {
     display: flex;
     flex-direction: column;
@@ -664,6 +681,11 @@
     width: 26px;
     height: 26px;
     fill: #ffffff;
+    transition: 0.3s;
+}
+
+.important_task:not(active):hover {
+    color: #f85b06;
 }
 
 .important_task.active .icon {
@@ -681,35 +703,50 @@
 
 .popup-bottom_info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .popup-bottom_inner {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 22px 12px 0;
+}
+
+.popup-bottom_box {
+    display: flex;
+    align-items: center;
+}
+
+.popup-bottom_inner .popup-bottom_box span {
+    margin-left: 10px;
+    margin-bottom: 0;
 }
 
 .popup-bottom_inner span {
     margin-bottom: 10px;
 }
 
-.popup-bottom_inner > b {
+.popup-bottom_inner b {
+    font-size: 18px;
+    width: 100%;
+    color: var(--light-primary);
     font-weight: 400;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 0 16px;
     min-height: 40px;
     background-color: var(--sub-primary);
     border-radius: 8px;
 }
 
-.popup-bottom_inner > input {
+.popup-bottom_inner input {
     color: var(--light-primary);
     font-size: 18px;
     padding: 0 16px;
-    width: 165px;
+    width: 100%;
     min-height: 40px;
     background-color: var(--sub-primary);
     border-color: var(--sub-primary);
@@ -720,7 +757,7 @@
     color: var(--light-primary)
 }
 
-.popup-bottom_inner > input:focus {
+.popup-bottom_inner input:focus {
     border-color: var(--secondary);
 }
 

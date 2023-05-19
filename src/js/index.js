@@ -114,10 +114,13 @@ $(function () {
     $('.notification_btn').on('click', function (e) {
         e.preventDefault();
 
+        $(this).toggleClass('opened');
+
         $black.toggleClass('hidden');
         $('.notification_list').toggleClass('active');
 
         $black.on('click', function () {
+            $(this).removeClass('opened');
             $('.notification_list').removeClass('active');
         })
     })

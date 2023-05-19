@@ -40,8 +40,8 @@
 .status_main {
     position: relative;
     transition: 0.3s;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .status_main:hover {
@@ -105,30 +105,29 @@
 
 .sub_tasks {
     padding-left: 68px;
-    padding-top: 20px;
+    padding-top: 16px;
 }
 
 .sub_tasks li {
      position: relative;
     transition: 0.3s;
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
 }
 
 .sub_tasks li:hover {
-    opacity: 0.8;
     background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sub_tasks li + li {
-    margin-top: 20px;
+    margin-top: 12px;
 }
 
 .sub_tasks li:after {
     content: "";
     position: absolute;
     top: 10px;
-    left: -23px;
+    left: -18px;
     width: 6px;
     height: 6px;
     border-bottom: 2px solid var(--text-color);

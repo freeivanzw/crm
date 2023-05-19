@@ -108,7 +108,7 @@
     opacity: 1;
 }
 
-.open-site_panel {
+.btn.btn_not-radius.open-site_panel {
     width: 30px;
     height: 30px;
     padding: 0;
@@ -137,11 +137,10 @@
     align-items: center;
     position: relative;
     margin-left: auto;
-    z-index: 12;
 }
 
 .notification .btn {
-    margin-right: 12px;
+    margin-right: 25px;
 }
 
 .notification_info {
@@ -166,6 +165,10 @@
     opacity: 0.75;
 }
 
+.notification_btn.opened {
+    z-index: 12;
+}
+
 .notification_btn.active {
     opacity: 1;
     filter: grayscale(0);
@@ -176,6 +179,8 @@
     transition: transform 0.75s;
     transform: rotate(0deg);
     transform-origin: top;
+    width: 16px;
+    height: 16px;
 }
 
 .notification_btn.active .icon {
@@ -263,23 +268,23 @@
 
 @keyframes flicker {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
 
     5% {
-        opacity: 1;
-    }
-
-    10% {
         opacity: 0;
     }
 
-    15% {
+    10% {
         opacity: 1;
     }
 
+    15% {
+        opacity: 0;
+    }
+
     100%  {
-        opacity: 1;
+        opacity: 0;
     }
 
 }
@@ -302,7 +307,7 @@
 .notification_list {
     position: absolute;
     top: 100%;
-    right: 100%;
+    right: 30px;
     padding: 5px;
     width: 300px;
     max-height: 360px;
@@ -315,11 +320,14 @@
 }
 
 .notification_list.active {
+    z-index: 12;
     visibility: visible;
     opacity: 1;
 }
 
-.notification_list li {
+.notification_item {
+    display: block;
+    text-decoration: none;
     padding: 5px 5px 5px 10px;
     border-radius: 5px;
     background-color: var(--site-bg-contrast);
@@ -327,7 +335,7 @@
     overflow: hidden;
 }
 
-.notification_list li::before {
+.notification_item::before {
     content: "";
     width: 5px;
     height: 100%;
@@ -336,28 +344,24 @@
     left: 0;
 }
 
-.notification_list li.status_danger::before {
+.notification_item.status_danger::before {
     background-color: var(--danger);
 }
 
-.notification_list li.status_warning::before {
+.notification_item.status_warning::before {
     background-color: var(--warning);
 }
 
-.notification_list li.status_success::before {
+.notification_item.status_success::before {
     background-color: var(--success);
 }
 
-.notification_list li.status_pending::before {
+.notification_item.status_pending::before {
     background-color: var(--success);
 }
 
 .notification_list li + li {
     margin-top: 5px;
-}
-
-.notification_item {
-    text-decoration: none;
 }
 
 .notification_task-info {

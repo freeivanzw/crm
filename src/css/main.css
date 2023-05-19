@@ -258,22 +258,38 @@ select {
   cursor: pointer;
 }
 
-.drop_arrow:after {
+.drop_arrow::after,
+.drop_arrow::before {
   content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 8px;
+  width: 2px;
   height: 8px;
-  border-bottom: 2px solid var(--text-contrast);
-  border-right: 2px solid var(--text-contrast);
-  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: var(--text-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transition: 0.3s;
+  transform-origin: bottom;
 }
 
-.dropdown-open .drop_arrow:after {
-  border-top-color: #747474;
-  transform: translate(-50%, -50%) rotate(-135deg);
+.drop_arrow::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.drop_arrow::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dropdown-open .drop_arrow::after,
+.dropdown-open .drop_arrow::before {
+  transform-origin: top;
+}
+
+.dropdown-open .drop_arrow::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dropdown-open .drop_arrow::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .dropdown_short .drop_arrow {
@@ -2210,7 +2226,9 @@ input.dark {
 }
 
 input[type=text].error, input[type=date].error, input[type=email].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
-  box-shadow: 2px 2px 7px 0px rgba(238, 60, 48, 0.56);
+  box-shadow: 0px 0px 7px 0px var(--danger);
+  border-color: var(--danger);
+  color: var(--danger);
 }
 
 input[type=text]:focus, input[type=date]:focus, input[type=email]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=number]:focus, textarea:focus {
@@ -2346,7 +2364,7 @@ a.sub_title:hover {
 
 .btn {
   text-decoration: none;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.2;
   min-height: 30px;
   display: flex;
@@ -2365,8 +2383,8 @@ a.sub_title:hover {
 }
 
 .btn .icon {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   margin: 0 10px 0 0;
   fill: var(--btn-text);
   transition: 0.3s;
@@ -2499,7 +2517,7 @@ a.sub_title:hover {
   opacity: 1;
 }
 
-.open-site_panel {
+.btn.btn_not-radius.open-site_panel {
   width: 30px;
   height: 30px;
   padding: 0;
@@ -2528,11 +2546,10 @@ a.sub_title:hover {
   align-items: center;
   position: relative;
   margin-left: auto;
-  z-index: 12;
 }
 
 .notification .btn {
-  margin-right: 12px;
+  margin-right: 25px;
 }
 
 .notification_info {
@@ -2557,6 +2574,10 @@ a.sub_title:hover {
   opacity: 0.75;
 }
 
+.notification_btn.opened {
+  z-index: 12;
+}
+
 .notification_btn.active {
   opacity: 1;
   filter: grayscale(0);
@@ -2567,6 +2588,8 @@ a.sub_title:hover {
   transition: transform 0.75s;
   transform: rotate(0deg);
   transform-origin: top;
+  width: 16px;
+  height: 16px;
 }
 
 .notification_btn.active .icon {
@@ -2643,19 +2666,19 @@ a.sub_title:hover {
 
 @keyframes flicker {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
   5% {
-    opacity: 1;
-  }
-  10% {
     opacity: 0;
   }
-  15% {
+  10% {
     opacity: 1;
   }
+  15% {
+    opacity: 0;
+  }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 .notification_counter {
@@ -2676,7 +2699,7 @@ a.sub_title:hover {
 .notification_list {
   position: absolute;
   top: 100%;
-  right: 100%;
+  right: 30px;
   padding: 5px;
   width: 300px;
   max-height: 360px;
@@ -2689,11 +2712,14 @@ a.sub_title:hover {
 }
 
 .notification_list.active {
+  z-index: 12;
   visibility: visible;
   opacity: 1;
 }
 
-.notification_list li {
+.notification_item {
+  display: block;
+  text-decoration: none;
   padding: 5px 5px 5px 10px;
   border-radius: 5px;
   background-color: var(--site-bg-contrast);
@@ -2701,7 +2727,7 @@ a.sub_title:hover {
   overflow: hidden;
 }
 
-.notification_list li::before {
+.notification_item::before {
   content: "";
   width: 5px;
   height: 100%;
@@ -2710,28 +2736,24 @@ a.sub_title:hover {
   left: 0;
 }
 
-.notification_list li.status_danger::before {
+.notification_item.status_danger::before {
   background-color: var(--danger);
 }
 
-.notification_list li.status_warning::before {
+.notification_item.status_warning::before {
   background-color: var(--warning);
 }
 
-.notification_list li.status_success::before {
+.notification_item.status_success::before {
   background-color: var(--success);
 }
 
-.notification_list li.status_pending::before {
+.notification_item.status_pending::before {
   background-color: var(--success);
 }
 
 .notification_list li + li {
   margin-top: 5px;
-}
-
-.notification_item {
-  text-decoration: none;
 }
 
 .notification_task-info {
@@ -2844,10 +2866,15 @@ a.sub_title:hover {
   border-radius: 8px;
   background-color: #e0e3ec;
   position: relative;
+  transition: 0.3s;
 }
 
 .task_list li + li {
   margin-top: 8px;
+}
+
+.task_list li:hover {
+  box-shadow: var(--elem-shadow);
 }
 
 .task_list li.status_danger {
@@ -2957,7 +2984,7 @@ a.sub_title:hover {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.6;
+  opacity: 0.3;
   z-index: -1;
 }
 
@@ -3039,7 +3066,7 @@ li.status_danger .add_task:hover .icon {
 }
 
 li.status_warning .add_task:hover .icon {
-  fill: #f85b06;
+  fill: #f8aa06;
 }
 
 li.status_success .add_task:hover .icon {
@@ -3091,6 +3118,7 @@ li.status_success .add_task:hover .icon {
   font-size: 30px;
   line-height: 1.2;
   margin-bottom: 8px;
+  padding: 5px 0;
 }
 
 .my_money span {
@@ -3129,6 +3157,7 @@ li.status_success .add_task:hover .icon {
   padding: 8px;
   border-radius: 8px;
   background-color: #e0e3ec;
+  transition: 0.3s;
 }
 
 .task_counter li + li {
@@ -3136,6 +3165,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .task_size {
+  flex: 0 0 auto;
   white-space: nowrap;
   font-size: 30px;
   color: #fff;
@@ -3254,8 +3284,8 @@ li.status_success .add_task:hover .icon {
 .status_main {
   position: relative;
   transition: 0.3s;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 .status_main:hover {
@@ -3319,30 +3349,29 @@ li.status_success .add_task:hover .icon {
 
 .sub_tasks {
   padding-left: 68px;
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .sub_tasks li {
   position: relative;
   transition: 0.3s;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
 }
 
 .sub_tasks li:hover {
-  opacity: 0.8;
   background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sub_tasks li + li {
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
 .sub_tasks li:after {
   content: "";
   position: absolute;
   top: 10px;
-  left: -23px;
+  left: -18px;
   width: 6px;
   height: 6px;
   border-bottom: 2px solid var(--text-color);
@@ -3420,9 +3449,8 @@ li.status_success .add_task:hover .icon {
   border-radius: 8px;
   transition: 0.3s;
   position: absolute;
-  top: 100px;
+  top: 10px;
   left: -100%;
-  transform: translateX(-50%);
   z-index: 12;
 }
 
@@ -3431,7 +3459,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .popup.active {
-  left: 50%;
+  left: 10px;
 }
 
 .popup_header {
@@ -3463,6 +3491,9 @@ li.status_success .add_task:hover .icon {
 }
 
 .popup_title .icon_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 26px;
   height: 26px;
   display: flex;
@@ -3470,19 +3501,23 @@ li.status_success .add_task:hover .icon {
 }
 
 .popup.create_popup .popup_title .icon_box {
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .popup_title .icon {
-  width: 100%;
-  height: 100%;
+  width: 22px;
+  height: 22px;
   fill: var(--text-contrast);
 }
 
 .close_popup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
-  padding: 8px;
   position: absolute;
   top: 5px;
   right: 5px;
@@ -3494,8 +3529,8 @@ li.status_success .add_task:hover .icon {
 }
 
 .close_popup .icon {
-  width: 100%;
-  height: 100%;
+  width: 18px;
+  height: 18px;
   fill: var(--danger);
 }
 
@@ -3507,7 +3542,6 @@ li.status_success .add_task:hover .icon {
 
 .popup_header .submit_popup {
   display: none;
-  font-size: 16px;
 }
 
 .popup_body {
@@ -3578,6 +3612,10 @@ li.status_success .add_task:hover .icon {
   cursor: pointer;
 }
 
+.task_box:hover {
+  opacity: 1;
+}
+
 .task_box .icon {
   flex: 0 0 28px;
   width: 28px;
@@ -3634,6 +3672,13 @@ li.status_success .add_task:hover .icon {
 
 .tasks_status .btn {
   opacity: 0.5;
+  pointer-events: none;
+}
+
+.tasks_status .btn.active {
+  font-size: 16px;
+  opacity: 1;
+  pointer-events: unset;
 }
 
 .tasks_counter {
@@ -3657,11 +3702,6 @@ li.status_success .add_task:hover .icon {
 .tasks_box .icon {
   margin-left: 6px;
   fill: currentColor;
-}
-
-.tasks_status .btn.active {
-  font-size: 16px;
-  opacity: 1;
 }
 
 .popup_tasks-list {
@@ -3772,12 +3812,6 @@ li.status_success .add_task:hover .icon {
   transition: 0.3s;
 }
 
-.popup_tasks-list > li:hover .del_task,
-.popup_tasks-list .col-3.active + .del_task {
-  opacity: 1;
-  visibility: visible;
-}
-
 .del_task .icon {
   width: 100%;
   height: 100%;
@@ -3798,7 +3832,7 @@ li.status_success .add_task:hover .icon {
   overflow: hidden;
   display: block;
   width: 100%;
-  padding: 8px;
+  padding: 3px 8px 8px 8px;
   background-color: transparent;
   transition-property: height, background-color;
   border: 1px solid transparent;
@@ -3845,6 +3879,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .task_performers-list li {
+  font-size: 18px;
   display: flex;
   align-items: center;
   padding: 5px;
@@ -3882,6 +3917,11 @@ li.status_success .add_task:hover .icon {
   padding-right: 50px;
 }
 
+.task_responsible .dropdown .overflow span,
+.task_customer .dropdown .overflow span {
+  font-size: 18px;
+}
+
 .task_responsible .dropdown .drop_arrow,
 .task_customer .dropdown .drop_arrow {
   width: 50px;
@@ -3906,6 +3946,7 @@ li.status_success .add_task:hover .icon {
 
 .task_responsible .dropdown UL LI A,
 .task_customer .dropdown UL LI A {
+  font-size: 18px;
   display: flex;
   align-items: center;
 }
@@ -3994,6 +4035,10 @@ li.status_success .add_task:hover .icon {
   margin-left: auto;
 }
 
+.popup_tasks-list .col-3.active .tasks_time {
+  display: none;
+}
+
 .add_check-item {
   display: flex;
   flex-direction: column;
@@ -4052,6 +4097,11 @@ li.status_success .add_task:hover .icon {
   width: 26px;
   height: 26px;
   fill: #ffffff;
+  transition: 0.3s;
+}
+
+.important_task:not(active):hover {
+  color: #f85b06;
 }
 
 .important_task.active .icon {
@@ -4069,35 +4119,50 @@ li.status_success .add_task:hover .icon {
 
 .popup-bottom_info {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .popup-bottom_inner {
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 22px 12px 0;
+}
+
+.popup-bottom_box {
+  display: flex;
+  align-items: center;
+}
+
+.popup-bottom_inner .popup-bottom_box span {
+  margin-left: 10px;
+  margin-bottom: 0;
 }
 
 .popup-bottom_inner span {
   margin-bottom: 10px;
 }
 
-.popup-bottom_inner > b {
+.popup-bottom_inner b {
+  font-size: 18px;
+  width: 100%;
+  color: var(--light-primary);
   font-weight: 400;
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 0 16px;
   min-height: 40px;
   background-color: var(--sub-primary);
   border-radius: 8px;
 }
 
-.popup-bottom_inner > input {
+.popup-bottom_inner input {
   color: var(--light-primary);
   font-size: 18px;
   padding: 0 16px;
-  width: 165px;
+  width: 100%;
   min-height: 40px;
   background-color: var(--sub-primary);
   border-color: var(--sub-primary);
@@ -4108,7 +4173,7 @@ li.status_success .add_task:hover .icon {
   color: var(--light-primary);
 }
 
-.popup-bottom_inner > input:focus {
+.popup-bottom_inner input:focus {
   border-color: var(--secondary);
 }
 
@@ -4208,7 +4273,7 @@ li.status_success .add_task:hover .icon {
   width: 10px;
   height: 100%;
   position: absolute;
-  bottom: -10px;
+  bottom: 0;
   right: -15px;
   background: linear-gradient(0deg, #e0e3ec 0%, white 100%);
 }
@@ -4219,6 +4284,7 @@ li.status_success .add_task:hover .icon {
   margin-top: 10px;
   padding-left: 15px;
   position: relative;
+  transition: 0.3s;
 }
 
 .timeline_tasks > li.status_danger {
@@ -4234,6 +4300,25 @@ li.status_success .add_task:hover .icon {
 .timeline_tasks > li.status_success {
   background-color: #51a727;
   color: var(--text-contrast);
+}
+
+.timeline_tasks > li::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.timeline_tasks > li:hover::before {
+  opacity: 1;
 }
 
 .timeline_tasks-item {
@@ -4263,10 +4348,6 @@ li.status_success .add_task:hover .icon {
   transition: 0.3s;
 }
 
-.timeline_plus:hover {
-  opacity: 0.7;
-}
-
 .timeline_tasks > li.status_completed .timeline_plus {
   cursor: unset;
 }
@@ -4278,6 +4359,12 @@ li.status_success .add_task:hover .icon {
 .timeline_tasks .timeline_plus .icon {
   width: 12px;
   height: 12px;
+  transition: 0.3s;
+}
+
+.timeline_plus:hover .icon {
+  width: 16px;
+  height: 16px;
 }
 
 .timeline_plus .icon.icon_minus {
@@ -4305,7 +4392,16 @@ li.status_success .add_task:hover .icon {
 }
 
 .timeline_tasks-title:hover {
-  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.timeline_tasks-title span {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 100%;
+  white-space: pre-wrap;
 }
 
 .timeline_tasks > li.status_completed .timeline_tasks-title {
@@ -4317,9 +4413,9 @@ li.status_success .add_task:hover .icon {
 }
 
 .timeline_tasks-item .icon {
-  flex: 0 0 22px;
-  width: 22px;
-  height: 22px;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
   fill: var(--text-color);
 }
 
@@ -4334,9 +4430,9 @@ li.status_success .add_task:hover .icon {
   top: 0;
   left: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   height: 100%;
+  padding-top: 7px;
   margin-left: -10px;
   padding-left: 0;
   padding-right: 10px;
@@ -4366,6 +4462,23 @@ li.status_success .add_task:hover .icon {
   background-color: #51a727;
 }
 
+.timeline_tasks-add::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 10px 10px 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.timeline_tasks > li:hover .timeline_tasks-add::before {
+  opacity: 1;
+}
+
 .add_timeline-item {
   display: flex;
   align-items: center;
@@ -4375,6 +4488,7 @@ li.status_success .add_task:hover .icon {
   border: 2px solid var(--text-color);
   border-radius: 4px;
   transition: 0.3s;
+  z-index: 1;
 }
 
 .timeline_tasks > li.status_danger .add_timeline-item,
@@ -4403,6 +4517,14 @@ li.status_success .add_task:hover .icon {
 
 .timeline_tasks > li > ul > li .timeline_tasks-item {
   font-size: 12px;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item span {
+  opacity: 0.75;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item .icon {
+  opacity: 0.75;
 }
 
 .timeline_tasks > li > ul > li .timeline_tasks-title {
@@ -4472,40 +4594,47 @@ li.status_success .add_task:hover .icon {
   height: 100%;
 }
 
+.timeline_col.month_section::before {
+  display: none;
+}
+
+.timeline_col.month_section + .timeline_col::before {
+  display: none;
+}
+
 .date_box {
-  font-size: 16px;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 10px;
   width: 100%;
-  height: 50px;
+  height: 60px;
   opacity: 0.7;
 }
 
 .timeline_col.pay_day .date_box {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #51a727;
 }
 
 .timeline_col.pay_day .date_box span {
-  padding-bottom: 6px;
+  padding-bottom: 20px;
 }
 
 .date_box.weekend {
-  color: var(--danger);
+  color: #f85b06;
 }
 
 .timeline_col.current_day .date_box {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
   color: var(--light-primary);
 }
 
 .timeline_col.current_day .date_box span {
-  padding-bottom: 6px;
+  padding-bottom: 20px;
 }
 
 .timeline_col.pay_day .date_box::before,
@@ -4651,8 +4780,8 @@ li.status_success .add_task:hover .icon {
 }
 
 .money_header .drop_arrow {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
 }
 
 .money_header .dropdown UL {
@@ -4689,7 +4818,7 @@ li.status_success .add_task:hover .icon {
 
 .money_content ul li {
   display: block;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .money_project {
@@ -4730,6 +4859,7 @@ li.status_success .add_task:hover .icon {
 
 .money_content > ul > li > ul > li .money_project {
   font-size: 14px;
+  opacity: 0.6;
 }
 
 .money_content > ul > li > ul > li .money_project::after {
@@ -4951,12 +5081,6 @@ li.status_success .add_task:hover .icon {
   line-height: 1.2;
 }
 
-.add_new_user .icon {
-  width: 12px;
-  height: 12px;
-  margin-right: 6px;
-}
-
 .user_item {
   color: var(--text-color);
   margin-top: 8px;
@@ -4998,15 +5122,16 @@ li.status_success .add_task:hover .icon {
 }
 
 .user_item-control {
-  display: block;
-  width: 26px;
-  height: 26px;
-  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
 }
 
 .user_item-control .icon {
-  width: 100%;
-  height: 100%;
+  width: 18px;
+  height: 18px;
   transition: 0.3s;
 }
 
@@ -5052,10 +5177,6 @@ li.status_success .add_task:hover .icon {
   margin: 0 8px 8px 8px;
   width: calc(100% - 16px);
   transition: 0.3s;
-}
-
-.clients:hover {
-  box-shadow: var(--elem-shadow);
 }
 
 .clients_list {

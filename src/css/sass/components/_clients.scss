@@ -9,10 +9,6 @@
     transition: 0.3s;
 }
 
-.clients:hover {
-    box-shadow: var(--elem-shadow);
-}
-
 .clients_list {
     display: flex;
     flex-direction: column;

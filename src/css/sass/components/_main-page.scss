@@ -13,10 +13,15 @@
     border-radius: 8px;
     background-color: #e0e3ec;
     position: relative;
+    transition: 0.3s;
 }
 
 .task_list li + li {
     margin-top: 8px;
+}
+
+.task_list li:hover {
+    box-shadow: var(--elem-shadow);
 }
 
 .task_list li.status_danger {
@@ -126,7 +131,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.6;
+    opacity: 0.3;
     z-index: -1;
 }
 
@@ -209,7 +214,7 @@ li.status_danger .add_task:hover .icon {
 }
 
 li.status_warning .add_task:hover .icon {
-    fill: #f85b06;
+    fill: #f8aa06;
 }
 
 li.status_success .add_task:hover .icon {
@@ -261,6 +266,7 @@ li.status_success .add_task:hover .icon {
     font-size: 30px;
     line-height: 1.2;
     margin-bottom: 8px;
+    padding: 5px 0;
 }
 
 .my_money span {
@@ -299,6 +305,7 @@ li.status_success .add_task:hover .icon {
     padding: 8px;
     border-radius: 8px;
     background-color: #e0e3ec;
+    transition: 0.3s;
 }
 
 .task_counter li + li {
@@ -306,6 +313,7 @@ li.status_success .add_task:hover .icon {
 }
 
 .task_size {
+    flex: 0 0 auto;
     white-space: nowrap;
     font-size: 30px;
     color: #fff;

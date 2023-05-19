@@ -119,22 +119,41 @@
     transition: background-color 0.3s;
     cursor: pointer;
 }
-.drop_arrow:after {
+.drop_arrow::after,
+.drop_arrow::before {
     content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 8px;
+    width: 2px;
     height: 8px;
-    border-bottom: 2px solid var(--text-contrast);
-    border-right: 2px solid var(--text-contrast);
-    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transition: 0.3s;
+    transform-origin: bottom;
 }
-.dropdown-open .drop_arrow:after {
-    border-top-color: #747474;
-    transform: translate(-50%, -50%) rotate(-135deg);
+
+.drop_arrow::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
+
+
+.drop_arrow::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dropdown-open .drop_arrow::after,
+.dropdown-open .drop_arrow::before {
+    transform-origin: top;
+}
+
+.dropdown-open .drop_arrow::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dropdown-open .drop_arrow::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
 .dropdown_short .drop_arrow {
     right: -1px;
     top: -1px;

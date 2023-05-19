@@ -35,8 +35,8 @@
 }
 
 .money_header .drop_arrow {
-    width: 34px;
-    height: 34px;
+    width: 32px;
+    height: 32px;
 }
 
 .money_header .dropdown UL {
@@ -73,7 +73,7 @@
 
 .money_content ul li {
     display: block;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .money_project {
@@ -115,6 +115,7 @@
 
 .money_content > ul > li > ul > li .money_project {
     font-size: 14px;
+    opacity: 0.6;
 }
 
 .money_content > ul > li > ul > li .money_project::after {
@@ -127,7 +128,6 @@
     top: 4px;
     left: -10px;
     z-index: 1;
-
 }
 
 .money_content-bottom {

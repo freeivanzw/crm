@@ -29,7 +29,7 @@
     width: 10px;
     height: 100%;
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     right: -15px;
     background: linear-gradient(0deg, #e0e3ec 0%, white 100%);
 }
@@ -40,6 +40,7 @@
     margin-top: 10px;
     padding-left: 15px;
     position: relative;
+    transition: 0.3s;
 }
 
 .timeline_tasks > li.status_danger {
@@ -55,6 +56,25 @@
 .timeline_tasks > li.status_success {
     background-color: #51a727;
     color: var(--text-contrast);
+}
+
+.timeline_tasks > li::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.timeline_tasks > li:hover::before {
+    opacity: 1;
 }
 
 .timeline_tasks-item {
@@ -84,10 +104,6 @@
     transition: 0.3s;
 }
 
-.timeline_plus:hover {
-    opacity: 0.7;
-}
-
 .timeline_tasks > li.status_completed .timeline_plus {
     cursor: unset;
 }
@@ -99,6 +115,12 @@
 .timeline_tasks .timeline_plus .icon {
     width: 12px;
     height: 12px;
+    transition: 0.3s;
+}
+
+.timeline_plus:hover .icon {
+    width: 16px;
+    height: 16px;
 }
 
 .timeline_plus .icon.icon_minus {
@@ -126,7 +148,16 @@
 }
 
 .timeline_tasks-title:hover {
-    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.timeline_tasks-title span {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 100%;
+    white-space: pre-wrap;
 }
 
 .timeline_tasks > li.status_completed .timeline_tasks-title {
@@ -138,9 +169,9 @@
 }
 
 .timeline_tasks-item .icon {
-    flex: 0 0 22px;
-    width: 22px;
-    height: 22px;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
     fill: var(--text-color);
 }
 
@@ -155,9 +186,9 @@
     top: 0;
     left: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     height: 100%;
+    padding-top: 7px;
     margin-left: -10px;
     padding-left: 0;
     padding-right: 10px;
@@ -188,6 +219,23 @@
     background-color: #51a727;
 }
 
+.timeline_tasks-add::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 10px 10px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.timeline_tasks > li:hover .timeline_tasks-add::before {
+    opacity: 1;
+}
+
 .add_timeline-item {
     display: flex;
     align-items: center;
@@ -196,7 +244,8 @@
     height: 26px;
     border: 2px solid var(--text-color);
     border-radius: 4px;
-    transition: 0.3s
+    transition: 0.3s;
+    z-index: 1;
 }
 
 .timeline_tasks > li.status_danger .add_timeline-item,
@@ -225,6 +274,14 @@
 
 .timeline_tasks > li > ul > li .timeline_tasks-item  {
     font-size: 12px;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item span {
+    opacity: 0.75;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item .icon {
+    opacity: 0.75;
 }
 
 .timeline_tasks > li > ul > li .timeline_tasks-title {
@@ -300,40 +357,47 @@
     height: 100%;
 }
 
+.timeline_col.month_section::before, {
+    display: none;
+}
+
+.timeline_col.month_section + .timeline_col::before {
+    display: none;
+}
+
 .date_box {
-    font-size: 16px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 10px;
     width: 100%;
-    height: 50px;
+    height: 60px;
     opacity: 0.7;
 }
 
 .timeline_col.pay_day .date_box {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: #51a727;
 }
 
 .timeline_col.pay_day .date_box span {
-    padding-bottom: 6px;
+    padding-bottom: 20px;
 }
 
 .date_box.weekend {
-    color: var(--danger)
+    color: #f85b06;
 }
 
 .timeline_col.current_day .date_box {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.2;
     color: var(--light-primary);
 }
 
 .timeline_col.current_day .date_box span {
-    padding-bottom: 6px;
+    padding-bottom: 20px;
 }
 
 .timeline_col.pay_day .date_box::before,

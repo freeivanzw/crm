@@ -82,7 +82,9 @@ input.dark {
 }
 
 input[type=text].error, input[type=date].error, input[type=email].error, input[type=password].error, input[type=tel].error, input[type=number].error, textarea.error {
-    box-shadow: 2px 2px 7px 0px rgba(238,60,48,0.56);
+    box-shadow: 0px 0px 7px 0px var(--danger);
+    border-color: var(--danger);
+    color: var(--danger);
 }
 
 input[type=text]:focus, input[type=date]:focus, input[type=email]:focus, input[type=password]:focus , input[type=tel]:focus , input[type=number]:focus, textarea:focus  {
@@ -217,7 +219,7 @@ a.sub_title:hover {
 
 .btn {
     text-decoration: none;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.2;
     min-height: 30px;
     display: flex;
@@ -236,8 +238,8 @@ a.sub_title:hover {
 }
 
 .btn .icon {
-    width: 22px;
-    height: 22px;
+    width: 16px;
+    height: 16px;
     margin: 0 10px 0 0;
     fill: var(--btn-text);
     transition: 0.3s;

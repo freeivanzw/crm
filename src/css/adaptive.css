@@ -134,7 +134,7 @@
   }
 
   .tasks_time-edit input {
-    margin: 0 16px;
+    margin: 0 8px;
   }
 
   .responsible {
@@ -154,12 +154,10 @@
 
   .popup-bottom_inner {
     align-items: flex-start;
-    margin: 0 22px 0 0;
   }
 
   .important_task {
     margin-top: 26px;
-    margin-left: 30px;
   }
 
   .task_performers {
@@ -235,6 +233,7 @@
 
   .notification_list {
     width: 300px;
+    right: 38px;
   }
 
   /*MAIN PAGE*/
@@ -428,7 +427,8 @@
   }
 
   .notification_info {
-    font-size: 18px;
+    font-size: 22px;
+    margin-right: 40px;
   }
 
   .notification_list {
@@ -437,15 +437,15 @@
     border-radius: 10px;
   }
 
-  .notification_list li {
-    padding: 10px 10px 10px 20px;
-  }
-
   .notification_list li + li {
     margin-top: 10px;
   }
 
-  .notification_list li::before {
+  .notification_item {
+    padding: 10px 10px 10px 20px;
+  }
+
+  .notification_item::before {
     width: 10px;
   }
 
@@ -502,10 +502,6 @@
     transition: 0.3s;
   }
 
-  .task_list:hover {
-    box-shadow: var(--elem-shadow);
-  }
-
   .task_list li {
     padding: 10px;
     border-radius: 10px;
@@ -542,7 +538,6 @@
 
   .main_page > .col-2 {
     flex: 0 1 35%;
-    padding-top: 10px;
     padding-left: 16px;
     padding-right: 10px;
   }
@@ -597,6 +592,14 @@
     margin-bottom: 16px;
   }
 
+  .chart_box-title {
+    font-size: 20px;
+  }
+
+  .task_size {
+    padding: 0 18px;
+  }
+
   /*TASK PAGE*/
   .task_page-list {
     margin-right: 10px;
@@ -604,10 +607,6 @@
     padding: 10px;
     border-radius: 10px;
     transition: 0.3s;
-  }
-
-  .task_page-list:hover {
-    box-shadow: var(--elem-shadow);
   }
 
   .task_page-list > li {
@@ -626,7 +625,7 @@
 
   .status_main > .col-1 {
     align-items: center;
-    flex: 0 1 30%;
+    flex: 0 1 35%;
     padding-right: 15px;
   }
 
@@ -646,6 +645,7 @@
     padding-left: 0;
     flex: 1 1 auto;
     margin: 0;
+    padding-right: 22px;
   }
 
   .status_main > .col-3 {
@@ -679,7 +679,7 @@
   }
 
   .sub_tasks li > .col-1 {
-    flex: 0 1 calc(30% - 50px);
+    flex: 0 1 calc(35% - 50px);
     padding-right: 15px;
   }
 
@@ -689,7 +689,7 @@
 
   .sub_tasks .col-2 {
     flex: 1 1 auto;
-    padding-left: 52px;
+    padding-left: 58px;
   }
 
   .sub_tasks .col-3 {
@@ -742,7 +742,16 @@
   }
 
   .money_content ul ul {
-    padding: 0 30px;
+    padding: 0 30px 15px 30px;
+  }
+
+  .money_content-bottom {
+    font-size: 18px;
+  }
+
+  .money_content-bottom b {
+    font-size: 26px;
+    margin-left: 30px;
   }
 
   /*USER EDIT*/
@@ -751,10 +760,6 @@
     padding: 10px;
     border-radius: 10px;
     transition: 0.3s;
-  }
-
-  .user_list:hover {
-    box-shadow: var(--elem-shadow);
   }
 
   .user_header {
@@ -809,6 +814,10 @@
     box-shadow: var(--elem-shadow);
   }
 
+  .users_section-title > span {
+    font-size: 18px;
+  }
+
   .user_item-name {
     font-size: 18px;
   }
@@ -860,6 +869,7 @@
 
   .site_panel.site_panel-main .site_nav li a {
     font-size: 18px;
+    width: 100%;
   }
 
   .site_panel.site_panel-main .site_nav li a .icon {
@@ -875,7 +885,7 @@
   }
 
   .btn_time {
-    margin: 0 16px 0 0;
+    margin: 0 25px 0 0;
   }
 
   .add_task-btn {
@@ -1010,7 +1020,6 @@
 
   .popup-bottom_info {
     font-size: 18px;
-    padding: 0 20px;
   }
 
   .add_check-item span {
@@ -1019,6 +1028,11 @@
 
   .task_performers-title {
     font-size: 18px;
+  }
+
+  .popup_tasks-list > li:hover .del_task {
+    opacity: 1;
+    visibility: visible;
   }
 
   /*LOGIN PAGE*/

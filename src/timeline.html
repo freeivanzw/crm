@@ -34,13 +34,13 @@
     <div class="content">
         <header class="content_header">
             <div class="content_header-inner">
-                <a href="#" class="open-site_panel btn btn_contrast btn_not-radius"><svg class="icon"><use xlink:href="./images/sprite.svg#home"></use></svg></a>
+                <a href="#" class="open-site_panel btn btn_not-radius"><svg class="icon"><use xlink:href="./images/sprite.svg#home"></use></svg></a>
                 <div class="notification">
                     <a href="#" class="btn btn_contrast add_task-btn"><svg class="icon"><use xlink:href="./images/sprite.svg#plus"></use></svg>Додати завдання</a>
                     <a href="#" class="notification_btn active"><svg class="icon"><use xlink:href="./images/sprite.svg#notification"></use></svg><span class="notification_counter">2</span></a>
                     <ul class="notification_list">
-                        <li class="status_danger">
-                            <a href="#" class="notification_item">
+                        <li>
+                            <a href="#" class="notification_item status_danger">
                                 <div class="notification_task-info">
                                     <div class="col-1">
                                         <span style="background-color: #5a5df6;" class="notification_task-logo">M</span>
@@ -57,8 +57,8 @@
                             </a>
 
                         </li>
-                        <li class="status_warning">
-                            <a href="#" class="notification_item">
+                        <li>
+                            <a href="#" class="notification_item status_warning">
                                 <div class="notification_task-info">
                                     <div class="col-1">
                                         <span style="background-color: #5a5df6;" class="notification_task-logo">M</span>
@@ -74,8 +74,8 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="status_success">
-                            <div class="notification_item">
+                        <li>
+                            <div class="notification_item status_success">
                                 <div class="notification_task-info">
                                     <div class="col-1">
                                         <div style="background-color: #5a5df6;" class="notification_task-logo">M</div>
@@ -91,8 +91,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="status_success">
-                            <a href="#" class="notification_item">
+                        <li>
+                            <a href="#" class="notification_item status_success">
                                 <div class="notification_task-info">
                                     <div class="col-1">
                                         <span style="background-color: #5a5df6;" class="notification_task-logo">M</span>
@@ -104,29 +104,12 @@
                                 </div>
                                 <div class="notification_task-status">
                                     <b>Виконане</b>
-                                    <span>Додано 20 червня 2022</span>
+                                    <span class="status_wrong_time">Додано 20 червня 2022</span>
                                 </div>
                             </a>
                         </li>
-                        <li class="status_success">
-                            <a href="#" class="notification_item">
-                                <div class="notification_task-info">
-                                    <div class="col-1">
-                                        <span href="#" style="background-color: #5a5df6;" class="notification_task-logo">M</span>
-                                    </div>
-                                    <div class="col-2">
-                                        <span class="notification_task-title">Магія Візерунку</span>
-                                        <span class="notification_task-mentor">від Володимир Романчук</span>
-                                    </div>
-                                </div>
-                                <div class="notification_task-status">
-                                    <b>Виконане</b>
-                                    <span>Додано сьогодні</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="status_success">
-                            <a href="#" class="notification_item">
+                        <li>
+                            <a href="#" class="notification_item status_success">
                                 <div class="notification_task-info">
                                     <div class="col-1">
                                         <span href="#" style="background-color: #5a5df6;" class="notification_task-logo">M</span>
@@ -142,8 +125,8 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="status_success">
-                            <a href="#" class="notification_item">
+                        <li>
+                            <a href="#" class="notification_item status_pending">
                                 <div class="notification_task-info">
                                     <div class="col-1">
                                         <span style="background-color: #5a5df6;" class="notification_task-logo">M</span>
@@ -154,8 +137,8 @@
                                     </div>
                                 </div>
                                 <div class="notification_task-status">
-                                    <b>Виконане</b>
-                                    <span class="status-wrong_time">Протерміновано 13 днів</span>
+                                    <b>Нове завдання</b>
+                                    <span class="status-wrong_time">Додано сьогодні</span>
                                 </div>
                             </a>
                         </li>
@@ -174,7 +157,7 @@
                             <svg class="icon icon_plus"><use xlink:href="./images/sprite.svg#plus"></use></svg>
                             <svg class="icon icon_minus"><use xlink:href="./images/sprite.svg#minus"></use></svg>
                         </a>
-                        <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
+                        <a href="#" class="timeline_tasks-title"><span>Stepankiv stepankiv</span></a>
                         <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
                     </div>
                     <div class="timeline_tasks-add">
@@ -183,13 +166,13 @@
                     <ul>
                         <li>
                             <div class="timeline_tasks-item">
-                                <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
+                                <a href="#" class="timeline_tasks-title"><span>Stepankiv stepankiv</span></a>
                                 <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
                             </div>
                         </li>
                         <li class="completed">
                             <div class="timeline_tasks-item">
-                                <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
+                                <a href="#" class="timeline_tasks-title"><span>Stepankiv stepankiv</span></a>
                                 <svg class="icon"><use xlink:href="./images/sprite.svg#checked"></use></svg>
                             </div>
                         </li>
@@ -197,7 +180,7 @@
                 </li>
                 <li class="status_warning">
                     <div class="timeline_tasks-item">
-                        <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
+                        <a href="#" class="timeline_tasks-title"><span>Stepankiv stepankiv</span></a>
                         <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
                     </div>
                     <div class="timeline_tasks-add">
@@ -206,7 +189,7 @@
                 </li>
                 <li class="status_success">
                     <div class="timeline_tasks-item">
-                        <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
+                        <a href="#" class="timeline_tasks-title"><span>Stepankiv stepankiv</span></a>
                         <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
                     </div>
                     <div class="timeline_tasks-add">
@@ -215,7 +198,7 @@
                 </li>
                 <li>
                     <div class="timeline_tasks-item">
-                        <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
+                        <a href="#" class="timeline_tasks-title"><span>Stepankiv stepankiv</span></a>
                         <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
                     </div>
                     <div class="timeline_tasks-add">
@@ -224,7 +207,7 @@
                 </li>
                 <li class="status_completed">
                     <div class="timeline_tasks-item">
-                        <a href="#" class="timeline_tasks-title">Stepankiv stepankiv</a>
+                        <a href="#" class="timeline_tasks-title"><span>Stepankiv stepankiv</span></a>
                         <svg class="icon"><use xlink:href="./images/sprite.svg#lamp"></use></svg>
                     </div>
                     <div class="timeline_tasks-add">
