@@ -39,6 +39,7 @@
     border-radius: 10px;
     margin-top: 10px;
     padding-left: 15px;
+    padding-right: 10px;
     position: relative;
     transition: 0.3s;
 }
@@ -147,9 +148,6 @@
     transition: 0.3s;
 }
 
-.timeline_tasks-title:hover {
-    text-decoration: underline;
-}
 
 .timeline_tasks-title span {
     overflow: hidden;
@@ -268,15 +266,22 @@
 }
 
 .timeline_tasks > li > ul > li {
-    padding-left: 10px;
     margin-top: 10px;
 }
 
 .timeline_tasks > li > ul > li .timeline_tasks-item  {
+    text-decoration: none;
     font-size: 12px;
+    padding-left: 30px;
+    transition: 0.3s;
+    border-radius: 6px;
 }
 
-.timeline_tasks > li > ul > li .timeline_tasks-item span {
+.timeline_tasks > li > ul > li .timeline_tasks-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item > span {
     opacity: 0.75;
 }
 
@@ -296,7 +301,7 @@
     border-left: 2px solid var(--text-color);
     position: absolute;
     top: 16px;
-    left: 0;
+    left: 10px;
 }
 
 .timeline_tasks > li.status_danger ul > li .timeline_tasks-title::before,

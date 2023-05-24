@@ -370,6 +370,33 @@
     .client_projects-info > .col-3 > .tasks-counter {
         margin: 0 0 8px 0;
     }
+
+    .project_task-list {
+        padding-left: 25px;
+    }
+
+    .project_task-item {
+        display: flex;
+    }
+
+    .project_task-item > .col-1 {
+        flex: 0 0 33.33%;
+        margin-bottom: 0;
+        padding-right: 10px;
+    }
+
+    .project_task-item > .col-2 {
+        flex: 0 0 33.33%;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .project_task-item > .col-3 {
+        flex: 0 0 33.33%;
+        flex-direction: column;
+        padding-left: 10px;
+    }
 }
 
 @media only screen and (min-width : 1024px) {
@@ -888,6 +915,7 @@
     .open_more-info {
         margin-left: 20px;
     }
+
 }
 
 @media only screen and (min-width : 1280px) {
@@ -945,6 +973,10 @@
     .task_item-title {
         font-size: 22px;
         margin-bottom: 2px;
+    }
+
+    .sub_tasks .task_item-title {
+        font-size: 20px;
     }
 
     .task_item-mentor {
@@ -1151,16 +1183,20 @@
     }
 
     .client_projects {
-        padding-left: 50px;
+        padding-left: 60px;
     }
 
     .client_projects-info > .col-1 {
         padding-right: 20px;
-        flex: 0 0 38%;
+        flex: 0 0 40%;
+    }
+
+    .client_projects-info > .col-1 > .task_item-logo {
+        margin-right: 15px;
     }
 
     .client_projects-info > .col-2 {
-        flex: 0 0 31%;
+        flex: 0 0 30%;
         flex-direction: row;
         padding-left: 20px;
     }
@@ -1170,12 +1206,48 @@
     }
 
     .client_projects-info > .col-3 {
-        flex: 0 0 31%;
+        flex: 0 0 30%;
         flex-direction: row;
     }
 
     .client_projects-info > .col-3 > .tasks-counter {
-        margin: 0 0 0 30px;
+        margin: 0 0 0 20px;
         order: 0
+    }
+
+    .project_task-list {
+        padding-left: 65px;
+    }
+
+    .project_task-item::before {
+        left: -20px;
+    }
+
+    .project_task-item > .col-1 {
+        flex: 0 0 calc(40% - 42px);
+        padding-right: 20px;
+    }
+
+    .project_task-item > .col-2 {
+        flex: 1 1 auto;
+        flex-direction: row;
+        padding-left: 20px;
+        margin-bottom: 0;
+    }
+    .project_task-item > .col-2 > .payment_status {
+        margin: 0 40px 0 0;
+    }
+
+    .project_task-item > .col-3 {
+        flex: 1 1 auto;
+        flex-direction: row;
+    }
+    .project_task-item > .col-3 > .tasks-counter {
+        margin: 0 0 0 20px;
+        order: 0
+    }
+
+    .sub_tasks li::after {
+        top: 16px;
     }
 }

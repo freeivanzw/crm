@@ -276,24 +276,6 @@
     //transform-origin: top;
 }
 
-.client_item:hover .open_more-info .icon {
-    animation-name: arrow-drop;
-    animation-duration: 0.3s;
-    animation-timing-function: ease-in;
-}
-
-@keyframes arrow-drop {
-    0%, 100% {
-        transform: rotate(0);
-    }
-    25% {
-        transform: rotate(20deg);
-    }
-     75% {
-         transform: rotate(-20deg);
-     }
-}
-
 .client_projects {
     padding-left: 15px;
     padding-top: 15px;
@@ -329,6 +311,17 @@
     fill: var(--text-contrast)
 }
 
+.client_projects-info {
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.3s;
+    position: relative;
+}
+
+.client_projects-info:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .client_projects-info > .col-1 {
     display: flex;
     align-items: center;
@@ -342,6 +335,16 @@
 
 .client_projects-info > .col-1 > .dir-col {
     flex: 1 1 auto;
+}
+
+.client_projects-info > .col-1 > .dir-col .task_item-name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .task_item-name {
@@ -375,5 +378,85 @@
 }
 
 .client_projects-info > .col-3 > .dir-col {
+    flex: 1 1 auto;
+}
+
+.project_task-list {
+    padding-top: 12px;
+    padding-left: 15px;
+}
+
+.project_task-item {
+    position: relative;
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.project_task-item > .col-1 > .dir-col > .task_item-name::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.project_task-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.project_task-item::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-bottom: 2px solid var(--text-color);
+    border-left: 2px solid var(--text-color);
+    position: absolute;
+    top: 14px;
+    left: -10px;
+}
+
+.client_projects-list.status_danger .project_task-item::before,
+.client_projects-list.status_warning .project_task-item::before,
+.client_projects-list.status_success .project_task-item::before {
+    border-color: var(--text-contrast)
+}
+
+
+.project_task-item + .project_task-item {
+    margin-top: 8px;
+}
+
+.project_task-item > .col-1 {
+    margin-bottom: 10px;
+}
+
+.project_task-item > .col-2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.project_task-item > .col-2 > .payment_status {
+    margin-right: 10px;
+}
+
+.project_task-item > .col-2 > .dir-col {
+    flex: 1 1 auto;
+}
+
+.project_task-item > .col-3 {
+    display: flex;
+    align-items: center;
+}
+
+.project_task-item > .col-3 > .tasks-counter {
+    order: -1;
+    margin: 0 10px 0 0;
+}
+
+.project_task-item > .col-3 > .dir-col {
     flex: 1 1 auto;
 }

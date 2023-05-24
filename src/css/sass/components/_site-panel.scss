@@ -167,6 +167,7 @@
 
 .notification_btn.opened {
     z-index: 12;
+    background-color: #e0e3ec;
 }
 
 .notification_btn.active {
@@ -310,7 +311,7 @@
     right: 30px;
     padding: 5px;
     width: 300px;
-    max-height: 360px;
+    max-height: 532px;
     overflow-y: auto;
     background-color: #e0e3ec;
     border-radius: 5px;

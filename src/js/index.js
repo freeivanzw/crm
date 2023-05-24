@@ -120,7 +120,7 @@ $(function () {
         $('.notification_list').toggleClass('active');
 
         $black.on('click', function () {
-            $(this).removeClass('opened');
+            $('.notification_btn').removeClass('opened');
             $('.notification_list').removeClass('active');
         })
     })
@@ -173,12 +173,9 @@ $(function () {
         $(this).css('height', ($(this)[0].scrollHeight + 2 ) + 'px')
     }
 
-
     $('.choose_department').dropdown()
     $('.money_month').dropdown()
     $('.money_year').dropdown()
-    $('.choose_performers').dropdown()
-    $('.choose_customer').dropdown()
 
 
     $(".demo-x").mCustomScrollbar({

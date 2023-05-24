@@ -45,7 +45,6 @@
 }
 
 .status_main:hover {
-    opacity: 0.8;
     background-color: rgba(0,0,0,0.1);
 }
 
@@ -152,6 +151,16 @@
 
 .sub_tasks li.finished {
     filter: grayscale(1) opacity(0.5);
+}
+
+.sub_tasks li.finished .tasks-counter {
+    opacity: 0.8;
+}
+
+.task_page-list > li.status_danger .tasks-counter,
+.task_page-list > li.status_warning .tasks-counter,
+.task_page-list > li.status_success .tasks-counter {
+    opacity: 1;
 }
 
 .sub_tasks .col-1 {
