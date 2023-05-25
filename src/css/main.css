@@ -2699,8 +2699,8 @@ a.sub_title:hover {
 
 .notification_list {
   position: absolute;
-  top: 100%;
-  right: 30px;
+  top: calc(100% + 10px);
+  right: 0;
   padding: 5px;
   width: 300px;
   max-height: 532px;
@@ -4247,7 +4247,8 @@ li.status_success .add_task:hover .icon {
   border-radius: 8px;
 }
 
-.popup-bottom_inner:not(.popup-dead_line) > b {
+.popup-bottom_inner:not(.popup-dead_line) b {
+  background-color: transparent;
   color: var(--light-primary);
 }
 
@@ -4262,10 +4263,6 @@ li.status_success .add_task:hover .icon {
 
 .popup-bottom_inner.popup-dead_line > b {
   color: #a30c16;
-  background-color: transparent;
-}
-
-.popup-bottom_inner:not(.popup-dead_line) > b {
   background-color: transparent;
 }
 
@@ -4618,10 +4615,25 @@ li.status_success .add_task:hover .icon {
   padding-left: 30px;
   transition: 0.3s;
   border-radius: 6px;
+  position: relative;
 }
 
-.timeline_tasks > li > ul > li .timeline_tasks-item:hover {
+.timeline_tasks > li > ul > li .timeline_tasks-item::before {
+  content: "";
+  width: 100%;
+  height: calc(100% - 10px);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item:hover::before {
+  opacity: 1;
 }
 
 .timeline_tasks > li > ul > li .timeline_tasks-item > span {

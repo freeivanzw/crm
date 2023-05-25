@@ -821,7 +821,8 @@
     border-radius: 8px;
 }
 
-.popup-bottom_inner:not(.popup-dead_line) > b {
+.popup-bottom_inner:not(.popup-dead_line) b {
+    background-color: transparent;
     color: var(--light-primary)
 }
 
@@ -836,10 +837,6 @@
 
 .popup-bottom_inner.popup-dead_line > b {
     color:  #a30c16;
-    background-color: transparent;
-}
-
-.popup-bottom_inner:not(.popup-dead_line) > b {
     background-color: transparent;
 }
 

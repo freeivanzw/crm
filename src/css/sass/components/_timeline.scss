@@ -275,10 +275,25 @@
     padding-left: 30px;
     transition: 0.3s;
     border-radius: 6px;
+    position: relative;
 }
 
-.timeline_tasks > li > ul > li .timeline_tasks-item:hover {
+.timeline_tasks > li > ul > li .timeline_tasks-item::before {
+    content: "";
+    width: 100%;
+    height: calc(100% - 10px);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.timeline_tasks > li > ul > li .timeline_tasks-item:hover::before {
+    opacity: 1;
 }
 
 .timeline_tasks > li > ul > li .timeline_tasks-item > span {
